@@ -1,0 +1,17 @@
+# Trinity harness — local audit log, not for sharing
+.trinity/
+
+# Node
+node_modules/
+dist/
+.wrangler/
+.vite/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
