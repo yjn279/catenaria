@@ -1,17 +1,66 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  /* Grayscale / surfaces (depth via layered black) */
   --bg: #0a0a0a;
   --bg-1: #0e0e0e;
   --surface: #131313;
   --surface-2: #181818;
   --line: rgba(255, 255, 255, 0.07);
   --line-2: rgba(255, 255, 255, 0.14);
+
+  /* Text */
   --text: #ffffff;
   --text-2: #c4c4c4;
   --text-3: #a8a8a8;
+
+  /* Accent (amber) — use sparingly */
   --accent: #e8b537;
   --accent-hi: #f6d569;
   --accent-glow: rgba(232, 181, 55, 0.22);
+
+  /* Motion */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 0.3s;
+  --dur: 0.4s;
+  --dur-slow: 0.9s;
+
+  /* Geometry */
+  --radius: 2px;
+  --radius-0: 0px;
+  --hairline: 1px;
+
+  /* Spacing scale (px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 66px;
+  --space-8: 130px;
+
+  /* Type families */
+  --font-sans: "Montserrat", "Noto Sans JP", sans-serif;
+  --font-jp: "Noto Sans JP", "Montserrat", sans-serif;
+
+  /* Type tokens */
+  --fs-body: 15px;
+  --lh-body: 1.9;
+  --ls-body: 0.01em;
+  --fw-body: 300;
+
+  /* Tracking presets for wide Latin labels */
+  --ls-label: 0.3em;
+  --ls-kicker: 0.34em;
+  --ls-brand: 0.42em;
+  --ls-nav: 0.18em;
 }
 * {
   margin: 0;
@@ -127,7 +176,7 @@ header.scrolled {
   font-family: "Montserrat", "Noto Sans JP", sans-serif;
   font-weight: 400;
   font-size: 12.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-2);
   text-decoration: none;
@@ -220,11 +269,6 @@ header.scrolled {
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
 }
-.hero-apex {
-  fill: var(--accent);
-  filter: drop-shadow(0 0 9px var(--accent));
-  opacity: 0;
-}
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -244,7 +288,7 @@ header.scrolled {
   font-family: "Montserrat", "Noto Sans JP", sans-serif;
   font-weight: 600;
   line-height: 1.32;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.045em;
   font-size: clamp(2rem, 5.4vw, 4rem);
   margin-bottom: 30px;
   max-width: 16em;
@@ -293,7 +337,7 @@ section.block.alt {
 }
 .sec-title {
   font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(1.6rem, 3.4vw, 2.4rem);
   letter-spacing: 0.04em;
   line-height: 1.4;
@@ -568,7 +612,7 @@ section.block.alt {
   margin-bottom: 24px;
 }
 .trait h4 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 17px;
   line-height: 1.6;
   margin-bottom: 14px;
@@ -699,7 +743,7 @@ section.block.alt {
 }
 .contact-pitch h3 {
   font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.5;
   letter-spacing: 0.03em;
