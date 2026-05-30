@@ -20,16 +20,10 @@ export const CATENARY_D = catenaryPath(100, 120, 0.33, 140)
 interface CatenaryMarkProps {
   width?: number
   stroke?: string
-  apex?: boolean
   className?: string
 }
 
-export function CatenaryMark({
-  width = 26,
-  stroke = 'var(--text)',
-  apex = true,
-  className,
-}: CatenaryMarkProps) {
+export function CatenaryMark({ width = 26, stroke = 'var(--text)', className }: CatenaryMarkProps) {
   return (
     <svg
       viewBox="0 0 100 120"
@@ -44,31 +38,22 @@ export function CatenaryMark({
         strokeWidth="1.4"
         vectorEffect="non-scaling-stroke"
       />
-      {apex && <circle cx="50" cy="0" r="2.6" fill="var(--accent)" />}
     </svg>
   )
 }
 
 export function HeroMotif() {
   const pathRef = useRef<SVGPathElement>(null)
-  const apexRef = useRef<SVGCircleElement>(null)
 
   useEffect(() => {
     const hp = pathRef.current
-    const apex = apexRef.current
-    if (!hp || !apex) return
+    if (!hp) return
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) {
-      apex.style.opacity = '1'
-      return
-    }
+    if (reduce) return
 
     const len = hp.getTotalLength()
-    if (!len) {
-      apex.style.opacity = '1'
-      return
-    }
+    if (!len) return
 
     hp.style.strokeDasharray = String(len)
     hp.style.strokeDashoffset = String(len)
@@ -77,10 +62,6 @@ export function HeroMotif() {
     const r1 = requestAnimationFrame(() =>
       requestAnimationFrame(() => {
         hp.style.strokeDashoffset = '0'
-        setTimeout(() => {
-          apex.style.transition = 'opacity 1.1s ease'
-          apex.style.opacity = '1'
-        }, 1700)
       }),
     )
 
@@ -90,7 +71,6 @@ export function HeroMotif() {
   return (
     <svg className="hero-motif" viewBox="0 0 100 120" aria-hidden="true">
       <path ref={pathRef} className="cat-path" d={CATENARY_D} />
-      <circle ref={apexRef} className="hero-apex" cx="50" cy="0" r="2.4" />
     </svg>
   )
 }

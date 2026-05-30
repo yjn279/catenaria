@@ -14,7 +14,7 @@ export function Footer() {
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-brand">
-            <CatenaryMark width={34} stroke="var(--text)" apex={false} />
+            <CatenaryMark width={34} stroke="var(--text)" />
             <div className="foot-word">CATENARIA</div>
             <div className="foot-tag">Innovative IT Solutions</div>
           </div>

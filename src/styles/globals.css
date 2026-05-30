@@ -1,17 +1,66 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  /* ---- Grayscale / surfaces ---- */
   --bg: #0a0a0a;
   --bg-1: #0e0e0e;
   --surface: #131313;
   --surface-2: #181818;
   --line: rgba(255, 255, 255, 0.07);
   --line-2: rgba(255, 255, 255, 0.14);
+
+  /* ---- Text ---- */
   --text: #ffffff;
   --text-2: #c4c4c4;
   --text-3: #a8a8a8;
+
+  /* ---- Accent ---- */
   --accent: #e8b537;
   --accent-hi: #f6d569;
   --accent-glow: rgba(232, 181, 55, 0.22);
+
+  /* ---- Motion ---- */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 0.3s;
+  --dur: 0.4s;
+  --dur-slow: 0.9s;
+
+  /* ---- Geometry ---- */
+  --radius: 2px;
+  --radius-0: 0px;
+  --hairline: 1px;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 66px;
+  --space-8: 130px;
+
+  /* ---- Type families ---- */
+  --font-sans: "Montserrat", "Noto Sans JP", sans-serif;
+  --font-jp: "Noto Sans JP", "Montserrat", sans-serif;
+
+  /* ---- Type tokens ---- */
+  --fs-body: 15px;
+  --lh-body: 1.8;
+  --ls-body: 0.01em;
+  --fw-body: 400;
+
+  /* ---- Tracking presets ---- */
+  --ls-label: 0.3em;
+  --ls-kicker: 0.34em;
+  --ls-brand: 0.42em;
+  --ls-nav: 0.18em;
 }
 * {
   margin: 0;
@@ -20,7 +69,7 @@
 }
 html {
   scroll-behavior: smooth;
-  background: #0a0a0a;
+  background: var(--bg);
   color-scheme: dark;
 }
 html,
@@ -35,40 +84,40 @@ body {
 #bg-layer {
   position: fixed;
   inset: 0;
-  background: #0a0a0a;
+  background: var(--bg);
   z-index: -1;
 }
 body {
-  background: #0a0a0a;
+  background: var(--bg);
   color: var(--text);
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  font-weight: 300;
-  line-height: 1.9;
-  letter-spacing: 0.01em;
-  font-size: 15px;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  font-size: var(--fs-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 .wrap {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--space-6);
 }
 @media (max-width: 720px) {
   .wrap {
-    padding: 0 24px;
+    padding: 0 var(--space-5);
   }
 }
 ::selection {
   background: var(--accent);
-  color: #0a0a0a;
+  color: var(--bg);
 }
 
 #progress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 1px;
+  height: var(--hairline);
   width: 0;
   background: linear-gradient(90deg, transparent, var(--accent));
   z-index: 100;
@@ -83,15 +132,15 @@ header {
   right: 0;
   z-index: 90;
   transition:
-    background 0.4s var(--ease),
-    border-color 0.4s var(--ease),
-    backdrop-filter 0.4s;
-  border-bottom: 1px solid transparent;
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    backdrop-filter var(--dur);
+  border-bottom: var(--hairline) solid transparent;
 }
 header.scrolled {
-  background: rgba(10, 10, 11, 0.72);
+  background: rgba(10, 10, 10, 0.72);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: var(--hairline) solid var(--line);
 }
 .nav {
   display: flex;
@@ -111,12 +160,12 @@ header.scrolled {
   display: block;
 }
 .brand-word {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: 0.42em;
+  letter-spacing: var(--ls-brand);
   color: var(--text);
-  padding-left: 0.42em;
+  padding-left: var(--ls-brand);
 }
 .nav-links {
   display: flex;
@@ -124,23 +173,23 @@ header.scrolled {
   gap: 40px;
 }
 .nav-links a {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 12.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--ls-nav);
   text-transform: uppercase;
   color: var(--text-2);
   text-decoration: none;
   position: relative;
   padding: 4px 0;
-  transition: color 0.3s var(--ease);
+  transition: color var(--dur-fast) var(--ease);
 }
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -2px;
-  height: 1px;
+  height: var(--hairline);
   width: 0;
   background: var(--accent);
   transition: width 0.35s var(--ease);
@@ -152,7 +201,7 @@ header.scrolled {
   width: 100%;
 }
 .btn {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -161,14 +210,14 @@ header.scrolled {
   align-items: center;
   gap: 10px;
   padding: 13px 26px;
-  border-radius: 2px;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: all 0.32s var(--ease);
-  border: 1px solid transparent;
+  border: var(--hairline) solid transparent;
 }
 .btn-accent {
   background: var(--accent);
-  color: #0a0a0a;
+  color: var(--bg);
   box-shadow: 0 0 0 0 var(--accent-glow);
 }
 .btn-accent:hover {
@@ -179,7 +228,7 @@ header.scrolled {
 .btn-ghost {
   background: transparent;
   color: var(--text);
-  border: 1px solid var(--line-2);
+  border: var(--hairline) solid var(--line-2);
 }
 .btn-ghost:hover {
   border-color: var(--accent);
@@ -220,20 +269,15 @@ header.scrolled {
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
 }
-.hero-apex {
-  fill: var(--accent);
-  filter: drop-shadow(0 0 9px var(--accent));
-  opacity: 0;
-}
 .hero-inner {
   position: relative;
   z-index: 2;
 }
 .kicker {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
-  letter-spacing: 0.34em;
+  letter-spacing: var(--ls-kicker);
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 30px;
@@ -241,10 +285,10 @@ header.scrolled {
   align-items: center;
 }
 .hero h1 {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   line-height: 1.32;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.045em;
   font-size: clamp(2rem, 5.4vw, 4rem);
   margin-bottom: 30px;
   max-width: 16em;
@@ -271,20 +315,20 @@ header.scrolled {
 
 /* Section frame */
 section.block {
-  padding: 130px 0;
+  padding: var(--space-8) 0;
   position: relative;
 }
 section.block.alt {
   background: var(--bg-1);
 }
 .sec-head {
-  margin-bottom: 66px;
+  margin-bottom: var(--space-7);
 }
 .sec-label {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 16px;
@@ -292,8 +336,8 @@ section.block.alt {
   align-items: center;
 }
 .sec-title {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: clamp(1.6rem, 3.4vw, 2.4rem);
   letter-spacing: 0.04em;
   line-height: 1.4;
@@ -314,17 +358,17 @@ section.block.alt {
 @media (max-width: 720px) {
   .cards {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: var(--space-4);
   }
 }
 .card {
   background: var(--surface);
-  border: 1px solid var(--line);
-  padding: 44px 40px;
+  border: var(--hairline) solid var(--line);
+  padding: 30px 28px;
   position: relative;
   transition:
-    background 0.4s var(--ease),
-    border-color 0.4s var(--ease);
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
   overflow: hidden;
 }
 .card::before {
@@ -347,25 +391,26 @@ section.block.alt {
   transform: scaleX(1);
 }
 .card-name {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 21px;
   letter-spacing: 0.04em;
   margin: 0 0 4px;
 }
 .card-role {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 .card-desc {
   color: var(--text-2);
-  font-size: 14.5px;
-  line-height: 1.95;
+  font-size: 14px;
+  line-height: 1.9;
+  font-weight: 400;
   margin-bottom: 26px;
   min-height: 3.8em;
 }
@@ -373,7 +418,7 @@ section.block.alt {
   font-size: 13px;
   color: var(--text);
   padding: 12px 0;
-  border-top: 1px solid var(--line);
+  border-top: var(--hairline) solid var(--line);
   display: flex;
   gap: 10px;
   align-items: baseline;
@@ -387,9 +432,9 @@ section.block.alt {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 22px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: var(--hairline) solid var(--line);
 }
 .card-term {
   font-size: 12px;
@@ -397,7 +442,7 @@ section.block.alt {
   letter-spacing: 0.06em;
 }
 .card-price {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 19px;
   letter-spacing: 0.02em;
@@ -424,10 +469,10 @@ section.block.alt {
   text-align: center;
 }
 .figure-cap {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
-  letter-spacing: 0.26em;
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--text-3);
   margin-bottom: 36px;
@@ -441,10 +486,10 @@ section.block.alt {
 }
 .cycle text {
   fill: var(--text);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
 }
 .cycle .jp {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-jp);
   fill: var(--text-3);
 }
 .cycle .edge {
@@ -482,21 +527,21 @@ section.block.alt {
   position: absolute;
   top: 13px;
   right: -1px;
-  width: 1px;
+  width: var(--hairline);
   height: calc(100% - 13px);
   background: var(--line);
 }
 @media (max-width: 820px) {
   .step {
     padding: 28px 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: var(--hairline) solid var(--line);
   }
   .step:not(:last-child)::after {
     display: none;
   }
 }
 .step-num {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.1em;
@@ -511,7 +556,7 @@ section.block.alt {
   left: -24px;
   top: 7px;
   width: 18px;
-  height: 1px;
+  height: var(--hairline);
   background: var(--accent);
 }
 @media (max-width: 820px) {
@@ -537,16 +582,16 @@ section.block.alt {
   font-size: 12.5px;
   letter-spacing: 0.16em;
   font-style: italic;
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* About */
 .traits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  gap: var(--hairline);
   background: var(--line);
-  border: 1px solid var(--line);
+  border: var(--hairline) solid var(--line);
   margin-bottom: 70px;
 }
 @media (max-width: 820px) {
@@ -559,7 +604,7 @@ section.block.alt {
   padding: 42px 36px;
 }
 .trait-mark {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 300;
   font-style: italic;
   font-size: 28px;
@@ -568,7 +613,7 @@ section.block.alt {
   margin-bottom: 24px;
 }
 .trait h4 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 17px;
   line-height: 1.6;
   margin-bottom: 14px;
@@ -580,14 +625,14 @@ section.block.alt {
   line-height: 1.95;
 }
 .profile {
-  border-top: 1px solid var(--line);
+  border-top: var(--hairline) solid var(--line);
 }
 .profile-row {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 30px;
   padding: 22px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: var(--hairline) solid var(--line);
 }
 @media (max-width: 640px) {
   .profile-row {
@@ -596,7 +641,7 @@ section.block.alt {
   }
 }
 .profile-row dt {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -621,10 +666,10 @@ section.block.alt {
 
 /* FAQ */
 .faq {
-  border-top: 1px solid var(--line);
+  border-top: var(--hairline) solid var(--line);
 }
 .faq-item {
-  border-bottom: 1px solid var(--line);
+  border-bottom: var(--hairline) solid var(--line);
 }
 .faq-q {
   width: 100%;
@@ -636,7 +681,7 @@ section.block.alt {
   font-family: inherit;
   font-size: 16px;
   font-weight: 400;
-  padding: 28px 50px 28px 0;
+  padding: 22px 50px 22px 0;
   position: relative;
   letter-spacing: 0.02em;
   line-height: 1.6;
@@ -648,14 +693,14 @@ section.block.alt {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  transition: transform 0.4s var(--ease);
+  transition: transform var(--dur) var(--ease);
 }
 .faq-q .plus::before,
 .faq-q .plus::after {
   content: "";
   position: absolute;
   background: var(--accent);
-  transition: opacity 0.3s;
+  transition: opacity var(--dur-fast);
 }
 .faq-q .plus::before {
   top: 7px;
@@ -678,10 +723,11 @@ section.block.alt {
   transition: max-height 0.45s var(--ease);
 }
 .faq-a-inner {
-  padding: 0 50px 30px 0;
+  padding: 0 50px 26px 0;
   color: var(--text-2);
   font-size: 14.5px;
   line-height: 2;
+  font-weight: 400;
 }
 
 /* Contact */
@@ -698,8 +744,8 @@ section.block.alt {
   }
 }
 .contact-pitch h3 {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.5;
   letter-spacing: 0.03em;
@@ -717,21 +763,21 @@ section.block.alt {
 .contact-alt a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
+  border-bottom: var(--hairline) solid transparent;
+  transition: border-color var(--dur-fast);
 }
 .contact-alt a:hover {
   border-color: var(--accent);
 }
 .field {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-5);
 }
 .field label {
   display: block;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ls-nav);
   text-transform: uppercase;
   color: var(--text-3);
   margin-bottom: 10px;
@@ -740,13 +786,13 @@ section.block.alt {
 .field textarea {
   width: 100%;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: var(--hairline) solid var(--line);
   color: var(--text);
   font-family: inherit;
   font-size: 15px;
   padding: 14px 16px;
-  border-radius: 2px;
-  transition: border-color 0.3s var(--ease);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-fast) var(--ease);
   resize: vertical;
 }
 .field input:focus,
@@ -771,7 +817,7 @@ section.block.alt {
 /* Footer */
 footer {
   padding: 80px 0 56px;
-  border-top: 1px solid var(--line);
+  border-top: var(--hairline) solid var(--line);
 }
 .foot-top {
   display: flex;
@@ -787,16 +833,16 @@ footer {
   margin-bottom: 18px;
 }
 .foot-word {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 15px;
-  letter-spacing: 0.42em;
-  padding-left: 0.42em;
+  letter-spacing: var(--ls-brand);
+  padding-left: var(--ls-brand);
 }
 .foot-tag {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-size: 10px;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--ls-label);
   color: var(--text-3);
   margin-top: 8px;
   text-transform: uppercase;
@@ -807,13 +853,13 @@ footer {
   flex-wrap: wrap;
 }
 .foot-nav a {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--ls-nav);
   text-transform: uppercase;
   color: var(--text-2);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color var(--dur-fast);
 }
 .foot-nav a:hover {
   color: var(--accent);
@@ -842,8 +888,8 @@ footer {
     opacity: 0;
     transform: translateY(22px);
     transition:
-      opacity 0.9s var(--ease),
-      transform 0.9s var(--ease);
+      opacity var(--dur-slow) var(--ease),
+      transform var(--dur-slow) var(--ease);
   }
   .reveal.in {
     opacity: 1;
