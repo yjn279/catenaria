@@ -89,7 +89,7 @@ function ServiceCycle() {
             markerHeight="7"
             orient="auto"
           >
-            <path d="M0,0 L10,5 L0,10 z" fill="#c4c4c4" />
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--text-2)" />
           </marker>
         </defs>
         <text x="280" y="44" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
@@ -105,7 +105,7 @@ function ServiceCycle() {
           textAnchor="middle"
           fontSize="19"
           letterSpacing="0.04em"
-          fill="#e8b537"
+          fill="var(--accent)"
         >
           mini-CTO
         </text>
