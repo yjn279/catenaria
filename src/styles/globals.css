@@ -160,7 +160,7 @@ header.scrolled {
   display: block;
 }
 .brand-word {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 16px;
   letter-spacing: var(--ls-brand);
@@ -173,7 +173,7 @@ header.scrolled {
   gap: 40px;
 }
 .nav-links a {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 12.5px;
   letter-spacing: var(--ls-nav);
@@ -201,7 +201,7 @@ header.scrolled {
   width: 100%;
 }
 .btn {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -274,7 +274,7 @@ header.scrolled {
   z-index: 2;
 }
 .kicker {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: var(--ls-kicker);
@@ -285,7 +285,7 @@ header.scrolled {
   align-items: center;
 }
 .hero h1 {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   line-height: 1.32;
   letter-spacing: 0.045em;
@@ -325,7 +325,7 @@ section.block.alt {
   margin-bottom: var(--space-7);
 }
 .sec-label {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: var(--ls-label);
@@ -336,7 +336,7 @@ section.block.alt {
   align-items: center;
 }
 .sec-title {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: clamp(1.6rem, 3.4vw, 2.4rem);
   letter-spacing: 0.04em;
@@ -391,14 +391,14 @@ section.block.alt {
   transform: scaleX(1);
 }
 .card-name {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 21px;
   letter-spacing: 0.04em;
   margin: 0 0 4px;
 }
 .card-role {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.24em;
@@ -442,7 +442,7 @@ section.block.alt {
   letter-spacing: 0.06em;
 }
 .card-price {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 19px;
   letter-spacing: 0.02em;
@@ -469,7 +469,7 @@ section.block.alt {
   text-align: center;
 }
 .figure-cap {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: var(--ls-label);
@@ -486,10 +486,10 @@ section.block.alt {
 }
 .cycle text {
   fill: var(--text);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
 }
 .cycle .jp {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-jp);
   fill: var(--text-3);
 }
 .cycle .edge {
@@ -541,7 +541,7 @@ section.block.alt {
   }
 }
 .step-num {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.1em;
@@ -582,7 +582,7 @@ section.block.alt {
   font-size: 12.5px;
   letter-spacing: 0.16em;
   font-style: italic;
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* About */
@@ -604,7 +604,7 @@ section.block.alt {
   padding: 42px 36px;
 }
 .trait-mark {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 300;
   font-style: italic;
   font-size: 28px;
@@ -641,7 +641,7 @@ section.block.alt {
   }
 }
 .profile-row dt {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -744,7 +744,7 @@ section.block.alt {
   }
 }
 .contact-pitch h3 {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.5;
@@ -774,7 +774,7 @@ section.block.alt {
 }
 .field label {
   display: block;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: var(--ls-nav);
@@ -833,14 +833,14 @@ footer {
   margin-bottom: 18px;
 }
 .foot-word {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 15px;
   letter-spacing: var(--ls-brand);
   padding-left: var(--ls-brand);
 }
 .foot-tag {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-size: 10px;
   letter-spacing: var(--ls-label);
   color: var(--text-3);
@@ -853,7 +853,7 @@ footer {
   flex-wrap: wrap;
 }
 .foot-nav a {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   letter-spacing: var(--ls-nav);
   text-transform: uppercase;
