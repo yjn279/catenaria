@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useCallback } from 'react';
 
 const FAQS = [
   {
@@ -25,7 +25,11 @@ const FAQS = [
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState<boolean>(false);
-  const inner = useRef<HTMLDivElement>(null);
+  const [innerHeight, setInnerHeight] = useState<number>(0);
+
+  const innerRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) setInnerHeight(node.scrollHeight);
+  }, []);
 
   return (
     <div className={'faq-item' + (open ? ' open' : '')}>
@@ -35,9 +39,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       </button>
       <div
         className="faq-a"
-        style={{ maxHeight: open && inner.current ? `${inner.current.scrollHeight}px` : '0px' }}
+        style={{ maxHeight: open ? `${innerHeight}px` : '0px' }}
       >
-        <div className="faq-a-inner" ref={inner}>{a}</div>
+        <div className="faq-a-inner" ref={innerRef}>{a}</div>
       </div>
     </div>
   );

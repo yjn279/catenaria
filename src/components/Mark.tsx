@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function catenaryPath(W: number, H: number, tautness: number, N: number): string {
   const hw = W / 2;
   const a = hw * tautness;
@@ -13,6 +14,7 @@ export function catenaryPath(W: number, H: number, tautness: number, N: number):
   return d.trim();
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const CATENARY_D = catenaryPath(100, 120, 0.33, 140);
 
 interface CatenaryMarkProps {
