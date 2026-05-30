@@ -1,0 +1,34 @@
+import { CatenaryMark } from './Mark';
+
+const COLS = [
+  { href: '#services', label: 'Services' },
+  { href: '#flow', label: 'Flow' },
+  { href: '#about', label: 'About' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Contact' },
+];
+
+export function Footer() {
+  return (
+    <footer>
+      <div className="wrap">
+        <div className="foot-top">
+          <div className="foot-brand">
+            <CatenaryMark width={34} stroke="var(--text)" apex={false} />
+            <div className="foot-word">CATENARIA</div>
+            <div className="foot-tag">Innovative IT Solutions</div>
+          </div>
+          <nav className="foot-nav" aria-label="フッターナビゲーション">
+            {COLS.map((c) => (
+              <a key={c.href} href={c.href}>{c.label}</a>
+            ))}
+          </nav>
+        </div>
+        <div className="foot-bottom">
+          <span>© 2026 CATENARIA</span>
+          <a href="#top">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
