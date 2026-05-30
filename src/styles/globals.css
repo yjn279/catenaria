@@ -1,17 +1,66 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  /* ---- Grayscale / surfaces ---- */
   --bg: #0a0a0a;
   --bg-1: #0e0e0e;
   --surface: #131313;
   --surface-2: #181818;
   --line: rgba(255, 255, 255, 0.07);
   --line-2: rgba(255, 255, 255, 0.14);
+
+  /* ---- Text ---- */
   --text: #ffffff;
   --text-2: #c4c4c4;
   --text-3: #a8a8a8;
+
+  /* ---- Accent ---- */
   --accent: #e8b537;
   --accent-hi: #f6d569;
   --accent-glow: rgba(232, 181, 55, 0.22);
+
+  /* ---- Motion ---- */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 0.3s;
+  --dur: 0.4s;
+  --dur-slow: 0.9s;
+
+  /* ---- Geometry ---- */
+  --radius: 2px;
+  --radius-0: 0px;
+  --hairline: 1px;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 66px;
+  --space-8: 130px;
+
+  /* ---- Type families ---- */
+  --font-sans: "Montserrat", "Noto Sans JP", sans-serif;
+  --font-jp: "Noto Sans JP", "Montserrat", sans-serif;
+
+  /* ---- Type tokens ---- */
+  --fs-body: 15px;
+  --lh-body: 1.8;
+  --ls-body: 0.01em;
+  --fw-body: 400;
+
+  /* ---- Tracking presets ---- */
+  --ls-label: 0.3em;
+  --ls-kicker: 0.34em;
+  --ls-brand: 0.42em;
+  --ls-nav: 0.18em;
 }
 * {
   margin: 0;
