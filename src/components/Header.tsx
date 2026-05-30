@@ -22,7 +22,7 @@ export function Header() {
     <header id="header" className={scrolled ? 'scrolled' : ''}>
       <div className="wrap nav">
         <a href="#top" className="brand-lockup" aria-label="CATENARIA home">
-          <CatenaryMark width={26} stroke="var(--text)" apex={false} />
+          <CatenaryMark width={26} stroke="var(--text)" />
           <span className="brand-word">CATENARIA</span>
         </a>
         <nav className="nav-links" aria-label="主要ナビゲーション">

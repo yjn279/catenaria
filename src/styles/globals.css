@@ -269,11 +269,6 @@ header.scrolled {
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
 }
-.hero-apex {
-  fill: var(--accent);
-  filter: drop-shadow(0 0 9px var(--accent));
-  opacity: 0;
-}
 .hero-inner {
   position: relative;
   z-index: 2;
