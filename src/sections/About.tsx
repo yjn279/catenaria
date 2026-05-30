@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 
 const TRAITS = [
   {
@@ -16,20 +16,27 @@ const TRAITS = [
     h: 'AIにできないことを、売る。',
     p: 'AIは顧客のYESマシンになりがち。私たちは対等な視座から、本質を提示する。',
   },
-];
+]
 
 interface ProfileRow {
-  dt: string;
-  dd: ReactNode;
+  dt: string
+  dd: ReactNode
 }
 
 const PROFILE: ProfileRow[] = [
-  { dt: 'Name', dd: <>CATENARIA <span className="en">/ カテナリア</span></> },
+  {
+    dt: 'Name',
+    dd: (
+      <>
+        CATENARIA <span className="en">/ カテナリア</span>
+      </>
+    ),
+  },
   { dt: 'Structure', dd: 'フリーランス少数精鋭 ＋ AIエージェント組織' },
   { dt: 'Service', dd: 'AI時代の個人開発者・小規模事業者向け、技術機能アウトソーシング' },
   { dt: 'Phase', dd: '0→10 の領域に特化（10→100 のスケールは扱わない）' },
   { dt: 'Contact', dd: <a href="mailto:hello@catenaria.jp">hello@catenaria.jp</a> },
-];
+]
 
 export function About() {
   return (
@@ -61,5 +68,5 @@ export function About() {
         </dl>
       </div>
     </section>
-  );
+  )
 }

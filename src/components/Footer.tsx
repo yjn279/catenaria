@@ -1,4 +1,4 @@
-import { CatenaryMark } from './Mark';
+import { CatenaryMark } from './Mark'
 
 const COLS = [
   { href: '#services', label: 'Services' },
@@ -6,7 +6,7 @@ const COLS = [
   { href: '#about', label: 'About' },
   { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
-];
+]
 
 export function Footer() {
   return (
@@ -20,7 +20,9 @@ export function Footer() {
           </div>
           <nav className="foot-nav" aria-label="フッターナビゲーション">
             {COLS.map((c) => (
-              <a key={c.href} href={c.href}>{c.label}</a>
+              <a key={c.href} href={c.href}>
+                {c.label}
+              </a>
             ))}
           </nav>
         </div>
@@ -30,5 +32,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react'
 
 const FAQS = [
   {
@@ -21,30 +21,34 @@ const FAQS = [
     q: '対応していない領域はありますか？',
     a: '0→10 を専門とし、10→100 の大規模スケールは扱いません。その段階は、次の伴走者へ気持ちよく送り出す設計です。',
   },
-];
+]
 
 function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState<boolean>(false);
-  const [innerHeight, setInnerHeight] = useState<number>(0);
+  const [open, setOpen] = useState<boolean>(false)
+  const [innerHeight, setInnerHeight] = useState<number>(0)
 
   const innerRef = useCallback((node: HTMLDivElement | null) => {
-    if (node) setInnerHeight(node.scrollHeight);
-  }, []);
+    if (node) setInnerHeight(node.scrollHeight)
+  }, [])
 
   return (
-    <div className={'faq-item' + (open ? ' open' : '')}>
-      <button className="faq-q" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+    <div className={`faq-item${open ? ' open' : ''}`}>
+      <button
+        type="button"
+        className="faq-q"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
         {q}
         <span className="plus" aria-hidden="true"></span>
       </button>
-      <div
-        className="faq-a"
-        style={{ maxHeight: open ? `${innerHeight}px` : '0px' }}
-      >
-        <div className="faq-a-inner" ref={innerRef}>{a}</div>
+      <div className="faq-a" style={{ maxHeight: open ? `${innerHeight}px` : '0px' }}>
+        <div className="faq-a-inner" ref={innerRef}>
+          {a}
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
 export function Faq() {
@@ -56,11 +60,11 @@ export function Faq() {
           <h2 className="sec-title">よくある質問</h2>
         </div>
         <div className="faq reveal">
-          {FAQS.map((f, i) => (
-            <FaqItem key={i} q={f.q} a={f.a} />
+          {FAQS.map((f) => (
+            <FaqItem key={f.q} q={f.q} a={f.a} />
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
