@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import { CatenaryMark } from './Mark';
+import { useEffect, useState } from 'react'
+import { CatenaryMark } from './Mark'
 
 const NAV = [
   { href: '#services', label: 'Services' },
   { href: '#flow', label: 'Flow' },
   { href: '#about', label: 'About' },
   { href: '#faq', label: 'FAQ' },
-];
+]
 
 export function Header() {
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <header id="header" className={scrolled ? 'scrolled' : ''}>
@@ -27,11 +27,15 @@ export function Header() {
         </a>
         <nav className="nav-links" aria-label="主要ナビゲーション">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href}>{n.label}</a>
+            <a key={n.href} href={n.href}>
+              {n.label}
+            </a>
           ))}
         </nav>
-        <a href="#contact" className="btn btn-accent">無料で相談する</a>
+        <a href="#contact" className="btn btn-accent">
+          無料で相談する
+        </a>
       </div>
     </header>
-  );
+  )
 }
