@@ -8,16 +8,14 @@ export function Contact() {
       <div className="wrap contact-grid">
         <div className="contact-pitch reveal">
           <div className="sec-label">Contact</div>
-          <h3>
-            作るべきか迷っているなら、
-            <br />
-            まずは、話しましょう。
-          </h3>
+          <h3>まずは、お話を聞かせてください。</h3>
           <p>
-            初回相談は無料です。コードを見せていただく必要も、まだありません。いまの状況を聞かせてください。
+            初回相談は無料です。30〜60
+            分のオンラインで、いまの状況とご要望をお聞きします。コードや資料があれば、ぜひ事前に共有してください。話の解像度が一段上がります。
           </p>
           <p className="contact-alt">
-            もしくは <a href="mailto:hello@catenaria.jp">hello@catenaria.jp</a> まで直接どうぞ。
+            もしくは <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a>{' '}
+            まで直接どうぞ。
           </p>
         </div>
         <div className="contact-form reveal d1">
