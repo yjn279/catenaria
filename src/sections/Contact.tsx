@@ -10,7 +10,7 @@ export function Contact() {
           <div className="sec-label">Contact</div>
           <h3>
             まずは、
-            <br className="br-mobile-only" />
+            <br />
             お話を聞かせてください。
           </h3>
           <p>

@@ -947,10 +947,11 @@ footer {
 /* Mobile refinements */
 @media (max-width: 640px) {
   section.block {
-    padding: 56px 0;
+    padding: 28px 0;
   }
   .hero {
     min-height: 90vh;
+    padding-top: 0;
   }
   .hero h1 {
     margin-bottom: 24px;
