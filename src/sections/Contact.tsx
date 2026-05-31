@@ -10,12 +10,9 @@ export function Contact() {
           <div className="sec-label">Contact</div>
           <h3>まずは、お話を聞かせてください。</h3>
           <p>
-            初回相談は無料です。30〜60
-            分のオンラインで、いまの状況とご要望をお聞きします。コードや資料があれば、ぜひ事前に共有してください。話の解像度が一段上がります。
-          </p>
-          <p className="contact-alt">
-            もしくは <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a>{' '}
-            まで直接どうぞ。
+            初回相談は無料です。30
+            分間のオンライン相談で、今のご状況やご要望をお伺いします。漠然としたお悩みのご相談や、解消しないエラーのご相談でも構いません。メールでのご連絡をご希望の場合は、
+            <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a> まで。
           </p>
         </div>
         <div className="contact-form reveal d1">
