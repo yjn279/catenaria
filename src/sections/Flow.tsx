@@ -1,13 +1,29 @@
 const STEPS = [
   {
     num: '01',
-    title: '問い合わせ',
-    desc: 'まずは現状を聞かせてください。技術の言葉でなくて構いません。',
+    title: 'お問い合わせ',
+    desc: 'フォームまたはメールでご連絡ください。技術の言葉でなくて構いません。',
   },
-  { num: '02', title: '診断', desc: 'コードと事業の両面から、本当の課題を見極めます。' },
-  { num: '03', title: '提案', desc: '残すもの、捨てるものを、一緒に決めます。' },
-  { num: '04', title: '実装', desc: '残すと決めたものを、Production-Ready水準まで磨き上げます。' },
-  { num: '05', title: '運用', desc: 'リリース後も見守りながら、改善を続けます。' },
+  {
+    num: '02',
+    title: '無料相談',
+    desc: 'オンラインで 30〜60 分、現状とご要望をお聞きします。費用は一切かかりません。',
+  },
+  {
+    num: '03',
+    title: 'お見積もり',
+    desc: 'お話を踏まえて、最適なサービスと費用感をご提案します。比較検討のための簡易見積も歓迎です。',
+  },
+  {
+    num: '04',
+    title: 'ご契約',
+    desc: '内容にご納得いただけたら、業務委託契約を締結します。月額継続かプロジェクト単位かを選べます。',
+  },
+  {
+    num: '05',
+    title: '業務実施 / 納品',
+    desc: '合意したスコープで実装・運用を進めます。完了時に成果物を納品し、必要に応じて運用へ移行します。',
+  },
 ]
 
 export function Flow() {
@@ -15,10 +31,11 @@ export function Flow() {
     <section className="block alt" id="flow">
       <div className="wrap">
         <div className="sec-head reveal">
-          <div className="sec-label">Flow</div>
+          <div className="sec-label">Process</div>
           <h2 className="sec-title">ご依頼の流れ</h2>
           <p className="sec-lead">
-            関係は一方通行ではない。新たな課題が現れるたび、また入口へ戻る。
+            初めてのご相談から業務完了まで、5
+            つのステップでご案内します。気になる段階だけでも、お気軽にお声がけください。
           </p>
         </div>
         <div className="flow reveal">
@@ -30,7 +47,6 @@ export function Flow() {
             </div>
           ))}
         </div>
-        <p className="flow-loop reveal">— 新たな課題ごとに、再び —</p>
       </div>
     </section>
   )
