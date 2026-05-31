@@ -25,7 +25,7 @@ export function Flow() {
           <div className="sec-label">Process</div>
           <h2 className="sec-title">ご依頼の流れ</h2>
           <p className="sec-lead">
-            お問い合わせから業務開始まではたったの 4 ステップで、簡単にご依頼いただけます。
+            お問い合わせから業務開始まで、たったの 4 ステップで簡単にご依頼いただけます。
           </p>
         </div>
         <div className="flow reveal">
