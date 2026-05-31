@@ -8,7 +8,11 @@ export function Contact() {
       <div className="wrap contact-grid">
         <div className="contact-pitch reveal">
           <div className="sec-label">Contact</div>
-          <h3>まずは、お話を聞かせてください。</h3>
+          <h3>
+            まずは、
+            <br className="br-mobile-only" />
+            お話を聞かせてください。
+          </h3>
           <p>
             初回相談は無料です。30
             分間のオンライン相談で、今のご状況やご要望をお伺いします。漠然としたお悩みのご相談や、解消しないエラーのご相談でも構いません。メールでのご連絡をご希望の場合は、
