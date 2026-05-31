@@ -952,7 +952,7 @@ footer {
   .hero {
     min-height: auto;
     justify-content: flex-start;
-    padding-top: 65px;
+    padding-top: 132px; /* 65px header + 72px gap (mirror bottom), minus ~5px line-leading */
     padding-bottom: 72px;
   }
   .hero h1 {
