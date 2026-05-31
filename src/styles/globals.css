@@ -97,6 +97,9 @@ body {
   font-size: var(--fs-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  word-break: keep-all;
+  line-break: strict;
+  overflow-wrap: anywhere;
 }
 .wrap {
   max-width: 1080px;
@@ -117,9 +120,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: var(--hairline);
+  height: 2px;
   width: 0;
-  background: linear-gradient(90deg, transparent, var(--accent));
+  background: linear-gradient(90deg, var(--accent-glow), var(--accent));
   z-index: 100;
   transition: width 0.1s linear;
 }
@@ -153,6 +156,7 @@ header.scrolled {
   align-items: center;
   gap: 13px;
   text-decoration: none;
+  color: var(--text);
 }
 .brand-lockup svg {
   width: 26px;
@@ -333,9 +337,7 @@ section.block {
   padding: calc(var(--space-7) + var(--space-5)) 0;
   position: relative;
 }
-section.block.alt {
-  background: var(--bg-1);
-}
+
 .sec-head {
   margin-bottom: var(--space-7);
 }
