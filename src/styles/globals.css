@@ -650,6 +650,15 @@ section.block {
   color: var(--text-3);
   margin: 0;
 }
+.trait-note {
+  font-family: var(--font-jp);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: var(--ls-body);
+  color: var(--text-3);
+  margin: 14px 0 0;
+}
 .profile {
   border-top: var(--hairline) solid var(--line);
 }

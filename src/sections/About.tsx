@@ -4,6 +4,7 @@ interface Trait {
   eyebrow: string
   jp: string
   en: string
+  note: string
 }
 
 const TRAITS: Trait[] = [
@@ -11,16 +12,19 @@ const TRAITS: Trait[] = [
     eyebrow: 'MISSION',
     jp: '真理を、探求せよ。',
     en: 'Essentialism',
+    note: '本質的な価値だけを抽出し、複数の課題を一つの仕組みで解決する。',
   },
   {
     eyebrow: 'VISION',
     jp: '原石を削り出す。',
     en: 'Simplicity',
+    note: '不要な要素を削ぎ落とし、最小構成で本質的な価値を成立させる。',
   },
   {
     eyebrow: 'VALUE',
     jp: '細部に魂を宿す。',
     en: 'Craftsmanship',
+    note: 'すべての細部に意味と必然性を宿し、職人的な機能美を磨き上げる。',
   },
 ]
 
@@ -52,7 +56,7 @@ export function About() {
         <div className="about-origin reveal">
           <p>
             鎖が自重で垂れる際に描く、カテナリー曲線。サグラダ・ファミリアの設計者であるアントニ・ガウディは、自然の摂理から導かれる合理的で美しいこの形状を、建築の強固な構造として応用しました。CATENARIA
-            は、ガウディが生まれ育ったスペイン・カタルーニャ地方でカテナリー曲線を表す言葉です。「ガウディの建築のようにお客さまをしっかりと支えられるような存在でありたい。」という想いを込めています。
+            は、ガウディが生まれ育ったスペイン・カタルーニャ地方でカテナリー曲線を表す言葉です。「ガウディの建築のように、お客さまをしっかりと支えられるような存在でありたい。」という想いを込めています。
           </p>
         </div>
         <div className="traits reveal">
@@ -61,6 +65,7 @@ export function About() {
               <div className="trait-eyebrow">{t.eyebrow}</div>
               <h3 className="trait-jp">{t.jp}</h3>
               <div className="trait-en">{t.en}</div>
+              <p className="trait-note">{t.note}</p>
             </div>
           ))}
         </div>
