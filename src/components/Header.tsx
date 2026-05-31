@@ -23,8 +23,11 @@ export function Header() {
     <header id="header" className={scrolled ? 'scrolled' : ''}>
       <div className="wrap nav">
         <a href="#top" className="brand-lockup" aria-label="CATENARIA home">
-          <CatenaryMark width={26} />
-          <span className="brand-word">CATENARIA</span>
+          <CatenaryMark width={30} />
+          <div className="brand-word-block">
+            <span className="brand-word">CATENARIA</span>
+            <span className="brand-tag">Innovative IT Solutions</span>
+          </div>
         </a>
         <nav className="nav-links" aria-label="主要ナビゲーション">
           {NAV.map((n) => (

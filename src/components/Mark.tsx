@@ -30,7 +30,7 @@ export function CatenaryMark({
 }: CatenaryMarkProps) {
   return (
     <svg
-      viewBox="0 0 100 120"
+      viewBox="-3 -5 106 130"
       aria-hidden="true"
       data-logo="catenary"
       className={className}

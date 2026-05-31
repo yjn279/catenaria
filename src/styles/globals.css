@@ -151,7 +151,7 @@ header.scrolled {
 .brand-lockup {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 13px;
   text-decoration: none;
 }
 .brand-lockup svg {
@@ -166,6 +166,21 @@ header.scrolled {
   letter-spacing: var(--ls-brand);
   color: var(--text);
   padding-left: var(--ls-brand);
+  line-height: 1;
+}
+.brand-word-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.brand-tag {
+  font-size: 8.5px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-top: 4px;
+  line-height: 1;
 }
 .nav-links {
   display: flex;
@@ -980,6 +995,9 @@ footer {
     font-size: 14px;
     letter-spacing: 0.3em;
     padding-left: 0.3em;
+  }
+  .brand-tag {
+    display: none;
   }
   .brand-lockup svg {
     width: 22px;
