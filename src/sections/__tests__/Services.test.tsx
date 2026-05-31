@@ -3,7 +3,7 @@ import { Services } from '../Services'
 
 it('renders the services section title', () => {
   render(<Services />)
-  expect(screen.getByText(/サービス・料金/)).toBeInTheDocument()
+  expect(screen.getByText(/サービス \/ 料金/)).toBeInTheDocument()
 })
 
 it('renders Vibe Coding Cleanup service card', () => {
@@ -21,5 +21,5 @@ it('renders mini-CTO service', () => {
 
 it('renders Service Cycle figure caption', () => {
   render(<Services />)
-  expect(screen.getByText(/Service Cycle/)).toBeInTheDocument()
+  expect(screen.getByText(/サービスの相関図/)).toBeInTheDocument()
 })
