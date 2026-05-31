@@ -3,7 +3,7 @@ import { About } from '../About'
 
 it('renders the about section title', () => {
   render(<About />)
-  expect(screen.getByText(/私たちについて/)).toBeInTheDocument()
+  expect(screen.getByText(/CATENARIA について/)).toBeInTheDocument()
 })
 
 it('renders CATENARIA brand name in profile', () => {

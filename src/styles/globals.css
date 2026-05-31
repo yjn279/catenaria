@@ -603,15 +603,22 @@ section.block.alt {
   color: var(--text-2);
   font-size: 15px;
   line-height: 2;
-  max-width: 38em;
+  max-width: none;
+  width: 80%;
   margin: 0 auto 60px;
   padding: 28px 32px;
   border-left: 2px solid var(--accent);
   background: var(--surface);
 }
+@media (max-width: 640px) {
+  .about-origin {
+    width: 100%;
+    padding: 22px 22px;
+  }
+}
 .traits {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--hairline);
   background: var(--line);
   border: var(--hairline) solid var(--line);
@@ -626,35 +633,20 @@ section.block.alt {
   background: var(--surface);
   padding: 42px 36px;
 }
-.trait-mark {
+.trait-title {
   font-family: var(--font-sans);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 28px;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 24px;
-}
-.trait h4 {
   font-weight: 600;
   font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 14px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 18px;
+  line-height: 1;
 }
 .trait p {
   color: var(--text-2);
   font-size: 14px;
   line-height: 1.95;
-}
-.trait-en {
-  color: var(--text);
-}
-.trait-jp {
-  color: var(--text-3);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  font-size: 14px;
 }
 .trait-keyphrase {
   color: var(--accent);
