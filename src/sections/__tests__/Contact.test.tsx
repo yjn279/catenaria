@@ -91,4 +91,31 @@ describe('form submission', () => {
     resolveJson({ success: true })
     await screen.findByText('ありがとうございます。追って折り返しご連絡します。')
   })
+
+  it('shows validation errors and does not call fetch when form is submitted empty', () => {
+    const fetchMock = vi.spyOn(global, 'fetch')
+
+    render(<Contact />)
+    fireEvent.click(screen.getByRole('button', { name: /送信する/ }))
+
+    expect(screen.getByText('お名前を入力してください')).toBeInTheDocument()
+    expect(screen.getByText('メールアドレスを入力してください')).toBeInTheDocument()
+    expect(screen.getByText('ご相談内容を入力してください')).toBeInTheDocument()
+    expect(fetchMock).not.toHaveBeenCalled()
+  })
+
+  it('shows email format error and does not call fetch when email is invalid', () => {
+    const fetchMock = vi.spyOn(global, 'fetch')
+
+    render(<Contact />)
+    fireEvent.change(screen.getByLabelText('お名前'), { target: { value: 'テスト太郎' } })
+    fireEvent.change(screen.getByLabelText('メールアドレス'), {
+      target: { value: 'not-an-email' },
+    })
+    fireEvent.change(screen.getByLabelText('ご相談内容'), { target: { value: 'テスト相談内容' } })
+    fireEvent.click(screen.getByRole('button', { name: /送信する/ }))
+
+    expect(screen.getByText('正しいメールアドレスを入力してください')).toBeInTheDocument()
+    expect(fetchMock).not.toHaveBeenCalled()
+  })
 })
