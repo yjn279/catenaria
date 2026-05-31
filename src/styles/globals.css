@@ -606,7 +606,7 @@ section.block {
   max-width: 54em;
   margin: 0 auto 60px;
   padding: 28px 32px;
-  border-left: var(--hairline) solid var(--accent-glow);
+  border-left: 2px solid var(--accent-glow);
   background: var(--surface);
 }
 .about-origin p {
