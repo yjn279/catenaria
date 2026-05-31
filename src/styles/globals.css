@@ -848,6 +848,11 @@ section.block {
   width: 100%;
   justify-content: center;
 }
+.field-error {
+  font-size: 12px;
+  color: var(--accent);
+  margin-top: 4px;
+}
 .form-thanks {
   color: var(--accent);
   font-size: 14px;
