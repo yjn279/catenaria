@@ -383,6 +383,8 @@ section.block {
   border: var(--hairline) solid var(--line);
   padding: 30px 28px;
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition:
     background var(--dur) var(--ease),
     border-color var(--dur) var(--ease);
@@ -429,7 +431,6 @@ section.block {
   line-height: 1.9;
   font-weight: 400;
   margin-bottom: 26px;
-  min-height: 3.8em;
 }
 .card-for {
   font-size: 13px;
@@ -449,7 +450,7 @@ section.block {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 20px;
+  margin-top: auto;
   padding-top: 18px;
   border-top: var(--hairline) solid var(--line);
 }
