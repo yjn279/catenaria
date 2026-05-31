@@ -3,7 +3,7 @@ import { CatenaryMark } from './Mark'
 const COLS = [
   { href: '#top', label: 'TOP' },
   { href: '#services', label: 'Services' },
-  { href: '#flow', label: 'Flow' },
+  { href: '#flow', label: 'Process' },
   { href: '#about', label: 'About' },
   { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
