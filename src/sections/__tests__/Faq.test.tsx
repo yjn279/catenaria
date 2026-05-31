@@ -9,6 +9,6 @@ it('renders the FAQ section title', () => {
 it('renders first FAQ question', () => {
   render(<Faq />)
   expect(
-    screen.getByText(/途中まで自分で／AIで書いたコードでも見てもらえますか？/),
+    screen.getByText(/途中まで自分で\/AIで書いたコードでも見てもらえますか？/),
   ).toBeInTheDocument()
 })

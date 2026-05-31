@@ -1,9 +1,16 @@
+import type { ReactNode } from 'react'
 import { useCallback, useState } from 'react'
 
-const FAQS = [
+const FAQS: { q: string; a: ReactNode }[] = [
   {
-    q: '途中まで自分で／AIで書いたコードでも見てもらえますか？',
-    a: 'はい。むしろ、そこが CATENARIA の入口です。Vibe Coding Cleanup では、既にあるコードを診断し、本番に出すために何が足りないかを可視化するところから始めます。コードを書き直すか、活かすかの判断も含めて、お任せください。',
+    q: '途中まで自分で/AIで書いたコードでも見てもらえますか？',
+    a: (
+      <>
+        はい。むしろ、そこが CATENARIA の入口です。
+        <a href="#services">Vibe Coding Cleanup</a>{' '}
+        では、既にあるコードを診断し、本番に出すために何が足りないかを可視化するところから始めます。コードを書き直すか、活かすかの判断も含めて、お任せください。
+      </>
+    ),
   },
   {
     q: 'エンジニアでなくても依頼できますか？',
@@ -11,7 +18,14 @@ const FAQS = [
   },
   {
     q: 'いくらから依頼できますか？',
-    a: '最小は Vibe Coding Cleanup の 5 日間・¥98,000 からです。月額のサービスは ¥19,800（Operation）／¥29,800（mini-CTO）から始められます。まずはお試しのつもりで、最小の入口からご利用いただけます。',
+    a: (
+      <>
+        最小は <a href="#services">Vibe Coding Cleanup</a> の 5 日間・¥9,800 〜
+        からです。月額のサービスは ¥9,800 〜（<a href="#services">Operation</a>）/¥29,800 〜（
+        <a href="#services">mini-CTO</a>
+        ）から始められます。まずはお試しのつもりで、最小の入口からご利用いただけます。
+      </>
+    ),
   },
   {
     q: '契約期間や解約の縛りはありますか？',
@@ -23,7 +37,7 @@ const FAQS = [
   },
 ]
 
-function FaqItem({ q, a }: { q: string; a: string }) {
+function FaqItem({ q, a }: { q: string; a: ReactNode }) {
   const [open, setOpen] = useState<boolean>(false)
   const [innerHeight, setInnerHeight] = useState<number>(0)
 
