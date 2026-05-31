@@ -15,13 +15,13 @@ export function Hero() {
         </h1>
         <p className="sub reveal in d2">
           誰もが AI でサービスを作り出せる時代。
-          <br />
+          <br className="br-pc-only" />
           私たち人間に必要なのは「意志」と「責任」です。
-          <br />
+          <br className="br-pc-only" />
           本当に作りたかったサービスを、責任をもってエンドユーザーへ届ける。
-          <br />
+          <br className="br-pc-only" />
           CATENARIA ではプロフェッショナルな職人であるエンジニアが、
-          <br />
+          <br className="br-pc-only" />
           AI 時代のヒューマン・パートナーとしてお客さまと共に伴走します。
         </p>
         <div className="hero-cta reveal in d3">

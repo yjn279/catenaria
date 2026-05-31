@@ -45,7 +45,7 @@ export function About() {
           <h2 className="sec-title">CATENARIA について</h2>
           <p className="sec-lead">
             AI がサービスを量産する時代に、CATENARIA は人の意志と責任を吹き込む技術パートナーです。
-            <br />
+            <br className="br-pc-only" />
             事業開発経験のあるエンジニアが、プロフェッショナルとしてサービスの成長をサポートします。
           </p>
         </div>
