@@ -21,5 +21,5 @@ it('renders mini-CTO service', () => {
 
 it('renders Service Cycle figure caption', () => {
   render(<Services />)
-  expect(screen.getByText(/サービスの相関図/)).toBeInTheDocument()
+  expect(screen.getByText(/サービスマップ/)).toBeInTheDocument()
 })

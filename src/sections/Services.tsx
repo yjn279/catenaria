@@ -59,87 +59,15 @@ function ServiceCard({ s }: { s: ServiceData }) {
 function ServiceCycle() {
   return (
     <div className="figure reveal">
-      <div className="figure-cap">サービスの相関図</div>
-      <svg className="cycle" viewBox="0 0 560 400" aria-label="サービスの関係図">
-        <defs>
-          <marker
-            id="arr"
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="7"
-            markerHeight="7"
-            orient="auto"
-          >
-            <path d="M0,0 L10,5 L0,10 z" fill="var(--text-2)" />
-          </marker>
-        </defs>
-        <text x="280" y="44" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
-          Vibe Coding Cleanup
-        </text>
-        <text className="jp" x="280" y="64" textAnchor="middle" fontSize="11">
-          入口
-        </text>
-        <circle className="node-core" cx="280" cy="200" r="3.5" />
-        <text
-          x="280"
-          y="196"
-          textAnchor="middle"
-          fontSize="19"
-          letterSpacing="0.04em"
-          fill="var(--accent)"
-        >
-          mini-CTO
-        </text>
-        <text className="jp" x="280" y="216" textAnchor="middle" fontSize="11">
-          中心
-        </text>
-        <text x="92" y="356" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
-          Operation
-        </text>
-        <text x="468" y="356" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
-          Prototyping
-        </text>
-        <line
-          x1="280"
-          y1="78"
-          x2="280"
-          y2="176"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-        <line
-          x1="312"
-          y1="212"
-          x2="436"
-          y2="336"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-        <line
-          x1="410"
-          y1="350"
-          x2="150"
-          y2="350"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-        <line
-          x1="124"
-          y1="336"
-          x2="248"
-          y2="212"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-      </svg>
+      <div className="figure-cap">サービスマップ</div>
+      <img
+        src="/service-map.png"
+        alt="サービスマップ — Vibe Coding Cleanup から mini-CTO を中心に Operation・Prototyping へ循環する関係図"
+        className="service-map"
+        loading="lazy"
+      />
       <p className="figure-note">
-        Vibe Coding Cleanup を入口に、mini-CTO
-        を軸として循環する。一度きりの納品ではなく、課題ごとに巡る関係として。
+        お客さまのサービスの状況に合わせて、どこからでも始められます。設計から運用まで網羅的にカバーし、状況の変化に応じてプランを柔軟に切り替えられます。
       </p>
     </div>
   )
