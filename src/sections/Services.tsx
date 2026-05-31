@@ -13,7 +13,7 @@ const SERVICES: ServiceData[] = [
     name: 'Vibe Coding Cleanup',
     role: '診断 / Cleanup',
     desc: 'AI が生成したコードを診断し、軽微な不具合やセキュリティの欠陥を修正します。動いてはいるがリリースする自信がない、どうしても直せないバグがある、そんな状態をまずは整えるところから。',
-    term: '5日間 〜',
+    term: 'プロジェクト単位',
     price: '¥9,800 〜',
   },
   {
