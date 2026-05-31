@@ -4,7 +4,7 @@ import { CatenaryMark } from './Mark'
 const NAV = [
   { href: '#top', label: 'TOP' },
   { href: '#services', label: 'Services' },
-  { href: '#flow', label: 'Process' },
+  { href: '#flow', label: 'Engagement' },
   { href: '#about', label: 'About' },
   { href: '#faq', label: 'FAQ' },
 ]

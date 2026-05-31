@@ -2,27 +2,22 @@ const STEPS = [
   {
     num: '01',
     title: 'お問い合わせ',
-    desc: 'フォームまたはメールでご連絡ください。技術の言葉でなくて構いません。',
+    desc: 'まずはざっくりとしたご依頼でも構いません。',
   },
   {
     num: '02',
     title: '無料相談',
-    desc: 'オンラインで 30〜60 分、現状とご要望をお聞きします。費用は一切かかりません。',
+    desc: 'オンラインで 30 分間、無料相談をご利用いただけます。現状のお悩みやご要望をお聞かせください。',
   },
   {
     num: '03',
     title: 'お見積もり',
-    desc: 'お話を踏まえて、最適なサービスと費用感をご提案します。比較検討のための簡易見積も歓迎です。',
+    desc: 'お問い合わせや無料相談の内容を踏まえて、最適なサービスと費用感をご提案します。',
   },
   {
     num: '04',
-    title: 'ご契約',
-    desc: '内容にご納得いただけたら、業務委託契約を締結します。月額継続かプロジェクト単位かを選べます。',
-  },
-  {
-    num: '05',
-    title: '業務実施 / 納品',
-    desc: '合意したスコープで実装・運用を進めます。完了時に成果物を納品し、必要に応じて運用へ移行します。',
+    title: 'ご契約 / 業務開始',
+    desc: '内容にご納得いただけたら、契約を締結後に業務の開始となります。',
   },
 ]
 
@@ -31,7 +26,7 @@ export function Flow() {
     <section className="block alt" id="flow">
       <div className="wrap">
         <div className="sec-head reveal">
-          <div className="sec-label">Process</div>
+          <div className="sec-label">Engagement</div>
           <h2 className="sec-title">ご依頼の流れ</h2>
           <p className="sec-lead">
             初めてのご相談から業務完了まで、5

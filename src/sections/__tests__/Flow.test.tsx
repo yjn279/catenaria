@@ -8,10 +8,10 @@ it('renders the flow section title', () => {
 
 it('renders お問い合わせ step', () => {
   render(<Flow />)
-  expect(screen.getByText(/お問い合わせ/)).toBeInTheDocument()
+  expect(screen.getByText('お問い合わせ')).toBeInTheDocument()
 })
 
-it('renders 業務実施 step', () => {
+it('renders ご契約 step', () => {
   render(<Flow />)
-  expect(screen.getByText(/業務実施/)).toBeInTheDocument()
+  expect(screen.getByText(/ご契約/)).toBeInTheDocument()
 })
