@@ -1,20 +1,30 @@
 import type { ReactNode } from 'react'
 
-const TRAITS = [
+interface Trait {
+  eyebrow: string
+  en: string
+  jp: string
+  body: string
+}
+
+const TRAITS: Trait[] = [
   {
-    en: 'Mission',
-    keyphrase: 'AI が量産する成果物に、人の意志と責任を吹き込む。',
-    body: '誰もが AI でサービスを作り出せる時代、量産される成果物は驚くほど似通っていきます。CATENARIA は、その均質化に抗う一線として、本当に作りたかったものの意志をコードに刻み、責任をもってエンドユーザーへ届けることを使命とします。',
+    eyebrow: 'MISSION',
+    en: 'Essentialism',
+    jp: '真理を、探求せよ。',
+    body: '対処療法ではなく、根本的な原因を解決する。目先の現象に左右されるのではなく、真の課題を見極めて解決する。無駄な装飾や機能を削ぎ落とし、表層的ではなく本質的な意味のある価値を追い求める。一つの本質的な仕組みで複数の問題を同時に解決しましょう。それがアイデアです。',
   },
   {
-    en: 'Vision',
-    keyphrase: 'AI 時代の、対等な技術パートナーであり続ける。',
-    body: 'AI は手段であり、対話の相手ではありません。CATENARIA が目指すのは、AI を使いこなすあなたと対等に並び立つ技術の伴走者です。発注先でも下請けでもない、判断と責任を分かち合うヒューマン・パートナーとして、長く隣に在る存在を志します。',
+    eyebrow: 'VISION',
+    en: 'Simplicity',
+    jp: '原石を削り出す。',
+    body: '必要のないものを作らない。すべて作るのではなく、作らないことを判断する。全部盛りは過剰です。不要な要素や複雑性を排除することで依存関係を増やさずに済むため、管理コストを必要最低限に抑えることができます。最小構成で価値を成立させることで、本質的な価値を探究しましょう。これは引き算の美学、あるいは日本文化における独特の美的様式とも表現することができます。これは「やらない言い訳」ではありません。怠慢ではなく、ある種の労力を割いてもシンプルであるよう判断を下す。この違いを認識することが重要です。',
   },
   {
-    en: 'Value',
-    keyphrase: 'Judgment over execution. 職人の手と、対話で応える。',
-    body: 'CATENARIA が売るのは作業量ではなく判断です。AI にもできる実行ではなく、AI にはできない問いと、責任ある判断、そして対話で応える職人の手。「診て、治して、見守る」を分断せず、一つの視点で貫くことを CATENARIA は価値の中心に置きます。',
+    eyebrow: 'VALUE',
+    en: 'Craftsmanship',
+    jp: '細部に魂を宿す。',
+    body: '完成度を極限まで高め上げる。完璧を追求する。削り出した必要最小限の要素を、徹底的に磨き込む。0.1 mm までこだわり抜く。デザインの 1 ピクセル、プログラムの変数名一つにまで意味を持たせ、秩序だった整然たる論理を作り上げます。すべてのものに必然性や意味付けを持たせ、それぞれの要素が無駄なく作用するよう組み立てましょう。これは「スピードを犠牲にする」という意味ではありません。不要な 8 割を削り落とし、残りの 2 割に時間を注ぎましょう。その職人的な機能美の探求によって、本質の価値が浮かび上がってくるのです。',
   },
 ]
 
@@ -54,10 +64,11 @@ export function About() {
         </div>
         <div className="traits reveal">
           {TRAITS.map((t) => (
-            <div className="trait" key={t.en}>
-              <div className="trait-title">{t.en}</div>
-              <p className="trait-keyphrase">{t.keyphrase}</p>
-              <p>{t.body}</p>
+            <div className="trait" key={t.eyebrow}>
+              <div className="trait-eyebrow">{t.eyebrow}</div>
+              <div className="trait-en">{t.en}</div>
+              <p className="trait-jp">{t.jp}</p>
+              <p className="trait-body">{t.body}</p>
             </div>
           ))}
         </div>

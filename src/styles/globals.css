@@ -642,28 +642,38 @@ section.block {
   background: var(--surface);
   padding: 42px 36px;
 }
-.trait-title {
+.trait-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.trait-en {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 17px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
   color: var(--text);
-  margin-bottom: 18px;
-  line-height: 1;
+  margin-bottom: 6px;
 }
-.trait p {
+.trait-jp {
+  font-family: var(--font-jp);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  margin-bottom: 22px;
+}
+.trait-body {
   color: var(--text-2);
   font-size: 14px;
   line-height: 1.95;
-}
-.trait-keyphrase {
-  color: var(--accent);
-  font-size: 15px;
-  line-height: 1.9;
-  letter-spacing: 0.04em;
-  margin: 12px 0 18px;
-  font-weight: 400;
 }
 .profile {
   border-top: var(--hairline) solid var(--line);
