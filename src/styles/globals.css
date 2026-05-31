@@ -950,8 +950,10 @@ footer {
     padding: 28px 0;
   }
   .hero {
-    min-height: 90vh;
-    padding-top: 0;
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 65px;
+    padding-bottom: 72px;
   }
   .hero h1 {
     margin-bottom: 24px;
