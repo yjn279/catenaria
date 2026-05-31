@@ -1,6 +1,7 @@
 import { CatenaryMark } from './Mark'
 
 const COLS = [
+  { href: '#top', label: 'TOP' },
   { href: '#services', label: 'Services' },
   { href: '#flow', label: 'Flow' },
   { href: '#about', label: 'About' },
@@ -28,7 +29,6 @@ export function Footer() {
         </div>
         <div className="foot-bottom">
           <span>© 2026 CATENARIA</span>
-          <a href="#top">Privacy Policy</a>
         </div>
       </div>
     </footer>

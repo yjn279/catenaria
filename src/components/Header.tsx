@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { CatenaryMark } from './Mark'
 
 const NAV = [
+  { href: '#top', label: 'TOP' },
   { href: '#services', label: 'Services' },
   { href: '#flow', label: 'Flow' },
   { href: '#about', label: 'About' },
