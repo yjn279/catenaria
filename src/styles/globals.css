@@ -919,6 +919,22 @@ footer {
   }
 }
 
+/* Line-break helpers */
+.br-pc-only {
+  display: inline;
+}
+.br-mobile-only {
+  display: none;
+}
+@media (max-width: 640px) {
+  .br-pc-only {
+    display: none;
+  }
+  .br-mobile-only {
+    display: inline;
+  }
+}
+
 /* Mobile refinements */
 @media (max-width: 640px) {
   section.block {
