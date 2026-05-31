@@ -850,9 +850,8 @@ section.block {
 }
 .field-error {
   font-size: 12px;
-  color: var(--text);
+  color: var(--accent);
   margin-top: 4px;
-  opacity: 0.6;
 }
 .form-thanks {
   color: var(--accent);
