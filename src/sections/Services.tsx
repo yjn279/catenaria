@@ -67,7 +67,9 @@ function ServiceCycle() {
         loading="lazy"
       />
       <p className="figure-note">
-        お客さまのサービスの状況に合わせて、どこからでも始められます。設計から運用まで網羅的にカバーし、状況の変化に応じてプランを柔軟に切り替えられます。
+        お客さまのサービスの状況に合わせて、どこからでも始められます。
+        <br />
+        設計から運用まで網羅的にカバーし、状況の変化に応じてプランを柔軟に切り替えられます。
       </p>
     </div>
   )
@@ -81,8 +83,9 @@ export function Services() {
           <div className="sec-label">Services &amp; Pricing</div>
           <h2 className="sec-title">サービス / 料金</h2>
           <p className="sec-lead">
-            簡単に始められる Vibe Coding Cleanup から、高度な業務を任せられる mini-CTO
-            まで。お客さまのサービスの状況に合わせて、最適なプランをお選びいただけます。
+            簡単に始められる Vibe Coding Cleanup から、高度な業務を任せられる mini-CTO まで。
+            <br />
+            お客さまのサービスの状況に合わせて、最適なプランをお選びいただけます。
           </p>
         </div>
         <div className="cards reveal">
