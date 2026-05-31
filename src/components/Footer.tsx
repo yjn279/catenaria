@@ -15,7 +15,7 @@ export function Footer() {
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-brand">
-            <CatenaryMark width={34} stroke="var(--text)" />
+            <CatenaryMark width={34} />
             <div className="foot-word">CATENARIA</div>
             <div className="foot-tag">Innovative IT Solutions</div>
           </div>
