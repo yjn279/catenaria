@@ -315,7 +315,7 @@ header.scrolled {
 
 /* Section frame */
 section.block {
-  padding: var(--space-8) 0;
+  padding: calc(var(--space-7) + var(--space-5)) 0;
   position: relative;
 }
 section.block.alt {
@@ -937,7 +937,7 @@ footer {
 /* Mobile refinements */
 @media (max-width: 640px) {
   section.block {
-    padding: 84px 0;
+    padding: var(--space-7) 0;
   }
   .hero {
     min-height: 90vh;
