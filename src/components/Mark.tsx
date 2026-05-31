@@ -23,11 +23,16 @@ interface CatenaryMarkProps {
   className?: string
 }
 
-export function CatenaryMark({ width = 26, stroke = 'var(--text)', className }: CatenaryMarkProps) {
+export function CatenaryMark({
+  width = 26,
+  stroke = 'currentColor',
+  className,
+}: CatenaryMarkProps) {
   return (
     <svg
-      viewBox="0 0 100 120"
+      viewBox="-3 -5 106 130"
       aria-hidden="true"
+      data-logo="catenary"
       className={className}
       style={{ width, height: 'auto', display: 'block' }}
     >

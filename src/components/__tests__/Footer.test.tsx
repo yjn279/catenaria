@@ -6,7 +6,7 @@ it('renders the copyright notice', () => {
   expect(screen.getByText(/© 2026 CATENARIA/)).toBeInTheDocument()
 })
 
-it('renders Privacy Policy link', () => {
+it('renders TOP link in footer nav', () => {
   render(<Footer />)
-  expect(screen.getByText(/Privacy Policy/)).toBeInTheDocument()
+  expect(screen.getByText(/^TOP$/)).toBeInTheDocument()
 })

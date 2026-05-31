@@ -1,13 +1,20 @@
 const STEPS = [
   {
-    num: '01',
-    title: '問い合わせ',
-    desc: 'まずは現状を聞かせてください。技術の言葉でなくて構いません。',
+    title: 'お問い合わせ',
+    desc: 'フォームまたはメールでご連絡ください。まずはざっくりとしたご依頼でも構いません。',
   },
-  { num: '02', title: '診断', desc: 'コードと事業の両面から、本当の課題を見極めます。' },
-  { num: '03', title: '提案', desc: '残すもの、捨てるものを、一緒に決めます。' },
-  { num: '04', title: '実装', desc: '残すと決めたものを、Production-Ready水準まで磨き上げます。' },
-  { num: '05', title: '運用', desc: 'リリース後も見守りながら、改善を続けます。' },
+  {
+    title: '無料相談',
+    desc: 'オンラインで 30 分間、無料相談をご利用いただけます。現状のお悩みやご要望をお聞かせください。',
+  },
+  {
+    title: 'お見積もり',
+    desc: 'お問い合わせや無料相談の内容を踏まえて、最適なサービスと費用感をご提案します。',
+  },
+  {
+    title: 'ご契約 / 業務開始',
+    desc: '内容にご納得いただけたら、契約を締結後に業務の開始となります。',
+  },
 ]
 
 export function Flow() {
@@ -15,22 +22,20 @@ export function Flow() {
     <section className="block alt" id="flow">
       <div className="wrap">
         <div className="sec-head reveal">
-          <div className="sec-label">Flow</div>
+          <div className="sec-label">Process</div>
           <h2 className="sec-title">ご依頼の流れ</h2>
           <p className="sec-lead">
-            関係は一方通行ではない。新たな課題が現れるたび、また入口へ戻る。
+            お問い合わせから業務開始まで、たったの 4 ステップで簡単にご依頼いただけます。
           </p>
         </div>
         <div className="flow reveal">
           {STEPS.map((st) => (
-            <div className="step" key={st.num}>
-              <div className="step-num">{st.num}</div>
+            <div className="step" key={st.title}>
               <div className="step-title">{st.title}</div>
               <p className="step-desc">{st.desc}</p>
             </div>
           ))}
         </div>
-        <p className="flow-loop reveal">— 新たな課題ごとに、再び —</p>
       </div>
     </section>
   )

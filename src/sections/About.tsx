@@ -1,20 +1,30 @@
 import type { ReactNode } from 'react'
 
-const TRAITS = [
+interface Trait {
+  eyebrow: string
+  jp: string
+  en: string
+  note: string
+}
+
+const TRAITS: Trait[] = [
   {
-    mark: '01',
-    h: '作る前に、作るべきかを問う。',
-    p: '「言われた通り」には作らない。捨てる判断ができることが、本質的な助言を可能にする。',
+    eyebrow: 'MISSION',
+    jp: '真理を、探求せよ。',
+    en: 'Essentialism',
+    note: '本質的な価値だけを抽出し、複数の課題を一つの仕組みで解決する。',
   },
   {
-    mark: '02',
-    h: '診て、治して、見守るを分断しない。',
-    p: '診断する人と実装する人を分けない。一つの視点で貫くから、歪みが生まれない。',
+    eyebrow: 'VISION',
+    jp: '原石を削り出す。',
+    en: 'Simplicity',
+    note: '不要な要素を削ぎ落とし、最小構成で本質的な価値を成立させる。',
   },
   {
-    mark: '03',
-    h: 'AIにできないことを、売る。',
-    p: 'AIは顧客のYESマシンになりがち。私たちは対等な視座から、本質を提示する。',
+    eyebrow: 'VALUE',
+    jp: '細部に魂を宿す。',
+    en: 'Craftsmanship',
+    note: 'すべての細部に意味と必然性を宿し、職人的な機能美を磨き上げる。',
   },
 ]
 
@@ -24,18 +34,10 @@ interface ProfileRow {
 }
 
 const PROFILE: ProfileRow[] = [
-  {
-    dt: 'Name',
-    dd: (
-      <>
-        CATENARIA <span className="en">/ カテナリア</span>
-      </>
-    ),
-  },
-  { dt: 'Structure', dd: 'フリーランス少数精鋭 ＋ AIエージェント組織' },
-  { dt: 'Service', dd: 'AI時代の個人開発者・小規模事業者向け、技術機能アウトソーシング' },
-  { dt: 'Phase', dd: '0→10 の領域に特化（10→100 のスケールは扱わない）' },
-  { dt: 'Contact', dd: <a href="mailto:hello@catenaria.jp">hello@catenaria.jp</a> },
+  { dt: 'Name', dd: 'CATENARIA（カテナリア）' },
+  { dt: 'Service', dd: 'AI 時代の個人開発者・小規模事業者向け、技術組織アウトソーシング' },
+  { dt: 'Contract', dd: '業務委託契約（準委任）' },
+  { dt: 'Contact', dd: <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a> },
 ]
 
 export function About() {
@@ -44,17 +46,26 @@ export function About() {
       <div className="wrap">
         <div className="sec-head reveal">
           <div className="sec-label">About Us</div>
-          <h2 className="sec-title">私たちについて</h2>
+          <h2 className="sec-title">CATENARIA について</h2>
           <p className="sec-lead">
-            AIが進化するほど、私たちの価値は際立つ。AIには立てられない問い、取れない責任、続かない伴走を引き受ける。
+            AI がサービスを量産する時代に、CATENARIA は人の意志と責任を吹き込む技術パートナーです。
+            <br className="br-pc-only" />
+            事業開発経験のあるエンジニアが、プロフェッショナルとしてサービスの成長をサポートします。
+          </p>
+        </div>
+        <div className="about-origin reveal">
+          <p>
+            鎖が自重で垂れる際に描く、カテナリー曲線。サグラダ・ファミリアの設計者であるアントニ・ガウディは、自然の摂理から導かれる合理的で美しいこの形状を、建築の強固な構造として応用しました。CATENARIA
+            は、ガウディが生まれ育ったスペイン・カタルーニャ地方でカテナリー曲線を表す言葉です。「ガウディの建築のように、お客さまをしっかりと支えられるような存在でありたい。」という想いを込めています。
           </p>
         </div>
         <div className="traits reveal">
           {TRAITS.map((t) => (
-            <div className="trait" key={t.mark}>
-              <div className="trait-mark">{t.mark}</div>
-              <h4>{t.h}</h4>
-              <p>{t.p}</p>
+            <div className="trait" key={t.eyebrow}>
+              <div className="trait-eyebrow">{t.eyebrow}</div>
+              <h3 className="trait-jp">{t.jp}</h3>
+              <div className="trait-en">{t.en}</div>
+              <p className="trait-note">{t.note}</p>
             </div>
           ))}
         </div>

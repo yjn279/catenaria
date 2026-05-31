@@ -3,53 +3,42 @@ interface ServiceData {
   name: string
   role: string
   desc: string
-  forWhom: string
   term: string
   price: string
-  unit?: string
-  small?: boolean
 }
 
 const SERVICES: ServiceData[] = [
   {
     idx: '01',
     name: 'Vibe Coding Cleanup',
-    role: '入口 / Cleanup',
-    desc: 'AIが生成したコードを診断し、軽微な不具合を整える。まずは現状を可視化するところから。',
-    forWhom: '動いてはいるが、本番に出す自信がない',
-    term: '1週間〜',
-    price: '¥10,000',
-    unit: ' –',
+    role: '診断 / Cleanup',
+    desc: 'AI が生成したコードを診断し、軽微な不具合やセキュリティの欠陥を修正します。動いてはいるがリリースする自信がない、どうしても直せないバグがある、そんな状態をまずは整えるところから。',
+    term: 'プロジェクト単位',
+    price: '¥9,800 〜',
   },
   {
     idx: '02',
     name: 'mini-CTO',
-    role: '中心 / Continuous',
-    desc: '技術判断・実装管理に加え、人ではなくAIエージェント組織の組成までを継続支援する。',
-    forWhom: '相談できる技術の相棒がほしい',
+    role: '設計 / Architecture',
+    desc: '技術設計から AI エージェント開発チームの組織設計、事業視点での判断や提案まで。高度な業務を任せられる CTO のような相棒を、コスパ良く。これからサービスを拡大していきたいお客さまにおすすめです。',
     term: '月額',
-    price: '¥30,000',
-    unit: ' –/月',
+    price: '¥29,800 〜',
   },
   {
     idx: '03',
     name: 'Prototyping',
     role: '構築 / Build',
-    desc: '本番運用に耐えるプロトタイプを、設計から実装まで一貫して形にする。',
-    forWhom: 'アイデアを、確かな形にしたい',
+    desc: 'お客さまのアイデアを、最速でサービスにする。AI エージェントの Pro プランと同様の価格で、しかもプログラミングのエラーを自力で解決する必要がないため、エンジニア以外の方でも気軽にアイデアを形にできます。',
     term: 'プロジェクト単位',
-    price: '要見積',
-    small: true,
+    price: '¥19,800 〜',
   },
   {
     idx: '04',
     name: 'Operation',
-    role: '継続 / Operate',
-    desc: 'リリース後の運用保守と、継続的な改善を引き受ける。出した後も、ひとりにしない。',
-    forWhom: '出した後の運用に手が回らない',
+    role: '継続 / Steward',
+    desc: 'サービスをリリースした後の運用保守。ノンコア業務であり、退屈な業務でもある運用保守をアウトソースすることによって、お客さまの時間や費用、AI トークンなどを本質的なコア業務へ割り当てられるように。',
     term: '月額',
-    price: '要見積',
-    small: true,
+    price: '¥9,800 〜',
   },
 ]
 
@@ -59,16 +48,9 @@ function ServiceCard({ s }: { s: ServiceData }) {
       <div className="card-name">{s.name}</div>
       <div className="card-role">{s.role}</div>
       <p className="card-desc">{s.desc}</p>
-      <div className="card-for">
-        <span className="lbl">こんな方へ —</span>
-        <span>{s.forWhom}</span>
-      </div>
       <div className="card-meta">
         <span className="card-term">{s.term}</span>
-        <span className="card-price" style={s.small ? { fontSize: '15px' } : undefined}>
-          {s.price}
-          {s.unit && <small>{s.unit}</small>}
-        </span>
+        <span className="card-price">{s.price}</span>
       </div>
     </div>
   )
@@ -77,87 +59,17 @@ function ServiceCard({ s }: { s: ServiceData }) {
 function ServiceCycle() {
   return (
     <div className="figure reveal">
-      <div className="figure-cap">— Service Cycle —</div>
-      <svg className="cycle" viewBox="0 0 560 400" aria-label="サービスの関係図">
-        <defs>
-          <marker
-            id="arr"
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="7"
-            markerHeight="7"
-            orient="auto"
-          >
-            <path d="M0,0 L10,5 L0,10 z" fill="var(--text-2)" />
-          </marker>
-        </defs>
-        <text x="280" y="44" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
-          Vibe Coding Cleanup
-        </text>
-        <text className="jp" x="280" y="64" textAnchor="middle" fontSize="11">
-          入口
-        </text>
-        <circle className="node-core" cx="280" cy="200" r="3.5" />
-        <text
-          x="280"
-          y="196"
-          textAnchor="middle"
-          fontSize="19"
-          letterSpacing="0.04em"
-          fill="var(--accent)"
-        >
-          mini-CTO
-        </text>
-        <text className="jp" x="280" y="216" textAnchor="middle" fontSize="11">
-          中心
-        </text>
-        <text x="92" y="356" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
-          Operation
-        </text>
-        <text x="468" y="356" textAnchor="middle" fontSize="16" letterSpacing="0.04em">
-          Prototyping
-        </text>
-        <line
-          x1="280"
-          y1="78"
-          x2="280"
-          y2="176"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-        <line
-          x1="312"
-          y1="212"
-          x2="436"
-          y2="336"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-        <line
-          x1="410"
-          y1="350"
-          x2="150"
-          y2="350"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-        <line
-          x1="124"
-          y1="336"
-          x2="248"
-          y2="212"
-          className="edge"
-          strokeWidth="1"
-          markerEnd="url(#arr)"
-        />
-      </svg>
+      <div className="figure-cap">サービスマップ</div>
+      <img
+        src="/service-map.png"
+        alt="サービスマップ — Vibe Coding Cleanup から mini-CTO を中心に Operation・Prototyping へ循環する関係図"
+        className="service-map"
+        loading="lazy"
+      />
       <p className="figure-note">
-        Vibe Coding Cleanup を入口に、mini-CTO
-        を軸として循環する。一度きりの納品ではなく、課題ごとに巡る関係として。
+        お客さまのサービスの状況に応じて、必要なプランをご利用ください。複数プランのご契約も可能です。
+        <br className="br-pc-only" />
+        設計から運用まで網羅的にカバーしているため、状況の変化に応じて柔軟に切り替えられます。
       </p>
     </div>
   )
@@ -169,18 +81,17 @@ export function Services() {
       <div className="wrap">
         <div className="sec-head reveal">
           <div className="sec-label">Services &amp; Pricing</div>
-          <h2 className="sec-title">サービス・料金</h2>
+          <h2 className="sec-title">サービス / 料金</h2>
           <p className="sec-lead">
-            四つのサービスは、それぞれが独立して成立し、顧客の旅において自然に連なる。最小の入口から、必要な分だけ。
+            簡単に始められる Vibe Coding Cleanup から、高度な業務を任せられる mini-CTO まで。
+            <br className="br-pc-only" />
+            お客さまのサービスの状況に合わせて、最適なプランをお選びいただけます。
           </p>
         </div>
         <div className="cards reveal">
           {SERVICES.map((s) => (
             <ServiceCard key={s.idx} s={s} />
           ))}
-        </div>
-        <div className="price-note reveal">
-          プランは分けない。対話を通じて、いまのあなたに必要な分だけを見積もる。意思決定の摩擦を、できる限り小さく。
         </div>
         <ServiceCycle />
       </div>

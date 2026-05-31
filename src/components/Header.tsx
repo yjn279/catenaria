@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { CatenaryMark } from './Mark'
 
 const NAV = [
+  { href: '#top', label: 'TOP' },
   { href: '#services', label: 'Services' },
-  { href: '#flow', label: 'Flow' },
+  { href: '#flow', label: 'Process' },
   { href: '#about', label: 'About' },
   { href: '#faq', label: 'FAQ' },
 ]
@@ -22,8 +23,11 @@ export function Header() {
     <header id="header" className={scrolled ? 'scrolled' : ''}>
       <div className="wrap nav">
         <a href="#top" className="brand-lockup" aria-label="CATENARIA home">
-          <CatenaryMark width={26} stroke="var(--text)" />
-          <span className="brand-word">CATENARIA</span>
+          <CatenaryMark width={30} />
+          <div className="brand-word-block">
+            <span className="brand-word">CATENARIA</span>
+            <span className="brand-tag">Innovative IT Solutions</span>
+          </div>
         </a>
         <nav className="nav-links" aria-label="主要ナビゲーション">
           {NAV.map((n) => (
