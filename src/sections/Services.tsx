@@ -5,7 +5,6 @@ interface ServiceData {
   desc: string
   term: string
   price: string
-  unit?: string
 }
 
 const SERVICES: ServiceData[] = [
@@ -13,37 +12,33 @@ const SERVICES: ServiceData[] = [
     idx: '01',
     name: 'Vibe Coding Cleanup',
     role: '診断 / Cleanup',
-    desc: 'AI が生成したコードを診断し、軽微な不具合を整えます。動いてはいるが本番に出す自信がない、そんな状態を一度可視化するところから。',
-    term: '5日間〜',
-    price: '¥98,000',
-    unit: ' 〜',
+    desc: 'AI が生成したコードを診断し、軽微な不具合やセキュリティの欠陥を修正します。動いてはいるがリリースする自信がない、どうしても直せないバグがある、そんな状態をまずは整えるところから。',
+    term: '5日間 〜',
+    price: '¥9,800 〜',
   },
   {
     idx: '02',
     name: 'mini-CTO',
     role: '設計 / Architecture',
-    desc: '技術判断と実装管理に加え、AI エージェント組織の組成までを継続支援します。相談できる技術の相棒を、月額で持つように。',
+    desc: '技術設計から AI エージェント開発チームの組織設計、事業視点での判断や提案まで。高度な業務を任せられる CTO のような相棒を、コスパ良く。これからサービスを拡大していきたいお客さまにおすすめです。',
     term: '月額',
-    price: '¥29,800',
-    unit: ' 〜/月',
+    price: '¥29,800 〜',
   },
   {
     idx: '03',
     name: 'Prototyping',
     role: '構築 / Build',
-    desc: '本番運用に耐えるプロトタイプを、設計から実装まで一貫して形にします。アイデアを、確かな形にするために。',
+    desc: 'お客さまのアイデアを、最速でサービスにする。AI エージェントの Pro プランと同様の価格、しかもプログラミングのエラーを自力で解決する必要がないので、エンジニア以外の方でも気軽にアイデアを形にできます。',
     term: 'プロジェクト単位',
-    price: '¥19,800',
-    unit: ' 〜',
+    price: '¥19,800 〜',
   },
   {
     idx: '04',
     name: 'Operation',
     role: '継続 / Steward',
-    desc: 'リリース後の運用保守と継続的な改善を引き受けます。出した後の運用に手が回らない、そのまま放置しないために。',
+    desc: 'サービスをリリースした後の運用保守。ノンコア業務であり、退屈な業務でもある運用保守をアウトソースすることによって、お客さまの時間や費用、AI トークンなどを本質的な業務に割り当てられるように。',
     term: '月額',
-    price: '¥19,800',
-    unit: ' 〜/月',
+    price: '¥9,800 〜',
   },
 ]
 
@@ -55,10 +50,7 @@ function ServiceCard({ s }: { s: ServiceData }) {
       <p className="card-desc">{s.desc}</p>
       <div className="card-meta">
         <span className="card-term">{s.term}</span>
-        <span className="card-price">
-          {s.price}
-          {s.unit && <small>{s.unit}</small>}
-        </span>
+        <span className="card-price">{s.price}</span>
       </div>
     </div>
   )
@@ -161,8 +153,8 @@ export function Services() {
           <div className="sec-label">Services &amp; Pricing</div>
           <h2 className="sec-title">サービス / 料金</h2>
           <p className="sec-lead">
-            CATENARIA では、4
-            つのサービスをご提供しています。最小の入口から、必要な分だけ。あなたの状況に合わせて、自然に組み合わせてご利用いただけます。
+            簡単に始められる Vibe Coding Cleanup から、高度な業務を任せられる mini-CTO
+            まで。お客さまのサービスの状況に合わせて、最適なプランをお選びいただけます。
           </p>
         </div>
         <div className="cards reveal">
