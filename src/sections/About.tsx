@@ -3,18 +3,24 @@ import type { ReactNode } from 'react'
 const TRAITS = [
   {
     mark: '01',
-    h: '作る前に、作るべきかを問う。',
-    p: '「言われた通り」には作らない。捨てる判断ができることが、本質的な助言を可能にする。',
+    en: 'Mission',
+    jp: '使命',
+    keyphrase: 'AI が量産する成果物に、人の意志と責任を吹き込む。',
+    body: '誰もが AI でサービスを作り出せる時代、量産される成果物は驚くほど似通っていきます。CATENARIA は、その均質化に抗う一線として、本当に作りたかったものの意志をコードに刻み、責任をもってエンドユーザーへ届けることを使命とします。',
   },
   {
     mark: '02',
-    h: '診て、治して、見守るを分断しない。',
-    p: '診断する人と実装する人を分けない。一つの視点で貫くから、歪みが生まれない。',
+    en: 'Vision',
+    jp: '展望',
+    keyphrase: 'AI 時代の、対等な技術パートナーであり続ける。',
+    body: 'AI は手段であり、対話の相手ではありません。CATENARIA が目指すのは、AI を使いこなすあなたと対等に並び立つ技術の伴走者です。発注先でも下請けでもない、判断と責任を分かち合うヒューマン・パートナーとして、長く隣に在る存在を志します。',
   },
   {
     mark: '03',
-    h: 'AIにできないことを、売る。',
-    p: 'AIは顧客のYESマシンになりがち。私たちは対等な視座から、本質を提示する。',
+    en: 'Value',
+    jp: '価値観',
+    keyphrase: 'Judgment over execution. 職人の手と、対話で応える。',
+    body: 'CATENARIA が売るのは作業量ではなく判断です。AI にもできる実行ではなく、AI にはできない問いと、責任ある判断、そして対話で応える職人の手。「診て、治して、見守る」を分断せず、一つの視点で貫くことを CATENARIA は価値の中心に置きます。',
   },
 ]
 
@@ -24,18 +30,10 @@ interface ProfileRow {
 }
 
 const PROFILE: ProfileRow[] = [
-  {
-    dt: 'Name',
-    dd: (
-      <>
-        CATENARIA <span className="en">/ カテナリア</span>
-      </>
-    ),
-  },
-  { dt: 'Structure', dd: 'フリーランス少数精鋭 ＋ AIエージェント組織' },
-  { dt: 'Service', dd: 'AI時代の個人開発者・小規模事業者向け、技術機能アウトソーシング' },
-  { dt: 'Phase', dd: '0→10 の領域に特化（10→100 のスケールは扱わない）' },
-  { dt: 'Contact', dd: <a href="mailto:hello@catenaria.jp">hello@catenaria.jp</a> },
+  { dt: 'Name', dd: 'CATENARIA（カテナリア）' },
+  { dt: 'Service', dd: 'AI 時代の個人開発者・小規模事業者向け、技術組織アウトソーシング' },
+  { dt: 'Contract', dd: '月額継続契約 / プロジェクト単位 / 業務委託（準委任）' },
+  { dt: 'Contact', dd: <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a> },
 ]
 
 export function About() {
@@ -46,15 +44,27 @@ export function About() {
           <div className="sec-label">About Us</div>
           <h2 className="sec-title">私たちについて</h2>
           <p className="sec-lead">
-            AIが進化するほど、私たちの価値は際立つ。AIには立てられない問い、取れない責任、続かない伴走を引き受ける。
+            AI が量産する成果物の時代に、CATENARIA
+            は人の意志と責任を吹き込む技術パートナーです。診て、治して、見守るを分断しない。その姿勢を、Mission・Vision・Value
+            の三つに整理しました。
           </p>
         </div>
+        <p className="about-origin reveal">
+          社名 CATENARIA
+          は、鎖が自らの重みで描く自然な曲線「カテナリー（catenary）」に由来します。二点の間を支え、その重みを引き受けて美しいかたちを保つ線——それが
+          CATENARIA
+          のロゴであり、あなたのアイデアと出荷されたプロダクトの間に在りたいという理念そのものです。
+        </p>
         <div className="traits reveal">
           {TRAITS.map((t) => (
             <div className="trait" key={t.mark}>
               <div className="trait-mark">{t.mark}</div>
-              <h4>{t.h}</h4>
-              <p>{t.p}</p>
+              <h4>
+                <span className="trait-en">{t.en}</span>
+                <span className="trait-jp"> / {t.jp}</span>
+              </h4>
+              <p className="trait-keyphrase">{t.keyphrase}</p>
+              <p>{t.body}</p>
             </div>
           ))}
         </div>

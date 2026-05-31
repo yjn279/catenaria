@@ -586,9 +586,19 @@ section.block.alt {
 }
 
 /* About */
+.about-origin {
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 2;
+  max-width: 38em;
+  margin: 0 auto 60px;
+  padding: 28px 32px;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+}
 .traits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--hairline);
   background: var(--line);
   border: var(--hairline) solid var(--line);
@@ -623,6 +633,23 @@ section.block.alt {
   color: var(--text-2);
   font-size: 14px;
   line-height: 1.95;
+}
+.trait-en {
+  color: var(--text);
+}
+.trait-jp {
+  color: var(--text-3);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+}
+.trait-keyphrase {
+  color: var(--accent);
+  font-size: 15px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  margin: 12px 0 18px;
+  font-weight: 400;
 }
 .profile {
   border-top: var(--hairline) solid var(--line);
