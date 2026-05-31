@@ -879,30 +879,10 @@ footer {
 .foot-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
   flex-wrap: wrap;
   margin-bottom: 60px;
-}
-.foot-brand svg {
-  width: 34px;
-  height: auto;
-  margin-bottom: 18px;
-}
-.foot-word {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 15px;
-  letter-spacing: var(--ls-brand);
-  padding-left: var(--ls-brand);
-}
-.foot-tag {
-  font-family: var(--font-sans);
-  font-size: 10px;
-  letter-spacing: var(--ls-label);
-  color: var(--text-3);
-  margin-top: 8px;
-  text-transform: uppercase;
 }
 .foot-nav {
   display: flex;

@@ -14,10 +14,12 @@ export function Footer() {
     <footer>
       <div className="wrap">
         <div className="foot-top">
-          <div className="foot-brand">
+          <div className="foot-brand brand-lockup">
             <CatenaryMark width={34} />
-            <div className="foot-word">CATENARIA</div>
-            <div className="foot-tag">Innovative IT Solutions</div>
+            <div className="brand-word-block">
+              <span className="brand-word">CATENARIA</span>
+              <span className="brand-tag">Innovative IT Solutions</span>
+            </div>
           </div>
           <nav className="foot-nav" aria-label="フッターナビゲーション">
             {COLS.map((c) => (
