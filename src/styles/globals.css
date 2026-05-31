@@ -606,16 +606,22 @@ section.block {
   color: var(--text-2);
   font-size: 15px;
   line-height: 2;
-  max-width: none;
-  width: 80%;
+  max-width: 54em;
   margin: 0 auto 60px;
   padding: 28px 32px;
-  border-left: 2px solid var(--accent);
+  border-left: var(--hairline) solid var(--accent-glow);
   background: var(--surface);
+}
+.about-origin p {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.about-origin > p + p {
+  margin-top: 1em;
 }
 @media (max-width: 640px) {
   .about-origin {
-    width: 100%;
     padding: 22px 22px;
   }
 }
