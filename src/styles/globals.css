@@ -318,7 +318,7 @@ header.scrolled {
 .hero p.sub {
   font-size: clamp(0.95rem, 1.5vw, 1.0625rem);
   color: var(--text-2);
-  max-width: 32em;
+  max-width: 38em;
   line-height: 2.1;
   margin-bottom: 44px;
   font-weight: 300;

@@ -10,6 +10,7 @@ export function Hero() {
           Vibe Codingを、
           <br />
           <span className="accent">Production-Ready</span>
+          <br className="br-mobile-only" />
           水準へ。
         </h1>
         <p className="sub reveal in d2">
