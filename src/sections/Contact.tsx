@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { z } from 'zod'
+import { AnalyticsEvent, track } from '../lib/analytics'
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'お名前を入力してください'),
@@ -59,11 +60,14 @@ export function Contact() {
       if (json.success) {
         setStatus('success')
         formRef.current?.reset()
+        track(AnalyticsEvent.ContactSubmitSuccess)
       } else {
         setStatus('error')
+        track(AnalyticsEvent.ContactSubmitError)
       }
     } catch {
       setStatus('error')
+      track(AnalyticsEvent.ContactSubmitError)
     }
   }
 
