@@ -24,8 +24,9 @@ export function initAnalytics(): void {
   if (!import.meta.env.PROD) return
 
   window.dataLayer = window.dataLayer ?? []
-  window.gtag = (...args: unknown[]) => {
-    window.dataLayer?.push(args)
+  window.gtag = function gtag() {
+    // biome-ignore lint/complexity/noArguments: 公式スニペットに揃え、引数の塊をそのまま dataLayer へ渡す
+    window.dataLayer?.push(arguments)
   }
   window.gtag('js', new Date())
   window.gtag('config', MEASUREMENT_ID)
