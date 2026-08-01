@@ -24,12 +24,11 @@ export function initAnalytics(): void {
   if (!import.meta.env.PROD) return
 
   window.dataLayer = window.dataLayer ?? []
-  const gtag = (...args: unknown[]) => {
+  window.gtag = (...args: unknown[]) => {
     window.dataLayer?.push(args)
   }
-  window.gtag = gtag
-  gtag('js', new Date())
-  gtag('config', MEASUREMENT_ID)
+  window.gtag('js', new Date())
+  window.gtag('config', MEASUREMENT_ID)
 
   const script = document.createElement('script')
   script.async = true
