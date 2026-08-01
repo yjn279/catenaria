@@ -31,6 +31,7 @@ export function Footer() {
         </div>
         <div className="foot-bottom">
           <span>© 2026 CATENARIA</span>
+          <span>本サイトはアクセス解析のため Google アナリティクスを利用しています。</span>
         </div>
       </div>
     </footer>

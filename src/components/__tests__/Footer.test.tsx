@@ -10,3 +10,8 @@ it('renders TOP link in footer nav', () => {
   render(<Footer />)
   expect(screen.getByText(/^TOP$/)).toBeInTheDocument()
 })
+
+it('discloses the use of Google Analytics', () => {
+  render(<Footer />)
+  expect(screen.getByText(/Google アナリティクス/)).toBeInTheDocument()
+})

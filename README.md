@@ -75,6 +75,21 @@ pnpm format      # Format files (biome format --write .)
 
 Biome runs automatically on staged files via a pre-commit hook (registered by `simple-git-hooks` during `pnpm install`).
 
+## Analytics
+
+The site uses Google Analytics (GA4, measurement ID `G-L74JBX1R42`) to measure visits and how many visitors reach the contact form. The tag is only loaded in a production build (`import.meta.env.PROD`), so `pnpm dev` and `pnpm test` never send data. All tracking logic lives in `src/lib/analytics.ts`.
+
+| Event | When | Extra data |
+| --- | --- | --- |
+| `page_view` | A page is viewed (recorded automatically by GA4) | — |
+| `contact_submit_success` | The contact form submission succeeds | — |
+| `contact_submit_error` | The contact form submission fails | — |
+| `email_click` | The `catenaria.dev@gmail.com` link is clicked | `location`: `contact` or `about` |
+| `cta_click` | A call-to-action button is clicked | `location`: `header` or `hero`; `destination`: `contact` or `services` |
+| `nav_click` | A header navigation link is clicked | `destination`: the target section |
+
+No personal data (name, email address, message content) is ever recorded — only the fact that an action happened.
+
 ## Release & Versioning
 
 This project uses [Release Please](https://github.com/googleapis/release-please) for automated releases.
