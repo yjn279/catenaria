@@ -62,3 +62,27 @@ describe('initAnalytics', () => {
     expect(document.querySelector('script[src*="G-L74JBX1R42"]')).not.toBeNull()
   })
 })
+
+describe('dataLayer entries', () => {
+  it('pushes each entry as an arguments object, matching the official snippet', () => {
+    vi.stubEnv('PROD', true)
+
+    initAnalytics()
+    track(AnalyticsEvent.NavClick, { destination: 'top' })
+
+    const [initJs, initConfig, event] = window.dataLayer ?? []
+
+    for (const entry of [initJs, initConfig, event]) {
+      expect(Array.isArray(entry)).toBe(false)
+      expect(Object.prototype.toString.call(entry)).toBe('[object Arguments]')
+    }
+
+    expect(initJs[0]).toBe('js')
+    expect(initJs[1]).toBeInstanceOf(Date)
+    expect(initConfig[0]).toBe('config')
+    expect(initConfig[1]).toBe('G-L74JBX1R42')
+    expect(event[0]).toBe('event')
+    expect(event[1]).toBe('nav_click')
+    expect(event[2]).toEqual({ destination: 'top' })
+  })
+})
