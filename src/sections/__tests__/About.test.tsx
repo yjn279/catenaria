@@ -1,5 +1,15 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { track } from '../../lib/analytics'
 import { About } from '../About'
+
+vi.mock('../../lib/analytics', async () => {
+  const actual = await vi.importActual('../../lib/analytics')
+  return { ...actual, track: vi.fn() }
+})
+
+afterEach(() => {
+  vi.mocked(track).mockClear()
+})
 
 it('renders the about section title', () => {
   render(<About />)
@@ -14,4 +24,10 @@ it('renders CATENARIA brand name in profile', () => {
 it('renders contact email', () => {
   render(<About />)
   expect(screen.getByText(/catenaria\.dev@gmail\.com/)).toBeInTheDocument()
+})
+
+it('records email_click when the contact email is clicked', () => {
+  render(<About />)
+  fireEvent.click(screen.getByText(/catenaria\.dev@gmail\.com/))
+  expect(track).toHaveBeenCalledExactlyOnceWith('email_click', { location: 'about' })
 })

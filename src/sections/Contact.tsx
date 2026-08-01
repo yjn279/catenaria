@@ -84,7 +84,13 @@ export function Contact() {
           <p>
             初回相談は無料です。30
             分間のオンライン相談で、今のご状況やご要望をお伺いします。漠然としたお悩みのご相談や、解消しないエラーのご相談でも構いません。メールでのご連絡をご希望の場合は、
-            <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a> まで。
+            <a
+              href="mailto:catenaria.dev@gmail.com"
+              onClick={() => track(AnalyticsEvent.EmailClick, { location: 'contact' })}
+            >
+              catenaria.dev@gmail.com
+            </a>{' '}
+            まで。
           </p>
         </div>
         <form className="contact-form reveal d1" onSubmit={handleSubmit} ref={formRef} noValidate>

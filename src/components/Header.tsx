@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { AnalyticsEvent, track } from '../lib/analytics'
 import { CatenaryMark } from './Mark'
 
 const NAV = [
@@ -31,12 +32,23 @@ export function Header() {
         </a>
         <nav className="nav-links" aria-label="主要ナビゲーション">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href}>
+            <a
+              key={n.href}
+              href={n.href}
+              onClick={() => track(AnalyticsEvent.NavClick, { destination: n.href.slice(1) })}
+            >
               {n.label}
             </a>
           ))}
         </nav>
-        <a href="#contact" className="btn btn-accent">
+        {/* biome-ignore lint/a11y/useValidAnchor: same-page navigation anchor with an added click-tracking handler */}
+        <a
+          href="#contact"
+          className="btn btn-accent"
+          onClick={() =>
+            track(AnalyticsEvent.CtaClick, { location: 'header', destination: 'contact' })
+          }
+        >
           無料で相談する
         </a>
       </div>

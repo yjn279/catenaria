@@ -17,6 +17,13 @@ it('renders the submit button', () => {
   expect(screen.getByText(/送信する/)).toBeInTheDocument()
 })
 
+it('records email_click when the contact email is clicked', () => {
+  render(<Contact />)
+  fireEvent.click(screen.getByText(/catenaria\.dev@gmail\.com/))
+  expect(track).toHaveBeenCalledExactlyOnceWith('email_click', { location: 'contact' })
+  vi.mocked(track).mockClear()
+})
+
 describe('form submission', () => {
   afterEach(() => {
     vi.restoreAllMocks()
