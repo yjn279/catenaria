@@ -1,5 +1,11 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { track } from '../../lib/analytics'
 import { Contact } from '../Contact'
+
+vi.mock('../../lib/analytics', async () => {
+  const actual = await vi.importActual('../../lib/analytics')
+  return { ...actual, track: vi.fn() }
+})
 
 it('renders the contact section headline', () => {
   render(<Contact />)
@@ -11,9 +17,17 @@ it('renders the submit button', () => {
   expect(screen.getByText(/送信する/)).toBeInTheDocument()
 })
 
+it('records email_click when the contact email is clicked', () => {
+  render(<Contact />)
+  fireEvent.click(screen.getByText(/catenaria\.dev@gmail\.com/))
+  expect(track).toHaveBeenCalledExactlyOnceWith('email_click', { location: 'contact' })
+  vi.mocked(track).mockClear()
+})
+
 describe('form submission', () => {
   afterEach(() => {
     vi.restoreAllMocks()
+    vi.mocked(track).mockClear()
   })
 
   function fillForm() {
@@ -44,6 +58,7 @@ describe('form submission', () => {
     expect((options.body as FormData).get('access_key')).toBe(
       '70feaeb7-229a-4d75-bf84-4f0352c6babc',
     )
+    expect(track).toHaveBeenCalledExactlyOnceWith('contact_submit_success')
   })
 
   it('shows error message when fetch returns success: false', async () => {
@@ -57,6 +72,7 @@ describe('form submission', () => {
 
     const message = await screen.findByText(/送信に失敗しました/)
     expect(message).toBeInTheDocument()
+    expect(track).toHaveBeenCalledExactlyOnceWith('contact_submit_error')
   })
 
   it('shows error message when fetch rejects', async () => {
@@ -68,6 +84,7 @@ describe('form submission', () => {
 
     const message = await screen.findByText(/送信に失敗しました/)
     expect(message).toBeInTheDocument()
+    expect(track).toHaveBeenCalledExactlyOnceWith('contact_submit_error')
   })
 
   it('disables submit button while submitting to prevent double submission', async () => {
@@ -102,6 +119,7 @@ describe('form submission', () => {
     expect(screen.getByText('メールアドレスを入力してください')).toBeInTheDocument()
     expect(screen.getByText('ご相談内容を入力してください')).toBeInTheDocument()
     expect(fetchMock).not.toHaveBeenCalled()
+    expect(track).not.toHaveBeenCalled()
   })
 
   it('shows email format error and does not call fetch when email is invalid', () => {
@@ -117,5 +135,6 @@ describe('form submission', () => {
 
     expect(screen.getByText('正しいメールアドレスを入力してください')).toBeInTheDocument()
     expect(fetchMock).not.toHaveBeenCalled()
+    expect(track).not.toHaveBeenCalled()
   })
 })

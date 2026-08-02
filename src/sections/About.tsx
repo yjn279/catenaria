@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { AnalyticsEvent, track } from '../lib/analytics'
 
 interface Trait {
   eyebrow: string
@@ -37,7 +38,17 @@ const PROFILE: ProfileRow[] = [
   { dt: 'Name', dd: 'CATENARIA（カテナリア）' },
   { dt: 'Service', dd: 'AI 時代の個人開発者・小規模事業者向け、技術組織アウトソーシング' },
   { dt: 'Contract', dd: '業務委託契約（準委任）' },
-  { dt: 'Contact', dd: <a href="mailto:catenaria.dev@gmail.com">catenaria.dev@gmail.com</a> },
+  {
+    dt: 'Contact',
+    dd: (
+      <a
+        href="mailto:catenaria.dev@gmail.com"
+        onClick={() => track(AnalyticsEvent.EmailClick, { location: 'about' })}
+      >
+        catenaria.dev@gmail.com
+      </a>
+    ),
+  },
 ]
 
 export function About() {

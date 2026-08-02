@@ -1,4 +1,5 @@
 import { HeroMotif } from '../components/Mark'
+import { AnalyticsEvent, track } from '../lib/analytics'
 
 export function Hero() {
   return (
@@ -25,10 +26,24 @@ export function Hero() {
           AI 時代のヒューマン・パートナーとしてお客さまと共に伴走します。
         </p>
         <div className="hero-cta reveal in d3">
-          <a href="#contact" className="btn btn-accent">
+          {/* biome-ignore lint/a11y/useValidAnchor: same-page navigation anchor with an added click-tracking handler */}
+          <a
+            href="#contact"
+            className="btn btn-accent"
+            onClick={() =>
+              track(AnalyticsEvent.CtaClick, { location: 'hero', destination: 'contact' })
+            }
+          >
             無料で相談する
           </a>
-          <a href="#services" className="btn btn-ghost">
+          {/* biome-ignore lint/a11y/useValidAnchor: same-page navigation anchor with an added click-tracking handler */}
+          <a
+            href="#services"
+            className="btn btn-ghost"
+            onClick={() =>
+              track(AnalyticsEvent.CtaClick, { location: 'hero', destination: 'services' })
+            }
+          >
             サービスを見る
           </a>
         </div>
