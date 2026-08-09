@@ -19,6 +19,7 @@ const SHOWCASE_OPTOUT =
 const NO_VISIT_NO_CALL = 'ご訪問やお電話でお時間をいただくことはございません。'
 const REPLY_TIMING =
   'ご返信は1営業日以内、初稿は5営業日以内が目安です。返信するのは代表の中村です。'
+const CONTACT_EMAIL = 'y.nakamura@catenaria.dev'
 
 export const HERO = {
   eyebrow: 'ホームページ・LP制作',
@@ -88,7 +89,7 @@ export const CONTACT = {
   boundary: `${FREE_SCOPE}${PAID_FROM_PUBLISHING}`,
   privacy: PRIVACY_NOTICE,
   successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,
-  errorMessage: '送信に失敗しました。恐れ入りますが y.nakamura@catenaria.dev までご連絡ください。',
+  errorMessage: `送信に失敗しました。恐れ入りますが ${CONTACT_EMAIL} までご連絡ください。`,
 } as const
 
 export const FAQ = {
@@ -116,4 +117,16 @@ export const FAQ = {
     },
     { q: '返信はいつ来ますか？', a: REPLY_TIMING },
   ],
+} as const
+
+export const OPERATOR = {
+  brand: 'CATENARIA',
+  origin:
+    '「カテナリー」は、鎖やケーブルが自重で自然にたわむときにできる曲線の名前です。飾らずに、そのままの形で立つという思いを屋号に込めました。',
+  representative: '中村 勇士',
+  postalCode: '〒243-0406',
+  address: '神奈川県海老名市国分北1-35-3 102',
+  email: CONTACT_EMAIL,
+  siteUrl: 'https://catenaria.dev',
+  siteLabel: 'catenaria.dev',
 } as const

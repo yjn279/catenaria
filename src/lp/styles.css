@@ -59,11 +59,6 @@ html {
   background: var(--lp-bg);
   color-scheme: light;
 }
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
 body {
   margin: 0;
   padding-bottom: 84px; /* 追従する入口の高さぶん、フッターと重ならない余白を確保する */
@@ -148,14 +143,6 @@ a {
 }
 .lp-btn-accent:hover {
   background: #f6d569;
-}
-.lp-btn-outline {
-  background: transparent;
-  border-color: var(--lp-line-2);
-  color: var(--lp-text);
-}
-.lp-btn-outline:hover {
-  border-color: var(--lp-accent-ink);
 }
 
 /* ---- 区切りの造形（カテナリー曲線） ---- */
