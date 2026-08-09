@@ -14,8 +14,6 @@ const PAID_FROM_PUBLISHING = '公開して使い続けるところからは有�
 const FREE_REVISIONS = '無料で直せるのは、初稿の制作から2回までです。'
 const RIGHTS = '権利はすべてお客様のものです。'
 const DELIVERABLE_FREEDOM = 'ご自由にお使いいただけます。お使いいただかなくても構いません。'
-const SHOWCASE_OPTOUT =
-  '実績として紹介させていただくことがありますが、事情があればお断りいただけます。'
 const NO_VISIT_NO_CALL = 'ご訪問やお電話でお時間をいただくことはございません。'
 const REPLY_TIMING =
   'ご返信は1営業日以内、初稿は5営業日以内が目安です。返信するのは代表の中村です。'
@@ -54,7 +52,10 @@ export const OFFER = {
       title: '公開してからの運用',
       body: '公開してからの運用は、ご希望に応じて別途お見積りいたします。',
     },
-    { title: '実績としての紹介', body: SHOWCASE_OPTOUT },
+    {
+      title: '実績としての紹介',
+      body: '実績として紹介させていただくことがありますが、事情があればお断りいただけます。',
+    },
     {
       title: 'AI・DXのご支援も',
       body: 'ホームページ・LP制作のほか、AI・DXに関するご支援も行っています。',
@@ -77,17 +78,13 @@ export const FIT = {
   ],
 } as const
 
-const VISIT_CALL_NOTE =
-  '訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。'
-const PRIVACY_NOTICE =
-  'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信のためだけに利用します。'
-
 export const CONTACT = {
   eyebrow: 'お問い合わせ',
   heading: 'まずはメールでご相談ください',
-  lead: `${FREE_OFFER}${VISIT_CALL_NOTE}${REPLY_TIMING}`,
+  lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
   boundary: `${FREE_SCOPE}${PAID_FROM_PUBLISHING}`,
-  privacy: PRIVACY_NOTICE,
+  privacy:
+    'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信のためだけに利用します。',
   successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,
   errorMessage: `送信に失敗しました。恐れ入りますが ${CONTACT_EMAIL} までご連絡ください。`,
 } as const

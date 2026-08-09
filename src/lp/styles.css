@@ -205,13 +205,15 @@ a {
     width: auto;
   }
 }
-.lp-hero-image {
+.lp-hero-image,
+.lp-why-image {
   margin-top: var(--lp-space-6);
   height: 220px;
   border-radius: var(--lp-radius);
   overflow: hidden;
 }
-.lp-hero-image img {
+.lp-hero-image img,
+.lp-why-image img {
   display: block;
   width: 100%;
   height: 100%;
@@ -254,24 +256,14 @@ a {
 .lp-why-boundary-line:last-child {
   margin-bottom: 0;
 }
-.lp-why-image {
-  margin-top: var(--lp-space-6);
-  height: 220px;
-  border-radius: var(--lp-radius);
-  overflow: hidden;
-}
-.lp-why-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* ---- お渡しするもの ---- */
 .lp-offer {
   padding: var(--lp-space-7) 0;
 }
-.lp-offer-heading {
+.lp-offer-heading,
+.lp-fit-heading,
+.lp-faq-heading {
   font-size: clamp(1.3rem, 3.6vw, 1.6rem);
   margin-bottom: var(--lp-space-6);
 }
@@ -313,10 +305,6 @@ a {
   padding: var(--lp-space-7) 0;
   background: var(--lp-surface-2);
 }
-.lp-fit-heading {
-  font-size: clamp(1.3rem, 3.6vw, 1.6rem);
-  margin-bottom: var(--lp-space-6);
-}
 .lp-fit-columns {
   display: grid;
   gap: var(--lp-space-6);
@@ -346,10 +334,6 @@ a {
 /* ---- よくあるご質問 ---- */
 .lp-faq {
   padding: var(--lp-space-7) 0;
-}
-.lp-faq-heading {
-  font-size: clamp(1.3rem, 3.6vw, 1.6rem);
-  margin-bottom: var(--lp-space-6);
 }
 .lp-faq-list {
   display: flex;

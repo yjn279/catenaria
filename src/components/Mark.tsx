@@ -1,18 +1,5 @@
 import { useEffect, useRef } from 'react'
-
-// eslint-disable-next-line react-refresh/only-export-components
-export function catenaryPath(W: number, H: number, tautness: number, N: number): string {
-  const hw = W / 2
-  const a = hw * tautness
-  const denom = Math.cosh(hw / a) - 1
-  let d = ''
-  for (let i = 0; i <= N; i++) {
-    const x = -hw + (W * i) / N
-    const y = (H * (Math.cosh(x / a) - 1)) / denom
-    d += `${(i === 0 ? 'M' : 'L') + (x + hw).toFixed(2)} ${y.toFixed(2)} `
-  }
-  return d.trim()
-}
+import { catenaryPath } from '../lib/catenary'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const CATENARY_D = catenaryPath(100, 120, 0.33, 140)

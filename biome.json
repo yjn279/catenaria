@@ -3,15 +3,7 @@
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
     "ignoreUnknown": true,
-    "includes": [
-      "**/*",
-      "!dist",
-      "!.wrangler",
-      "!.vite",
-      "!node_modules",
-      "!.trinity",
-      "!.worktrees"
-    ]
+    "includes": ["**/*", "!dist", "!.wrangler", "!.vite", "!node_modules", "!.trinity"]
   },
   "formatter": {
     "enabled": true,

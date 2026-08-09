@@ -1,6 +1,9 @@
 # Trinity harness — local audit log, not for sharing
 .trinity/
 
+# Git worktrees
+.worktrees/
+
 # Node
 node_modules/
 dist/
