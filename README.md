@@ -90,6 +90,43 @@ The site uses Google Analytics (GA4, measurement ID `G-L74JBX1R42`) to measure v
 
 No personal data (name, email address, message content) is ever recorded — only the fact that an action happened.
 
+## 無料制作の案内ページ（`/lp`）
+
+営業メールで「ホームページ・LPを無料で制作します」と伝えた相手が、そのまま内容を理解できるように作った、会社サイトとは別の1枚のページ。公開先は `https://catenaria.dev/lp`。会社サイトのトップページ（`/`）はこのページのために変更していない。
+
+### 置き場所と作り
+
+会社サイトの部品を一切持ち込まず、このページだけで完結する形にしている。理由は、読み込む量をなるべく減らすため。
+
+| 中身 | 場所 |
+| --- | --- |
+| 入口のページ | `lp/index.html` |
+| 画面の中身 | `src/lp/` 以下（会社サイトの `src/sections/` などとは別） |
+| 見た目の指定 | `src/lp/styles.css`（会社サイトの `src/styles/globals.css` は使わない） |
+| 画像 | `public/lp/`（すべて生成した画像。実在の人物・実在の職場の写真ではない） |
+
+問い合わせフォームは会社サイトと同じ送信先（Web3Forms）を使い、新しい送信先は作っていない。フォームの中に見えない項目 `page`（値は `lp`）を持たせてあり、これで「会社サイトからの問い合わせ」と「このページからの問い合わせ」を見分けられる。
+
+### 何を測っているか
+
+新しい仕組みは足さず、会社サイトと同じ計測（`src/lib/analytics.ts`、Google Analytics）をそのまま使っている。
+
+| 記録される出来事 | いつ記録されるか |
+| --- | --- |
+| ページを見た | `/lp` を開いたとき。会社サイトのページとは開いたアドレス（パス）の違いで見分けられる |
+| ボタンを押した | 「相談する」ボタンを押したとき |
+| 問い合わせを送れた・送れなかった | フォームを送信したとき |
+
+氏名・メールアドレス・相談内容は記録していない。
+
+### 手元の環境で問い合わせを試すときの注意
+
+`pnpm dev` などで手元から開いた `/lp` でフォームを送信すると、送信先（Web3Forms）が許可していない場所からの送信として拒否される。これは会社サイトの問い合わせフォームにも前から共通する仕様であり、`/lp` だけの制限ではない。実際に送信が届くことは、本番のアドレス（`https://catenaria.dev`）に公開したあとで確かめる。
+
+### 品質の確認
+
+`/lp` が守るべき決めごと（無料の範囲を隠さず書く、存在しない実績を書かない、読み込む量の上限を超えないなど）は、このリポジトリの外にある検査の道具（`lp-self-checks.mjs`、事実と基準は `catenaria/lp-system/` 配下）で確認する。決めごとの詳しい中身は、その道具と資料が正であり、ここには写さない。
+
 ## Release & Versioning
 
 This project uses [Release Please](https://github.com/googleapis/release-please) for automated releases.
