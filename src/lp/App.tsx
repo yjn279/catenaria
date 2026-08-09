@@ -1,7 +1,7 @@
 import { Curve } from './components/Curve'
 import { Footer } from './components/Footer'
-import { OperatorInfo } from './components/OperatorInfo'
 import { StickyCta } from './components/StickyCta'
+import { Contact } from './sections/Contact'
 import { Faq } from './sections/Faq'
 import { FitOrNot } from './sections/FitOrNot'
 import { Hero } from './sections/Hero'
@@ -27,16 +27,7 @@ export default function App() {
         <Curve className="lp-divider" />
         <Faq />
         <Curve className="lp-divider" />
-        <section id="contact" className="lp-contact" aria-labelledby="contact-heading">
-          <div className="wrap">
-            <h2 id="contact-heading" className="lp-eyebrow">
-              お問い合わせ
-            </h2>
-            <h3 className="lp-contact-title">まずはメールでご相談ください</h3>
-            {/* 工程4でフォームをここに追加する */}
-            <OperatorInfo />
-          </div>
-        </section>
+        <Contact />
       </main>
       <Footer />
       <StickyCta />

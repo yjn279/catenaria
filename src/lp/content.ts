@@ -76,6 +76,21 @@ export const FIT = {
   ],
 } as const
 
+const VISIT_CALL_NOTE =
+  '訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。'
+const PRIVACY_NOTICE =
+  'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信のためだけに利用します。'
+
+export const CONTACT = {
+  eyebrow: 'お問い合わせ',
+  heading: 'まずはメールでご相談ください',
+  lead: `${FREE_OFFER}${VISIT_CALL_NOTE}${REPLY_TIMING}`,
+  boundary: `${FREE_SCOPE}${PAID_FROM_PUBLISHING}`,
+  privacy: PRIVACY_NOTICE,
+  successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,
+  errorMessage: '送信に失敗しました。恐れ入りますが y.nakamura@catenaria.dev までご連絡ください。',
+} as const
+
 export const FAQ = {
   eyebrow: 'よくあるご質問',
   heading: 'よくあるご質問',

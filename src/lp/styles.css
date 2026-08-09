@@ -352,13 +352,93 @@ a {
   color: var(--lp-text-2);
 }
 
-/* ---- お問い合わせ節（入れ物。中身は工程4） ---- */
+/* ---- お問い合わせ節 ---- */
 .lp-contact {
   padding: var(--lp-space-8) 0;
   background: var(--lp-surface-2);
 }
 .lp-contact-title {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-contact-lead {
+  color: var(--lp-text-2);
+  margin-bottom: var(--lp-space-4);
+}
+.lp-contact-boundary {
+  font-weight: 600;
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-accent);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-4) var(--lp-space-5);
+  margin-bottom: var(--lp-space-6);
+}
+
+/* ---- お問い合わせフォーム ---- */
+.lp-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-5);
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-6) var(--lp-space-5);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-2);
+}
+.lp-field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.lp-field input,
+.lp-field textarea {
+  min-height: 44px;
+  padding: var(--lp-space-3);
+  border-radius: var(--lp-radius-sm);
+  border: var(--lp-hairline) solid var(--lp-line-2);
+  background: var(--lp-surface);
+  color: var(--lp-text);
+  font-family: var(--lp-font-sans);
+  font-size: 15px;
+}
+.lp-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+.lp-field input:focus,
+.lp-field textarea:focus {
+  outline: 2px solid var(--lp-accent-ink);
+  outline-offset: 1px;
+}
+.lp-field-error {
+  color: #a3341a;
+  font-size: 13px;
+  margin: 0;
+}
+.lp-field-optout {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--lp-space-3);
+}
+.lp-field-optout label {
+  font-weight: 400;
+  font-size: 14.5px;
+}
+.lp-contact-submit {
+  align-self: flex-start;
+}
+.lp-contact-status p {
+  color: var(--lp-text-2);
+  font-size: 14.5px;
+}
+.lp-contact-privacy {
+  color: var(--lp-text-3);
+  font-size: 13px;
+  line-height: 1.8;
   margin-bottom: var(--lp-space-6);
 }
 
