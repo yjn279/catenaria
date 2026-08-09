@@ -18,15 +18,15 @@ export default function App() {
       </header>
       <main>
         <Hero />
-        <Curve className="lp-divider" />
+        <Curve />
         <WhyFree />
-        <Curve className="lp-divider" />
+        <Curve />
         <Offer />
-        <Curve className="lp-divider" />
+        <Curve />
         <FitOrNot />
-        <Curve className="lp-divider" />
+        <Curve />
         <Faq />
-        <Curve className="lp-divider" />
+        <Curve />
         <Contact />
       </main>
       <Footer />
