@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { z } from 'zod'
 import { AnalyticsEvent, track } from '../lib/analytics'
+import { submitToWeb3Forms } from '../lib/web3forms'
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'お名前を入力してください'),
@@ -49,15 +50,9 @@ export function Contact() {
     setErrors({})
     setStatus('submitting')
 
-    formData.append('access_key', '70feaeb7-229a-4d75-bf84-4f0352c6babc')
-
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
-      })
-      const json = (await res.json()) as { success: boolean }
-      if (json.success) {
+      const success = await submitToWeb3Forms(formData)
+      if (success) {
         setStatus('success')
         formRef.current?.reset()
         track(AnalyticsEvent.ContactSubmitSuccess)

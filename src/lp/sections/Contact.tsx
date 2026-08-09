@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { AnalyticsEvent, track } from '../../lib/analytics'
+import { submitToWeb3Forms } from '../../lib/web3forms'
 import { OperatorInfo } from '../components/OperatorInfo'
 import { CONTACT } from '../content'
 import {
@@ -7,8 +8,6 @@ import {
   type ContactFormValues,
   validateContactForm,
 } from '../lib/validate'
-
-const ACCESS_KEY = '70feaeb7-229a-4d75-bf84-4f0352c6babc'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -45,15 +44,9 @@ export function Contact() {
     setErrors({})
     setStatus('submitting')
 
-    formData.append('access_key', ACCESS_KEY)
-
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
-      })
-      const json = (await res.json()) as { success: boolean }
-      if (json.success) {
+      const success = await submitToWeb3Forms(formData)
+      if (success) {
         setStatus('success')
         formRef.current?.reset()
         track(AnalyticsEvent.ContactSubmitSuccess)
