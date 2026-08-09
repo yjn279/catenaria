@@ -10,7 +10,7 @@ export function FitOrNot() {
           {FIT.heading}
         </h2>
         <div className="lp-fit-columns">
-          <div className="lp-fit-column">
+          <div>
             <p className="lp-fit-column-title">{FIT.fitTitle}</p>
             <ul className="lp-fit-list">
               {FIT.fit.map((line) => (
@@ -18,7 +18,7 @@ export function FitOrNot() {
               ))}
             </ul>
           </div>
-          <div className="lp-fit-column">
+          <div>
             <p className="lp-fit-column-title">{FIT.notFitTitle}</p>
             <ul className="lp-fit-list">
               {FIT.notFit.map((line) => (

@@ -10,7 +10,7 @@ import { WhyFree } from './sections/WhyFree'
 
 export default function App() {
   return (
-    <div className="lp-page">
+    <div>
       <header className="lp-header">
         <div className="wrap lp-header-inner">
           <span className="lp-wordmark">CATENARIA</span>

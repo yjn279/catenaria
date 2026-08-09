@@ -15,9 +15,7 @@ export function WhyFree() {
         </h2>
         <div className="lp-why-reasons">
           {WHY_FREE.reasons.map((reason) => (
-            <p key={reason} className="lp-why-reason">
-              {reason}
-            </p>
+            <p key={reason}>{reason}</p>
           ))}
         </div>
         <div className="lp-why-boundary">

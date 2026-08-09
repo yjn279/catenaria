@@ -90,7 +90,7 @@ export const CONTACT = {
 } as const
 
 export const FAQ = {
-  eyebrow: 'よくあるご質問',
+  eyebrow: '気になること',
   heading: 'よくあるご質問',
   items: [
     { q: '本当に無料ですか？', a: `${FREE_OFFER}${NO_COST_NO_CONTRACT}` },
