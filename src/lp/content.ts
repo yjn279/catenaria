@@ -50,7 +50,7 @@ export const OFFER = {
     { title: '返信と初稿の目安', body: REPLY_TIMING },
     {
       title: '公開してからの運用',
-      body: '公開してからの運用は、ご希望に応じて別途お見積りいたします。',
+      body: '公開してからの運用は、ご希望に応じて個別にご案内します。',
     },
     {
       title: '実績としての紹介',
@@ -96,7 +96,7 @@ export const FAQ = {
     { q: '本当に無料ですか？', a: `${FREE_OFFER}${NO_COST_NO_CONTRACT}` },
     {
       q: 'どこから有償になりますか？',
-      a: `${PAID_FROM_PUBLISHING}公開してからの運用は、ご希望に応じて別途お見積りいたします。`,
+      a: PAID_FROM_PUBLISHING,
     },
     { q: '何回まで直してもらえますか？', a: `${FREE_REVISIONS}それ以降は別途になります。` },
     {
