@@ -28,6 +28,15 @@ export function WhyFree() {
             </p>
           ))}
         </div>
+        <div className="lp-why-image">
+          <img
+            src="/lp/reason.webp"
+            width={1536}
+            height={1024}
+            alt="複数のタブレット端末とノートパソコンが並び、細い配線でつながる机の上の情景"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   )

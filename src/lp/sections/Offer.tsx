@@ -9,6 +9,15 @@ export function Offer() {
         <h2 id="offer-heading" className="lp-offer-heading">
           {OFFER.heading}
         </h2>
+        <div className="lp-offer-image">
+          <img
+            src="/lp/offer.webp"
+            width={1672}
+            height={941}
+            alt="ご相談から制作、お渡しまでの3つの手順を示した図"
+            loading="lazy"
+          />
+        </div>
         <dl className="lp-offer-list">
           {OFFER.items.map((item) => (
             <div className="lp-offer-item" key={item.title}>

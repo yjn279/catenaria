@@ -23,6 +23,15 @@ export function Hero() {
         >
           {HERO.ctaLabel}
         </a>
+        <div className="lp-hero-image">
+          <img
+            src="/lp/hero.webp"
+            width={1672}
+            height={941}
+            alt="朝の光が差す木の机に置かれたノートパソコンとノート、コーヒーカップ"
+            loading="eager"
+          />
+        </div>
       </div>
     </section>
   )

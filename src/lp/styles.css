@@ -218,6 +218,18 @@ a {
     width: auto;
   }
 }
+.lp-hero-image {
+  margin-top: var(--lp-space-6);
+  height: 220px;
+  border-radius: var(--lp-radius);
+  overflow: hidden;
+}
+.lp-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ---- 制作が無料でできる理由・どこまでが無料か ---- */
 .lp-why {
@@ -255,6 +267,18 @@ a {
 .lp-why-boundary-line:last-child {
   margin-bottom: 0;
 }
+.lp-why-image {
+  margin-top: var(--lp-space-6);
+  height: 220px;
+  border-radius: var(--lp-radius);
+  overflow: hidden;
+}
+.lp-why-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ---- お渡しするもの ---- */
 .lp-offer {
@@ -263,6 +287,16 @@ a {
 .lp-offer-heading {
   font-size: clamp(1.3rem, 3.6vw, 1.6rem);
   margin-bottom: var(--lp-space-6);
+}
+.lp-offer-image {
+  margin-bottom: var(--lp-space-6);
+  border-radius: var(--lp-radius);
+  overflow: hidden;
+}
+.lp-offer-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .lp-offer-list {
   display: flex;
