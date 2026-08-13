@@ -23,6 +23,9 @@
   --lp-accent: #e8b537;
   --lp-accent-ink: #7a5710;
 
+  /* ---- 焦点の輪（藍） ---- */
+  --lp-focus: #1f3a5f;
+
   /* ---- Motion ---- */
   --lp-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --lp-dur-fast: 0.2s;
@@ -88,6 +91,24 @@ a {
 ::selection {
   background: var(--lp-accent);
   color: var(--lp-text);
+}
+
+/* ---- キーボードで移動したときの焦点の輪 ---- */
+/* 押せるもの・書き込む欄のすべてに、ブラウザ既定に代わる明示的な輪を付ける */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--lp-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-btn {
+    transition-duration: 0.001ms;
+  }
 }
 
 .wrap {
@@ -443,11 +464,6 @@ a {
 .lp-field textarea {
   min-height: 132px;
   resize: vertical;
-}
-.lp-field input:focus,
-.lp-field textarea:focus {
-  outline: 2px solid var(--lp-accent-ink);
-  outline-offset: 1px;
 }
 .lp-field-error {
   color: #a3341a;
