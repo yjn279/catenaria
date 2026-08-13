@@ -248,8 +248,8 @@ a {
   margin-bottom: var(--lp-space-3);
 }
 .lp-why-boundary-line {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.8;
   margin-bottom: var(--lp-space-2);
 }
@@ -371,7 +371,9 @@ a {
   margin-bottom: var(--lp-space-4);
 }
 .lp-contact-boundary {
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.8;
   background: var(--lp-surface);
   border: var(--lp-hairline) solid var(--lp-accent);
   border-radius: var(--lp-radius);
