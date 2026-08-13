@@ -208,16 +208,12 @@ a {
 .lp-hero-image,
 .lp-why-image {
   margin-top: var(--lp-space-6);
-  height: 220px;
-  border-radius: var(--lp-radius);
-  overflow: hidden;
 }
 .lp-hero-image img,
 .lp-why-image img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 /* ---- 制作が無料でできる理由・どこまでが無料か ---- */
@@ -267,10 +263,18 @@ a {
   font-size: clamp(1.3rem, 3.6vw, 1.6rem);
   margin-bottom: var(--lp-space-6);
 }
+.lp-offer-image-band {
+  margin: 0 calc(-1 * var(--lp-space-5)) var(--lp-space-6);
+  padding: var(--lp-space-6) var(--lp-space-5);
+  background: #fbf5e0;
+}
+.lp-offer-image-band img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .lp-offer-image {
-  margin-bottom: var(--lp-space-6);
-  border-radius: var(--lp-radius);
-  overflow: hidden;
+  margin-top: var(--lp-space-6);
 }
 .lp-offer-image img {
   display: block;
@@ -304,6 +308,14 @@ a {
 .lp-fit {
   padding: var(--lp-space-7) 0;
   background: var(--lp-surface-2);
+}
+.lp-fit-image {
+  margin-bottom: var(--lp-space-6);
+}
+.lp-fit-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .lp-fit-columns {
   display: grid;
@@ -356,6 +368,14 @@ a {
   margin: 0;
   color: var(--lp-text-2);
 }
+.lp-faq-image {
+  margin-top: var(--lp-space-6);
+}
+.lp-faq-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 /* ---- お問い合わせ節 ---- */
 .lp-contact {
@@ -379,6 +399,14 @@ a {
   border-radius: var(--lp-radius);
   padding: var(--lp-space-4) var(--lp-space-5);
   margin-bottom: var(--lp-space-6);
+}
+.lp-contact-image {
+  margin-bottom: var(--lp-space-6);
+}
+.lp-contact-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ---- お問い合わせフォーム ---- */
@@ -469,6 +497,14 @@ a {
   font-size: 14.5px;
   line-height: 1.9;
   margin-bottom: var(--lp-space-5);
+}
+.lp-operator-image {
+  margin-bottom: var(--lp-space-5);
+}
+.lp-operator-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .lp-operator-facts {
   border-top: var(--lp-hairline) solid var(--lp-line);

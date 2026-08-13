@@ -17,6 +17,15 @@ export function Faq() {
             </div>
           ))}
         </div>
+        <div className="lp-faq-image">
+          <img
+            src="/lp/mail.webp"
+            width={1536}
+            height={1024}
+            alt="木の机の隅を斜め上から写し、片手が画面の消えた携帯電話を持っている情景"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   )

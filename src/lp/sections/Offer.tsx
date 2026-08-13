@@ -9,12 +9,12 @@ export function Offer() {
         <h2 id="offer-heading" className="lp-offer-heading">
           {OFFER.heading}
         </h2>
-        <div className="lp-offer-image">
+        <div className="lp-offer-image-band">
           <img
-            src="/lp/offer.webp"
+            src="/lp/steps.webp"
             width={1672}
             height={941}
-            alt="ご相談から制作、お渡しまでの3つの手順を示した図"
+            alt="ご相談・制作・お渡し・公開の四つの段を、垂れた一本の線の上に並べた図解"
             loading="lazy"
           />
         </div>
@@ -37,6 +37,15 @@ export function Offer() {
             </dd>
           </div>
         </dl>
+        <div className="lp-offer-image">
+          <img
+            src="/lp/handover.webp"
+            width={1536}
+            height={1024}
+            alt="木のカウンター越しに、袖から出た片手が無地の紙挟みを見る人の側へ差し出している情景"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   )

@@ -25,10 +25,10 @@ export function Hero() {
         </a>
         <div className="lp-hero-image">
           <img
-            src="/lp/hero.webp"
-            width={1672}
-            height={941}
-            alt="朝の光が差す木の机に置かれたノートパソコンとノート、コーヒーカップ"
+            src="/lp/office.webp"
+            width={1536}
+            height={1024}
+            alt="日本の地方にある工務店の事務室。紺色の作業着を着て机に向かって座った後ろ姿"
             loading="eager"
           />
         </div>

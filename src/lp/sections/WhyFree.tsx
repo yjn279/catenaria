@@ -28,10 +28,10 @@ export function WhyFree() {
         </div>
         <div className="lp-why-image">
           <img
-            src="/lp/reason.webp"
+            src="/lp/capacity.webp"
             width={1536}
             height={1024}
-            alt="複数のタブレット端末とノートパソコンが並び、細い配線でつながる机の上の情景"
+            alt="古い木造の作業場で、梁のあいだに渡した紐に無地の紙が吊るされている情景"
             loading="lazy"
           />
         </div>

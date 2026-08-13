@@ -9,6 +9,15 @@ export function FitOrNot() {
         <h2 id="fit-heading" className="lp-fit-heading">
           {FIT.heading}
         </h2>
+        <div className="lp-fit-image">
+          <img
+            src="/lp/town.webp"
+            width={1672}
+            height={941}
+            alt="日本の地方都市の通りを斜めから写した情景"
+            loading="lazy"
+          />
+        </div>
         <p className="lp-fit-area-note">{FIT.areaNote}</p>
         <div className="lp-fit-columns">
           <div>
