@@ -30,6 +30,11 @@ const TARGET_FILES = [
   join(ROOT, 'src/lib/web3forms.ts'),
 ]
 
+const TARGET_CONTENTS = TARGET_FILES.map((path) => ({
+  path,
+  content: readFileSync(path, 'utf-8'),
+}))
+
 function findQuoteWordsOutOfContext(content: string): string[] {
   return QUOTE_WORDS.flatMap((word) => {
     const hits: string[] = []
@@ -46,20 +51,20 @@ function findQuoteWordsOutOfContext(content: string): string[] {
   })
 }
 
+function findViolations(findWords: (content: string) => string[]): string[] {
+  return TARGET_CONTENTS.flatMap(({ path, content }) =>
+    findWords(content).map((word) => `${relative(ROOT, path)}: "${word}"`),
+  )
+}
+
 it('/lp が読み込む一式に「契約」に関する語が無い', () => {
-  const violations = TARGET_FILES.flatMap((path) => {
-    const content = readFileSync(path, 'utf-8')
-    return CONTRACT_WORDS.filter((word) => content.includes(word)).map(
-      (word) => `${relative(ROOT, path)}: "${word}"`,
-    )
-  })
+  const violations = findViolations((content) =>
+    CONTRACT_WORDS.filter((word) => content.includes(word)),
+  )
   expect(violations).toEqual([])
 })
 
 it('/lp の「見積」は、運用・お任せの文脈から離れて使われていない', () => {
-  const violations = TARGET_FILES.flatMap((path) => {
-    const content = readFileSync(path, 'utf-8')
-    return findQuoteWordsOutOfContext(content).map((word) => `${relative(ROOT, path)}: "${word}"`)
-  })
+  const violations = findViolations(findQuoteWordsOutOfContext)
   expect(violations).toEqual([])
 })

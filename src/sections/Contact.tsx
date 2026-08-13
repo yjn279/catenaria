@@ -51,16 +51,12 @@ export function Contact() {
     setStatus('submitting')
 
     try {
-      const success = await submitToWeb3Forms(formData)
-      if (success) {
-        setStatus('success')
-        formRef.current?.reset()
-        track(AnalyticsEvent.ContactSubmitSuccess)
-      } else {
-        setStatus('error')
-        track(AnalyticsEvent.ContactSubmitError)
-      }
-    } catch {
+      await submitToWeb3Forms(formData)
+      setStatus('success')
+      formRef.current?.reset()
+      track(AnalyticsEvent.ContactSubmitSuccess)
+    } catch (error) {
+      console.error(error)
       setStatus('error')
       track(AnalyticsEvent.ContactSubmitError)
     }

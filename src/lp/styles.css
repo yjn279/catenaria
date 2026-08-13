@@ -231,7 +231,13 @@ select:focus-visible,
   margin-top: var(--lp-space-6);
 }
 .lp-hero-image img,
-.lp-why-image img {
+.lp-why-image img,
+.lp-offer-image-band img,
+.lp-offer-image img,
+.lp-fit-image img,
+.lp-faq-image img,
+.lp-contact-image img,
+.lp-operator-image img {
   display: block;
   width: 100%;
   height: auto;
@@ -289,18 +295,8 @@ select:focus-visible,
   padding: var(--lp-space-6) var(--lp-space-5);
   background: #fbf5e0;
 }
-.lp-offer-image-band img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 .lp-offer-image {
   margin-top: var(--lp-space-6);
-}
-.lp-offer-image img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 .lp-offer-list {
   display: flex;
@@ -332,11 +328,6 @@ select:focus-visible,
 }
 .lp-fit-image {
   margin-bottom: var(--lp-space-6);
-}
-.lp-fit-image img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 .lp-fit-columns {
   display: grid;
@@ -392,11 +383,6 @@ select:focus-visible,
 .lp-faq-image {
   margin-top: var(--lp-space-6);
 }
-.lp-faq-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
 /* ---- お問い合わせ節 ---- */
 .lp-contact {
@@ -423,11 +409,6 @@ select:focus-visible,
 }
 .lp-contact-image {
   margin-bottom: var(--lp-space-6);
-}
-.lp-contact-image img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 /* ---- お問い合わせフォーム ---- */
@@ -516,11 +497,6 @@ select:focus-visible,
 }
 .lp-operator-image {
   margin-bottom: var(--lp-space-5);
-}
-.lp-operator-image img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 .lp-operator-facts {
   border-top: var(--lp-hairline) solid var(--lp-line);

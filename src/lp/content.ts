@@ -14,6 +14,7 @@ const SELF_PUBLISH_FREE =
   'お渡ししたものを、お客様が自分で公開してお使いになるぶんも無料です。費用は発生しません。'
 const PAID_WHEN_DELEGATED =
   '公開や運用をこちらにお任せいただく場合は有償になり、その金額はご希望に応じて別途お見積りいたします。'
+const PUBLISH_BOUNDARY = `${SELF_PUBLISH_FREE}${PAID_WHEN_DELEGATED}`
 const FREE_REVISIONS = '無料で直せるのは、初稿の制作から2回までです。'
 const RIGHTS = '権利はすべてお客様のものです。'
 const DELIVERABLE_FREEDOM = 'ご自由にお使いいただけます。お使いいただかなくても構いません。'
@@ -94,7 +95,7 @@ export const CONTACT = {
   eyebrow: 'お問い合わせ',
   heading: 'まずはメールでご相談ください',
   lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
-  boundary: `${SELF_PUBLISH_FREE}${PAID_WHEN_DELEGATED}`,
+  boundary: PUBLISH_BOUNDARY,
   privacy:
     'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信と、ご依頼いただいた制作のご連絡にのみ使います。',
   successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,
@@ -108,7 +109,7 @@ export const FAQ = {
     { q: '本当に無料ですか？', a: `${FREE_OFFER}${NO_COST_NO_CONTRACT}` },
     {
       q: 'どこから有償になりますか？',
-      a: `${SELF_PUBLISH_FREE}${PAID_WHEN_DELEGATED}`,
+      a: PUBLISH_BOUNDARY,
     },
     { q: '何回まで直してもらえますか？', a: `${FREE_REVISIONS}それ以降は別途になります。` },
     {
