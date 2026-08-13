@@ -21,6 +21,14 @@ const NO_VISIT_NO_CALL = 'ご訪問やお電話でお時間をいただくこと
 const REPLY_TIMING =
   'ご返信は1営業日以内、初稿は5営業日以内が目安です。返信するのは代表の中村です。'
 const CONTACT_EMAIL = 'y.nakamura@catenaria.dev'
+const OPERATION_SCOPE_INTRO =
+  'ご自分で公開なさるなら費用はかかりません。こちらに任せていただく場合は、次のことを承ります。'
+const OPERATION_SCOPE_ITEMS = [
+  '公開の作業（作ったものを、実際に見られる状態にする）',
+  '公開し続けるための場所の用意（公開したページが表示され続けるようにする）',
+  '中身の更新（内容の書き換えや差し替え）',
+  '不具合の手当て（表示の乱れや動かなくなった箇所を直す）',
+] as const
 
 export const HERO = {
   eyebrow: 'ホームページ・LP制作',
@@ -52,10 +60,6 @@ export const OFFER = {
     },
     { title: '返信と初稿の目安', body: REPLY_TIMING },
     {
-      title: '公開してからの運用',
-      body: '公開してからの運用は、ご希望に応じて個別にご案内します。',
-    },
-    {
       title: '実績としての紹介',
       body: '実績として紹介させていただくことがありますが、事情があればお断りいただけます。',
     },
@@ -64,6 +68,9 @@ export const OFFER = {
       body: 'ホームページ・LP制作のほか、AI・DXに関するご支援も行っています。',
     },
   ],
+  operationScopeHeading: '公開してからの運用',
+  operationScopeIntro: OPERATION_SCOPE_INTRO,
+  operationScopeItems: OPERATION_SCOPE_ITEMS,
 } as const
 
 export const FIT = {

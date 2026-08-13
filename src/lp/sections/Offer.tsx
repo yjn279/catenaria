@@ -25,6 +25,17 @@ export function Offer() {
               <dd className="lp-offer-item-body">{item.body}</dd>
             </div>
           ))}
+          <div className="lp-offer-item">
+            <dt className="lp-offer-item-title">{OFFER.operationScopeHeading}</dt>
+            <dd className="lp-offer-item-body">
+              <p>{OFFER.operationScopeIntro}</p>
+              <ul className="lp-fit-list">
+                {OFFER.operationScopeItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </dd>
+          </div>
         </dl>
       </div>
     </section>
