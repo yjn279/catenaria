@@ -31,7 +31,7 @@ const OPERATION_SCOPE_ITEMS = [
 ] as const
 
 export const HERO = {
-  eyebrow: 'ホームページ・LP制作',
+  eyebrow: 'ホームページ・LP（商品やサービスを紹介する1枚のページ）制作',
   headline: FREE_OFFER,
   lead: NO_COST_NO_CONTRACT,
   sub: 'ホームページが無い、あっても古いまま。手が回らないまま何年も経っている、そんな会社のために。',
@@ -76,6 +76,8 @@ export const OFFER = {
 export const FIT = {
   eyebrow: 'こんな会社に',
   heading: '向いている方・向いていない方',
+  areaNote:
+    '対応する地域は問いません。所在地は神奈川県海老名市ですが、やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。',
   fitTitle: '向いている方',
   fit: [
     'メールとフォームのやり取りで、制作を進められる方',
@@ -94,7 +96,7 @@ export const CONTACT = {
   lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
   boundary: `${SELF_PUBLISH_FREE}${PAID_WHEN_DELEGATED}`,
   privacy:
-    'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信のためだけに利用します。',
+    'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信と、ご依頼いただいた制作のご連絡にのみ使います。',
   successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,
   errorMessage: `送信に失敗しました。恐れ入りますが ${CONTACT_EMAIL} までご連絡ください。`,
 } as const

@@ -150,6 +150,8 @@ export function Contact() {
             <label htmlFor="lp-f-optout">今後のご連絡を希望しない</label>
           </div>
 
+          <p className="lp-contact-privacy">{CONTACT.privacy}</p>
+
           <button
             className="lp-btn lp-btn-accent lp-contact-submit"
             type="submit"
@@ -163,8 +165,6 @@ export function Contact() {
             {status === 'error' && <p>{CONTACT.errorMessage}</p>}
           </div>
         </form>
-
-        <p className="lp-contact-privacy">{CONTACT.privacy}</p>
 
         <OperatorInfo />
       </div>

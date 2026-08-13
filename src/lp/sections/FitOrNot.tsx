@@ -9,6 +9,7 @@ export function FitOrNot() {
         <h2 id="fit-heading" className="lp-fit-heading">
           {FIT.heading}
         </h2>
+        <p className="lp-fit-area-note">{FIT.areaNote}</p>
         <div className="lp-fit-columns">
           <div>
             <p className="lp-fit-column-title">{FIT.fitTitle}</p>
