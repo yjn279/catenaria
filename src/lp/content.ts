@@ -23,6 +23,10 @@ const REPLY_ONE_DAY = 'ご返信は1営業日以内が目安です。'
 const DRAFT_FIVE_DAYS = '初稿は5営業日以内が目安です。'
 const REPLY_TIMING = `${REPLY_ONE_DAY}${DRAFT_FIVE_DAYS}返信するのは代表の中村です。`
 const CONTACT_EMAIL = 'y.nakamura@catenaria.dev'
+const WHY_FREE_REASON_COST =
+  'AIエージェントが制作するため、お引き受けする数が増えても、費用はほとんど増えません。'
+const WHY_FREE_REASON_MODEL =
+  'だからこそ制作そのものは無料にし、その先の運用でいただく事業の設計にしています。'
 
 export const HERO = {
   eyebrow: 'ホームページ・LP（商品やサービスを紹介する1枚のページ）制作',
@@ -47,10 +51,7 @@ export const CONCERNS = {
 export const WHY_FREE = {
   eyebrow: '2 — なぜ無料でできるのか',
   heading: '制作が無料でできる理由',
-  reasons: [
-    'AIエージェントが制作するため、お引き受けする数が増えても、費用はほとんど増えません。',
-    'だからこそ制作そのものは無料にし、その先の運用でいただく事業の設計にしています。',
-  ],
+  reasons: [WHY_FREE_REASON_COST, WHY_FREE_REASON_MODEL],
   boundaryHeading: 'どこまでが無料か',
   boundary: [FREE_SCOPE, SELF_PUBLISH_FREE, PAID_WHEN_DELEGATED, FREE_REVISIONS],
 } as const
@@ -146,7 +147,7 @@ export const FAQ = {
     { q: '何回まで直してもらえますか？', a: `${FREE_REVISIONS}それ以降は別途になります。` },
     {
       q: 'なぜ無料でできるのですか？',
-      a: 'AIエージェントが制作するため、費用がほとんど増えないからです。制作を無料にして、公開後の運用でいただく設計にしています。',
+      a: `${WHY_FREE_REASON_COST}${WHY_FREE_REASON_MODEL}`,
     },
     { q: '作ってもらったものを使わなくてもいいですか？', a: `${RIGHTS}${DELIVERABLE_FREEDOM}` },
     {

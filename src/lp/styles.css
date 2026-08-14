@@ -283,6 +283,19 @@ select:focus-visible,
 .lp-btn-accent:focus-visible {
   background: var(--lp-accent-active);
 }
+/* ---- 行動の入口のボタン：携帯は全幅、480px以上で内容に合わせた幅に戻す ---- */
+.lp-hero-cta,
+.lp-offer-cta,
+.lp-cta-band-link {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .lp-hero-cta,
+  .lp-offer-cta,
+  .lp-cta-band-link {
+    width: auto;
+  }
+}
 
 /* ---- 見出し帯 ---- */
 .lp-header {
@@ -377,14 +390,6 @@ select:focus-visible,
   color: var(--lp-text-2);
   margin-bottom: var(--lp-space-6);
 }
-.lp-hero-cta {
-  width: 100%;
-}
-@media (min-width: 480px) {
-  .lp-hero-cta {
-    width: auto;
-  }
-}
 /* ---- 全幅の画像（左右の余白を突き抜けて置く。入れ物は最大768px） ---- */
 .lp-image-full {
   max-width: 768px;
@@ -457,14 +462,6 @@ select:focus-visible,
 }
 
 /* ---- お渡しするもの ---- */
-.lp-offer-cta {
-  width: 100%;
-}
-@media (min-width: 480px) {
-  .lp-offer-cta {
-    width: auto;
-  }
-}
 .lp-offer-list {
   display: flex;
   flex-direction: column;
@@ -784,14 +781,6 @@ select:focus-visible,
 .lp-cta-band-note {
   max-width: 34em;
   color: var(--lp-text-2);
-}
-.lp-cta-band-link {
-  width: 100%;
-}
-@media (min-width: 480px) {
-  .lp-cta-band-link {
-    width: auto;
-  }
 }
 
 /* ---- 追従する入口（常設） ---- */
