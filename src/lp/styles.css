@@ -155,6 +155,7 @@ select:focus-visible,
 /* ---- 本文の入れ物（一行を読みやすい長さに絞る。見出し・画像は720pxのまま） ---- */
 .lp-hero-lead,
 .lp-hero-sub,
+.lp-concerns-closing,
 .lp-why-reasons,
 .lp-why-boundary,
 .lp-offer-item,
@@ -191,6 +192,7 @@ select:focus-visible,
 }
 
 /* ---- 節見出し ---- */
+.lp-concerns-heading,
 .lp-why-heading,
 .lp-offer-heading,
 .lp-fit-heading,
@@ -202,6 +204,7 @@ select:focus-visible,
   margin-bottom: var(--lp-space-5);
 }
 @media (min-width: 640px) {
+  .lp-concerns-heading,
   .lp-why-heading,
   .lp-offer-heading,
   .lp-fit-heading,
@@ -311,6 +314,7 @@ select:focus-visible,
 
 /* ---- 節の上下の余白（すべての節で揃える） ---- */
 .lp-hero,
+.lp-concerns,
 .lp-why,
 .lp-offer,
 .lp-fit,
@@ -321,6 +325,7 @@ select:focus-visible,
 }
 @media (min-width: 640px) {
   .lp-hero,
+  .lp-concerns,
   .lp-why,
   .lp-offer,
   .lp-fit,
@@ -384,6 +389,38 @@ select:focus-visible,
   height: auto;
 }
 
+/* ---- こんな状態のままになっていませんか ---- */
+.lp-concerns-list {
+  display: grid;
+  gap: var(--lp-space-3);
+  margin: 0 0 var(--lp-space-5);
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .lp-concerns-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.lp-concerns-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lp-space-3);
+  padding: var(--lp-space-3) var(--lp-space-4);
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  color: var(--lp-text-2);
+}
+.lp-concerns-check {
+  flex: none;
+  color: var(--lp-focus);
+  font-weight: 700;
+}
+.lp-concerns-closing {
+  color: var(--lp-text-2);
+}
+
 /* ---- 制作が無料でできる理由・どこまでが無料か ---- */
 .lp-why {
   background: var(--lp-surface-2);
@@ -392,7 +429,6 @@ select:focus-visible,
   display: flex;
   flex-direction: column;
   gap: var(--lp-space-4);
-  margin-bottom: var(--lp-space-6);
   color: var(--lp-text-2);
 }
 .lp-why-boundary {
@@ -400,6 +436,7 @@ select:focus-visible,
   border: var(--lp-hairline) solid var(--lp-focus);
   border-radius: var(--lp-radius);
   padding: var(--lp-space-5);
+  margin-bottom: var(--lp-space-6);
 }
 .lp-why-boundary-heading {
   margin-bottom: var(--lp-space-3);

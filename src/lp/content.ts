@@ -32,8 +32,19 @@ export const HERO = {
   ctaLabel: '制作は無料 — まずは相談する',
 } as const
 
+export const CONCERNS = {
+  eyebrow: '1 — こんな状態のままになっていませんか',
+  heading: 'こんな状態のままになっていませんか',
+  items: [
+    'ホームページが無い、または何年も更新できていない。',
+    '作り直したい気持ちはあるが、何から始めればいいか分からない。',
+    '費用や打ち合わせの手間を考えると、一歩が踏み出せない。',
+  ],
+  closing: FREE_OFFER,
+} as const
+
 export const WHY_FREE = {
-  eyebrow: '1 — なぜ無料でできるのか',
+  eyebrow: '2 — なぜ無料でできるのか',
   heading: '制作が無料でできる理由',
   reasons: [
     'AIエージェントが制作するため、お引き受けする数が増えても、費用はほとんど増えません。',
@@ -44,7 +55,7 @@ export const WHY_FREE = {
 } as const
 
 export const OFFER = {
-  eyebrow: '2 — 無料でお渡しする範囲',
+  eyebrow: '3 — 無料でお渡しする範囲',
   heading: 'お渡しするもの',
   ctaLabel: '制作は無料 — ここから相談する',
   items: [
@@ -75,7 +86,7 @@ export const OFFER = {
 } as const
 
 export const FIT = {
-  eyebrow: '3 — こんな会社に',
+  eyebrow: '4 — こんな会社に',
   heading: '向いている方・向いていない方',
   areaNote:
     '対応する地域は問いません。所在地は神奈川県海老名市ですが、やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。',
@@ -92,7 +103,7 @@ export const FIT = {
 } as const
 
 export const CONTACT = {
-  eyebrow: '5 — お問い合わせ',
+  eyebrow: '6 — お問い合わせ',
   heading: 'まずはメールでご相談ください',
   lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
   boundary: PUBLISH_BOUNDARY,
@@ -105,7 +116,7 @@ export const CONTACT = {
 } as const
 
 export const FAQ = {
-  eyebrow: '4 — 気になること',
+  eyebrow: '5 — 気になること',
   heading: 'よくあるご質問',
   items: [
     { q: '本当に無料ですか？', a: `${FREE_OFFER}${NO_COST_NO_CONTRACT}` },

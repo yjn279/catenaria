@@ -14,17 +14,17 @@ export function WhyFree() {
         <h2 id="why-free-heading" className="lp-why-heading">
           {WHY_FREE.heading}
         </h2>
-        <div className="lp-why-reasons">
-          {WHY_FREE.reasons.map((reason) => (
-            <p key={reason}>{reason}</p>
-          ))}
-        </div>
         <div className="lp-why-boundary">
           <p className="lp-why-boundary-heading">{WHY_FREE.boundaryHeading}</p>
           {WHY_FREE.boundary.map((line) => (
             <p key={line} className="lp-why-boundary-line">
               {line}
             </p>
+          ))}
+        </div>
+        <div className="lp-why-reasons">
+          {WHY_FREE.reasons.map((reason) => (
+            <p key={reason}>{reason}</p>
           ))}
         </div>
       </div>

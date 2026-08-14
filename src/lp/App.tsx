@@ -1,6 +1,7 @@
 import { Curve } from './components/Curve'
 import { Footer } from './components/Footer'
 import { StickyCta } from './components/StickyCta'
+import { Concerns } from './sections/Concerns'
 import { Contact } from './sections/Contact'
 import { Faq } from './sections/Faq'
 import { FitOrNot } from './sections/FitOrNot'
@@ -18,6 +19,8 @@ export default function App() {
       </header>
       <main>
         <Hero />
+        <Curve />
+        <Concerns />
         <Curve />
         <WhyFree />
         <Curve />
