@@ -1,0 +1,36 @@
+import { Curve } from './components/Curve'
+import { Footer } from './components/Footer'
+import { StickyCta } from './components/StickyCta'
+import { Contact } from './sections/Contact'
+import { Faq } from './sections/Faq'
+import { FitOrNot } from './sections/FitOrNot'
+import { Hero } from './sections/Hero'
+import { Offer } from './sections/Offer'
+import { WhyFree } from './sections/WhyFree'
+
+export default function App() {
+  return (
+    <div>
+      <header className="lp-header">
+        <div className="wrap lp-header-inner">
+          <span className="lp-wordmark">CATENARIA</span>
+        </div>
+      </header>
+      <main>
+        <Hero />
+        <Curve />
+        <WhyFree />
+        <Curve />
+        <Offer />
+        <Curve />
+        <FitOrNot />
+        <Curve />
+        <Faq />
+        <Curve />
+        <Contact />
+      </main>
+      <Footer />
+      <StickyCta />
+    </div>
+  )
+}

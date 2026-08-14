@@ -1,0 +1,551 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Surfaces (明るい紙色。紫〜青のグラデーションは使わない) ---- */
+  --lp-bg: #faf6ec;
+  --lp-surface: #ffffff;
+  --lp-surface-2: #f3ecdb;
+  --lp-line: rgba(33, 27, 15, 0.12);
+  --lp-line-2: rgba(33, 27, 15, 0.2);
+
+  /* ---- Text ---- */
+  --lp-text: #221c10;
+  --lp-text-2: #4a4130;
+  --lp-text-3: #6b6150;
+
+  /* ---- Accent（トップページの金を受け継ぐ） ---- */
+  --lp-accent: #e8b537;
+  --lp-accent-ink: #7a5710;
+
+  /* ---- Motion ---- */
+  --lp-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --lp-dur-fast: 0.2s;
+
+  /* ---- Geometry ---- */
+  --lp-radius: 12px;
+  --lp-radius-sm: 6px;
+  --lp-hairline: 1px;
+
+  /* ---- Spacing scale ---- */
+  --lp-space-1: 4px;
+  --lp-space-2: 8px;
+  --lp-space-3: 12px;
+  --lp-space-4: 16px;
+  --lp-space-5: 24px;
+  --lp-space-6: 40px;
+  --lp-space-7: 64px;
+  --lp-space-8: 96px;
+
+  /* ---- Type ---- */
+  --lp-font-sans:
+    "Montserrat", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "Yu Gothic", Meiryo, sans-serif;
+  --lp-fs-body: 16px;
+  --lp-lh-body: 1.8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  background: var(--lp-bg);
+  color-scheme: light;
+}
+body {
+  margin: 0;
+  padding-bottom: 84px; /* 追従する入口の高さぶん、フッターと重ならない余白を確保する */
+  background: var(--lp-bg);
+  color: var(--lp-text);
+  font-family: var(--lp-font-sans);
+  font-weight: 400;
+  font-size: var(--lp-fs-body);
+  line-height: var(--lp-lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--lp-font-sans);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+a {
+  color: inherit;
+}
+::selection {
+  background: var(--lp-accent);
+  color: var(--lp-text);
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--lp-space-5);
+}
+
+/* 読み上げソフトにのみ伝える補助文 */
+.lp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.lp-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lp-accent-ink);
+  margin-bottom: var(--lp-space-4);
+}
+
+/* ---- 共通ボタン（見出し帯・追従入口・本文・フォームの入口で共用する） ---- */
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 26px;
+  border-radius: var(--lp-radius-sm);
+  border: var(--lp-hairline) solid transparent;
+  font-family: var(--lp-font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--lp-dur-fast) var(--lp-ease),
+    border-color var(--lp-dur-fast) var(--lp-ease);
+}
+.lp-btn-accent {
+  background: var(--lp-accent);
+  color: var(--lp-text);
+}
+.lp-btn-accent:hover {
+  background: #f6d569;
+}
+
+/* ---- 見出し帯 ---- */
+.lp-header {
+  border-bottom: var(--lp-hairline) solid var(--lp-line);
+  background: var(--lp-bg);
+}
+.lp-header-inner {
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+.lp-wordmark {
+  font-family: var(--lp-font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: var(--lp-text);
+}
+
+/* ---- 区切り（節と節の間） ---- */
+/* 余白は入れ物（div）に、曲線の高さはsvg自身に持たせる。同じ要素にかけると
+   余白がsvgの高さ指定を押しつぶし、曲線が0に潰れて消えるため分けてある。 */
+.lp-divider {
+  max-width: 240px;
+  margin: 0 auto;
+  padding: var(--lp-space-6) 0;
+}
+.lp-curve {
+  display: block;
+  width: 100%;
+  height: 28px;
+  color: var(--lp-accent);
+  opacity: 0.55;
+}
+
+/* ---- 最初の一画面 ---- */
+.lp-hero {
+  padding: var(--lp-space-7) 0 var(--lp-space-6);
+}
+.lp-hero-title {
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  line-height: 1.4;
+  margin-bottom: var(--lp-space-4);
+}
+.lp-hero-lead {
+  font-size: 15px;
+  color: var(--lp-text-2);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-hero-sub {
+  color: var(--lp-text-2);
+  margin-bottom: var(--lp-space-6);
+}
+.lp-hero-cta {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .lp-hero-cta {
+    width: auto;
+  }
+}
+.lp-hero-image,
+.lp-why-image {
+  margin-top: var(--lp-space-6);
+  height: 220px;
+  border-radius: var(--lp-radius);
+  overflow: hidden;
+}
+.lp-hero-image img,
+.lp-why-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- 制作が無料でできる理由・どこまでが無料か ---- */
+.lp-why {
+  padding: var(--lp-space-6) 0 var(--lp-space-7);
+  background: var(--lp-surface-2);
+}
+.lp-why-heading {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-why-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-3);
+  margin-bottom: var(--lp-space-6);
+}
+.lp-why-boundary {
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-accent);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-5);
+}
+.lp-why-boundary-heading {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--lp-accent-ink);
+  margin-bottom: var(--lp-space-3);
+}
+.lp-why-boundary-line {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+  margin-bottom: var(--lp-space-2);
+}
+.lp-why-boundary-line:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- お渡しするもの ---- */
+.lp-offer {
+  padding: var(--lp-space-7) 0;
+}
+.lp-offer-heading,
+.lp-fit-heading,
+.lp-faq-heading {
+  font-size: clamp(1.3rem, 3.6vw, 1.6rem);
+  margin-bottom: var(--lp-space-6);
+}
+.lp-offer-image {
+  margin-bottom: var(--lp-space-6);
+  border-radius: var(--lp-radius);
+  overflow: hidden;
+}
+.lp-offer-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.lp-offer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-5);
+  margin: 0;
+}
+.lp-offer-item {
+  padding-top: var(--lp-space-4);
+  border-top: var(--lp-hairline) solid var(--lp-line);
+}
+.lp-offer-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.lp-offer-item-title {
+  font-weight: 600;
+  margin-bottom: var(--lp-space-2);
+}
+.lp-offer-item-body {
+  margin: 0;
+  color: var(--lp-text-2);
+}
+
+/* ---- 向いている方・向いていない方 ---- */
+.lp-fit {
+  padding: var(--lp-space-7) 0;
+  background: var(--lp-surface-2);
+}
+.lp-fit-columns {
+  display: grid;
+  gap: var(--lp-space-6);
+}
+@media (min-width: 640px) {
+  .lp-fit-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.lp-fit-column-title {
+  font-weight: 600;
+  color: var(--lp-accent-ink);
+  margin-bottom: var(--lp-space-3);
+}
+.lp-fit-list {
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--lp-text-2);
+}
+.lp-fit-list li {
+  margin-bottom: var(--lp-space-2);
+}
+.lp-fit-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- よくあるご質問 ---- */
+.lp-faq {
+  padding: var(--lp-space-7) 0;
+}
+.lp-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-5);
+}
+.lp-faq-item {
+  padding-bottom: var(--lp-space-5);
+  border-bottom: var(--lp-hairline) solid var(--lp-line);
+}
+.lp-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.lp-faq-question {
+  font-size: 16px;
+  margin-bottom: var(--lp-space-2);
+}
+.lp-faq-answer {
+  margin: 0;
+  color: var(--lp-text-2);
+}
+
+/* ---- お問い合わせ節 ---- */
+.lp-contact {
+  padding: var(--lp-space-8) 0;
+  background: var(--lp-surface-2);
+}
+.lp-contact-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-contact-lead {
+  color: var(--lp-text-2);
+  margin-bottom: var(--lp-space-4);
+}
+.lp-contact-boundary {
+  font-weight: 600;
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-accent);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-4) var(--lp-space-5);
+  margin-bottom: var(--lp-space-6);
+}
+
+/* ---- お問い合わせフォーム ---- */
+.lp-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-5);
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-6) var(--lp-space-5);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-2);
+}
+.lp-field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.lp-field input,
+.lp-field textarea {
+  min-height: 44px;
+  padding: var(--lp-space-3);
+  border-radius: var(--lp-radius-sm);
+  border: var(--lp-hairline) solid var(--lp-line-2);
+  background: var(--lp-surface);
+  color: var(--lp-text);
+  font-family: var(--lp-font-sans);
+  font-size: 15px;
+}
+.lp-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+.lp-field input:focus,
+.lp-field textarea:focus {
+  outline: 2px solid var(--lp-accent-ink);
+  outline-offset: 1px;
+}
+.lp-field-error {
+  color: #a3341a;
+  font-size: 13px;
+  margin: 0;
+}
+.lp-field-optout {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--lp-space-3);
+}
+.lp-field-optout label {
+  font-weight: 400;
+  font-size: 14.5px;
+}
+.lp-contact-submit {
+  align-self: flex-start;
+}
+.lp-contact-status p {
+  color: var(--lp-text-2);
+  font-size: 14.5px;
+}
+.lp-contact-privacy {
+  color: var(--lp-text-3);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: var(--lp-space-6);
+}
+
+/* ---- 運営者情報 ---- */
+.lp-operator {
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-6) var(--lp-space-5);
+  margin-top: var(--lp-space-7);
+}
+.lp-operator-brand {
+  font-family: var(--lp-font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  margin-bottom: var(--lp-space-4);
+}
+.lp-operator-origin {
+  color: var(--lp-text-2);
+  font-size: 14.5px;
+  line-height: 1.9;
+  margin-bottom: var(--lp-space-5);
+}
+.lp-operator-facts {
+  border-top: var(--lp-hairline) solid var(--lp-line);
+  margin: 0 0 var(--lp-space-5);
+}
+.lp-operator-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--lp-space-4);
+  padding: var(--lp-space-3) 0;
+  border-bottom: var(--lp-hairline) solid var(--lp-line);
+}
+.lp-operator-row dt {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--lp-text-3);
+}
+.lp-operator-row dd {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+.lp-operator-site {
+  color: var(--lp-text-2);
+  font-size: 14.5px;
+  line-height: 1.9;
+}
+.lp-operator-site a {
+  color: var(--lp-accent-ink);
+  text-decoration: underline;
+}
+@media (max-width: 480px) {
+  .lp-operator-row {
+    grid-template-columns: 1fr;
+    gap: var(--lp-space-1);
+  }
+}
+
+/* ---- フッター ---- */
+.lp-footer {
+  border-top: var(--lp-hairline) solid var(--lp-line);
+  background: var(--lp-bg);
+}
+.lp-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lp-space-3);
+  padding: var(--lp-space-6) 0;
+}
+.lp-footer-brand {
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--lp-text-2);
+}
+.lp-footer-note,
+.lp-footer-copy {
+  font-size: 12px;
+  color: var(--lp-text-3);
+}
+
+/* ---- 追従する入口（常設） ---- */
+.lp-sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 80;
+  padding: var(--lp-space-3) var(--lp-space-5);
+  background: var(--lp-surface);
+  border-top: var(--lp-hairline) solid var(--lp-line);
+  box-shadow: 0 -4px 16px rgba(33, 27, 15, 0.08);
+}
+.lp-sticky-cta-link {
+  display: flex;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
