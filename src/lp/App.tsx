@@ -7,6 +7,7 @@ import { Faq } from './sections/Faq'
 import { FitOrNot } from './sections/FitOrNot'
 import { Hero } from './sections/Hero'
 import { Offer } from './sections/Offer'
+import { Process } from './sections/Process'
 import { WhyFree } from './sections/WhyFree'
 
 export default function App() {
@@ -25,6 +26,8 @@ export default function App() {
         <WhyFree />
         <Curve />
         <Offer />
+        <Curve />
+        <Process />
         <Curve />
         <FitOrNot />
         <Curve />

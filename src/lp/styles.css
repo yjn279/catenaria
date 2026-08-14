@@ -159,7 +159,9 @@ select:focus-visible,
 .lp-why-reasons,
 .lp-why-boundary,
 .lp-offer-item,
+.lp-process-item-body,
 .lp-fit-list,
+.lp-fit-area-note,
 .lp-faq-item,
 .lp-contact-lead,
 .lp-contact-boundary,
@@ -185,6 +187,7 @@ select:focus-visible,
   }
   .lp-why-reasons,
   .lp-why-boundary,
+  .lp-process-item-body,
   .lp-faq-item {
     margin-left: auto;
     margin-right: 0;
@@ -195,6 +198,7 @@ select:focus-visible,
 .lp-concerns-heading,
 .lp-why-heading,
 .lp-offer-heading,
+.lp-process-heading,
 .lp-fit-heading,
 .lp-faq-heading,
 .lp-contact-title {
@@ -207,6 +211,7 @@ select:focus-visible,
   .lp-concerns-heading,
   .lp-why-heading,
   .lp-offer-heading,
+  .lp-process-heading,
   .lp-fit-heading,
   .lp-faq-heading,
   .lp-contact-title {
@@ -218,6 +223,7 @@ select:focus-visible,
 .lp-why-boundary-heading,
 .lp-fit-column-title,
 .lp-offer-item-title,
+.lp-process-item-title,
 .lp-faq-question,
 .lp-field label {
   font-size: 17px;
@@ -317,6 +323,7 @@ select:focus-visible,
 .lp-concerns,
 .lp-why,
 .lp-offer,
+.lp-process,
 .lp-fit,
 .lp-faq,
 .lp-contact {
@@ -328,6 +335,7 @@ select:focus-visible,
   .lp-concerns,
   .lp-why,
   .lp-offer,
+  .lp-process,
   .lp-fit,
   .lp-faq,
   .lp-contact {
@@ -479,9 +487,54 @@ select:focus-visible,
   color: var(--lp-text-2);
 }
 
+/* ---- 進め方（相談から受け取りまでの時系列） ---- */
+.lp-process-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-5);
+  margin: var(--lp-space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.lp-process-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lp-space-4);
+}
+.lp-process-number {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--lp-focus);
+  color: var(--lp-bg);
+  font-weight: 900;
+  font-size: 14px;
+}
+.lp-process-item-title {
+  margin-bottom: var(--lp-space-2);
+}
+.lp-process-item-body {
+  margin: 0;
+  color: var(--lp-text-2);
+}
+
 /* ---- 向いている方・向いていない方 ---- */
 .lp-fit {
   background: var(--lp-surface-2);
+}
+/* 対応地域を問わないことを、囲みで目立たせる（本文に埋もれさせない） */
+.lp-fit-area-note {
+  padding: var(--lp-space-4) var(--lp-space-5);
+  margin-bottom: var(--lp-space-5);
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-focus);
+  border-radius: var(--lp-radius);
+  font-weight: 700;
+  color: var(--lp-text);
 }
 .lp-fit-columns {
   display: grid;

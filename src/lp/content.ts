@@ -19,8 +19,9 @@ const FREE_REVISIONS = '無料で直せるのは、初稿の制作から2回ま�
 const RIGHTS = '権利はすべてお客様のものです。'
 const DELIVERABLE_FREEDOM = 'ご自由にお使いいただけます。お使いいただかなくても構いません。'
 const NO_VISIT_NO_CALL = 'ご訪問やお電話でお時間をいただくことはございません。'
-const REPLY_TIMING =
-  'ご返信は1営業日以内、初稿は5営業日以内が目安です。返信するのは代表の中村です。'
+const REPLY_ONE_DAY = 'ご返信は1営業日以内が目安です。'
+const DRAFT_FIVE_DAYS = '初稿は5営業日以内が目安です。'
+const REPLY_TIMING = `${REPLY_ONE_DAY}${DRAFT_FIVE_DAYS}返信するのは代表の中村です。`
 const CONTACT_EMAIL = 'y.nakamura@catenaria.dev'
 
 export const HERO = {
@@ -64,7 +65,6 @@ export const OFFER = {
       title: '新規もリニューアルも',
       body: '新規のホームページ制作はもちろん、既存サイトのリニューアルにも対応します。',
     },
-    { title: '返信と初稿の目安', body: REPLY_TIMING },
     {
       title: '実績としての紹介',
       body: '実績として紹介させていただくことがありますが、事情があればお断りいただけます。',
@@ -85,8 +85,20 @@ export const OFFER = {
   ],
 } as const
 
+export const PROCESS = {
+  eyebrow: '4 — 進め方',
+  heading: '進め方',
+  steps: [
+    { title: 'ご相談', body: `メールとフォームでやり取りします。${NO_VISIT_NO_CALL}` },
+    { title: 'ご返信', body: REPLY_ONE_DAY },
+    { title: '制作・初稿', body: DRAFT_FIVE_DAYS },
+    { title: '初稿のご確認・お直し', body: FREE_REVISIONS },
+    { title: 'お渡し', body: RIGHTS },
+  ],
+} as const
+
 export const FIT = {
-  eyebrow: '4 — こんな会社に',
+  eyebrow: '5 — こんな会社に',
   heading: '向いている方・向いていない方',
   areaNote:
     '対応する地域は問いません。所在地は神奈川県海老名市ですが、やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。',
@@ -103,7 +115,7 @@ export const FIT = {
 } as const
 
 export const CONTACT = {
-  eyebrow: '6 — お問い合わせ',
+  eyebrow: '7 — お問い合わせ',
   heading: 'まずはメールでご相談ください',
   lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
   boundary: PUBLISH_BOUNDARY,
@@ -116,7 +128,7 @@ export const CONTACT = {
 } as const
 
 export const FAQ = {
-  eyebrow: '5 — 気になること',
+  eyebrow: '6 — 気になること',
   heading: 'よくあるご質問',
   items: [
     { q: '本当に無料ですか？', a: `${FREE_OFFER}${NO_COST_NO_CONTRACT}` },
