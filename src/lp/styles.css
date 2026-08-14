@@ -361,6 +361,14 @@ select:focus-visible,
 }
 
 /* ---- お渡しするもの ---- */
+.lp-offer-cta {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .lp-offer-cta {
+    width: auto;
+  }
+}
 .lp-offer-list {
   display: flex;
   flex-direction: column;

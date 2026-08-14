@@ -40,7 +40,7 @@ export const HERO = {
 } as const
 
 export const WHY_FREE = {
-  eyebrow: 'なぜ無料でできるのか',
+  eyebrow: '1 — なぜ無料でできるのか',
   heading: '制作が無料でできる理由',
   reasons: [
     'AIエージェントが制作するため、お引き受けする数が増えても、費用はほとんど増えません。',
@@ -51,8 +51,9 @@ export const WHY_FREE = {
 } as const
 
 export const OFFER = {
-  eyebrow: '無料でお渡しする範囲',
+  eyebrow: '2 — 無料でお渡しする範囲',
   heading: 'お渡しするもの',
+  ctaLabel: '制作は無料 — ここから相談する',
   items: [
     { title: '権利はすべてお客様のもの', body: `${RIGHTS}${DELIVERABLE_FREEDOM}` },
     {
@@ -75,7 +76,7 @@ export const OFFER = {
 } as const
 
 export const FIT = {
-  eyebrow: 'こんな会社に',
+  eyebrow: '3 — こんな会社に',
   heading: '向いている方・向いていない方',
   areaNote:
     '対応する地域は問いません。所在地は神奈川県海老名市ですが、やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。',
@@ -92,18 +93,20 @@ export const FIT = {
 } as const
 
 export const CONTACT = {
-  eyebrow: 'お問い合わせ',
+  eyebrow: '5 — お問い合わせ',
   heading: 'まずはメールでご相談ください',
   lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
   boundary: PUBLISH_BOUNDARY,
   privacy:
     'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信と、ご依頼いただいた制作のご連絡にのみ使います。',
+  submitLabel: '制作は無料 — 送信する',
+  submittingLabel: '送信中…',
   successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,
   errorMessage: `送信に失敗しました。恐れ入りますが ${CONTACT_EMAIL} までご連絡ください。`,
 } as const
 
 export const FAQ = {
-  eyebrow: '気になること',
+  eyebrow: '4 — 気になること',
   heading: 'よくあるご質問',
   items: [
     { q: '本当に無料ですか？', a: `${FREE_OFFER}${NO_COST_NO_CONTRACT}` },

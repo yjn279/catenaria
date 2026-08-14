@@ -1,3 +1,4 @@
+import { AnalyticsEvent, track } from '../../lib/analytics'
 import { OFFER } from '../content'
 
 /** 無料の範囲で実際にお渡しするものと、有償になる範囲の扱いを具体的に示す。 */
@@ -57,6 +58,19 @@ export function Offer() {
           alt="木のカウンター越しに、袖から出た片手が無地の紙挟みを見る人の側へ差し出している情景"
           loading="lazy"
         />
+      </div>
+      <div className="wrap">
+        {/* biome-ignore lint/a11y/useValidAnchor: 同一ページ内の遷移にクリック計測を添えたアンカー */}
+        <a
+          href="#contact"
+          className="lp-btn lp-btn-accent lp-offer-cta"
+          data-cta="offer"
+          onClick={() =>
+            track(AnalyticsEvent.CtaClick, { location: 'offer', destination: 'contact' })
+          }
+        >
+          {OFFER.ctaLabel}
+        </a>
       </div>
     </section>
   )

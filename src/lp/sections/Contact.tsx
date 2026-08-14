@@ -163,7 +163,7 @@ export function Contact() {
             type="submit"
             disabled={status === 'submitting'}
           >
-            {status === 'submitting' ? '送信中…' : '送信する'}
+            {status === 'submitting' ? CONTACT.submittingLabel : CONTACT.submitLabel}
           </button>
 
           <div aria-live="polite" className="lp-contact-status">
