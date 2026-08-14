@@ -1,8 +1,6 @@
-import { readdirSync, readFileSync, statSync } from 'node:fs'
-import { join, relative, resolve } from 'node:path'
-import { render } from '@testing-library/react'
-import { createElement } from 'react'
-import App from '../App'
+import { readFileSync } from 'node:fs'
+import { join, relative } from 'node:path'
+import { collectFiles, ROOT, renderApp } from './support'
 
 // /lp は「契約」に類する語を一律に使わない。無料の境目は本文で語ることで伝え、
 // 契約手続きを連想させる言葉には頼らない。
@@ -38,19 +36,9 @@ const FREE_OBJECT_WORDS = ['制作', '作る', 'つくる', 'お渡し', '公開
 const FREE_CONTEXT_WINDOW = 24
 const TEXT_ATTRIBUTES = ['alt', 'aria-label', 'title', 'placeholder']
 
-const ROOT = resolve(import.meta.dirname, '../../..')
-
-function collectFiles(dir: string): string[] {
-  return readdirSync(dir).flatMap((entry) => {
-    if (entry === '__tests__') return []
-    const path = join(dir, entry)
-    return statSync(path).isDirectory() ? collectFiles(path) : [path]
-  })
-}
-
 const TARGET_FILES = [
   join(ROOT, 'lp/index.html'),
-  ...collectFiles(join(ROOT, 'src/lp')),
+  ...collectFiles(join(ROOT, 'src/lp'), { skipDir: (entry) => entry === '__tests__' }),
   ...collectFiles(join(ROOT, 'src/lib')),
 ]
 
@@ -97,7 +85,7 @@ function normalizeForFreeCheck(text: string): string {
 // ページに実際に表示される文字を、台帳の判定と同じ組み立て方で1本の文字列にする
 // （画面の本文＋ title ・ meta の説明文＋画像の説明文などの属性）。
 function renderedPageCorpus(): string {
-  const { container } = render(createElement(App))
+  const container = renderApp()
   const attributeText = Array.from(
     container.querySelectorAll(TEXT_ATTRIBUTES.map((name) => `[${name}]`).join(',')),
   ).flatMap((el) => TEXT_ATTRIBUTES.map((name) => el.getAttribute(name) ?? ''))
