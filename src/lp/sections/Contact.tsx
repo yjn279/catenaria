@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { AnalyticsEvent, track } from '../../lib/analytics'
 import { submitToWeb3Forms } from '../../lib/web3forms'
+import { FullImage } from '../components/FullImage'
 import { OperatorInfo } from '../components/OperatorInfo'
 import { CONTACT } from '../content'
 import {
@@ -38,6 +39,7 @@ export function Contact() {
     const fieldErrors = validateContactForm(values)
     if (Object.keys(fieldErrors).length > 0) {
       setErrors(fieldErrors)
+      setStatus('idle')
       return
     }
 
@@ -66,15 +68,13 @@ export function Contact() {
         <p className="lp-contact-lead">{CONTACT.lead}</p>
         <p className="lp-contact-boundary">{CONTACT.boundary}</p>
       </div>
-      <div className="lp-image-full">
-        <img
-          src="/lp/reply.webp"
-          width={1536}
-          height={1024}
-          alt="窓からの光が横に入る木の机で、両手がノートパソコンに文字を打っている情景"
-          loading="lazy"
-        />
-      </div>
+      <FullImage
+        src="/lp/reply.webp"
+        width={1536}
+        height={1024}
+        alt="窓からの光が横に入る木の机で、両手がノートパソコンに文字を打っている情景"
+        loading="lazy"
+      />
       <div className="wrap">
         <form className="lp-contact-form" onSubmit={handleSubmit} ref={formRef} noValidate>
           <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} />

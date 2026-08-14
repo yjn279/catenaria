@@ -1,6 +1,6 @@
 /**
- * このページに書いてよい事実の唯一の正は
- * /Users/yuji/catenaria/lp-system/briefs/catenaria-free-lp.md の Facts 表である。
+ * このページに書いてよい事実の唯一の正は、隣接する catenaria リポジトリの
+ * lp-system/briefs/catenaria-free-lp.md にある Facts 表である。
  * ここに無い事実・数値をページへ書き足さない。
  *
  * 無料の範囲・有償の範囲・直せる回数・権利・紹介の可否は、何度も文言を書き分けると
@@ -22,14 +22,6 @@ const NO_VISIT_NO_CALL = 'ご訪問やお電話でお時間をいただくこと
 const REPLY_TIMING =
   'ご返信は1営業日以内、初稿は5営業日以内が目安です。返信するのは代表の中村です。'
 const CONTACT_EMAIL = 'y.nakamura@catenaria.dev'
-const OPERATION_SCOPE_INTRO =
-  'ご自分で公開なさるなら費用はかかりません。こちらに任せていただく場合は、次のことを承ります。'
-const OPERATION_SCOPE_ITEMS = [
-  '公開の作業（作ったものを、実際に見られる状態にする）',
-  '公開し続けるための場所の用意（公開したページが表示され続けるようにする）',
-  '中身の更新（内容の書き換えや差し替え）',
-  '不具合の手当て（表示の乱れや動かなくなった箇所を直す）',
-] as const
 
 export const HERO = {
   eyebrow: 'ホームページ・LP（商品やサービスを紹介する1枚のページ）制作',
@@ -71,8 +63,14 @@ export const OFFER = {
     },
   ],
   operationScopeHeading: '公開してからの運用',
-  operationScopeIntro: OPERATION_SCOPE_INTRO,
-  operationScopeItems: OPERATION_SCOPE_ITEMS,
+  operationScopeIntro:
+    'ご自分で公開なさるなら費用はかかりません。こちらに任せていただく場合は、次のことを承ります。',
+  operationScopeItems: [
+    '公開の作業（作ったものを、実際に見られる状態にする）',
+    '公開し続けるための場所の用意（公開したページが表示され続けるようにする）',
+    '中身の更新（内容の書き換えや差し替え）',
+    '不具合の手当て（表示の乱れや動かなくなった箇所を直す）',
+  ],
 } as const
 
 export const FIT = {

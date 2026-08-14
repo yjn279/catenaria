@@ -1,4 +1,5 @@
 import { AnalyticsEvent, track } from '../../lib/analytics'
+import { FullImage } from '../components/FullImage'
 import { HERO } from '../content'
 
 /** 最初の一画面。制作は無料であることと、誰のためのページかを言い切り、フォームへ誘う。 */
@@ -24,15 +25,13 @@ export function Hero() {
           {HERO.ctaLabel}
         </a>
       </div>
-      <div className="lp-image-full">
-        <img
-          src="/lp/office.webp"
-          width={1536}
-          height={1024}
-          alt="日本の地方にある工務店の事務室。紺色の作業着を着て机に向かって座った後ろ姿"
-          loading="eager"
-        />
-      </div>
+      <FullImage
+        src="/lp/office.webp"
+        width={1536}
+        height={1024}
+        alt="日本の地方にある工務店の事務室。紺色の作業着を着て机に向かって座った後ろ姿"
+        loading="eager"
+      />
     </section>
   )
 }

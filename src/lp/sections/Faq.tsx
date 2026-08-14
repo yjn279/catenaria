@@ -1,3 +1,4 @@
+import { FullImage } from '../components/FullImage'
 import { FAQ } from '../content'
 
 /** 事実表で裏付けできる項目だけに限ったよくあるご質問。折りたたまず、すべて最初から読める。 */
@@ -18,15 +19,13 @@ export function Faq() {
           ))}
         </div>
       </div>
-      <div className="lp-image-full">
-        <img
-          src="/lp/mail.webp"
-          width={1536}
-          height={1024}
-          alt="木の机の隅を斜め上から写し、片手が画面の消えた携帯電話を持っている情景"
-          loading="lazy"
-        />
-      </div>
+      <FullImage
+        src="/lp/mail.webp"
+        width={1536}
+        height={1024}
+        alt="木の机の隅を斜め上から写し、片手が画面の消えた携帯電話を持っている情景"
+        loading="lazy"
+      />
     </section>
   )
 }
