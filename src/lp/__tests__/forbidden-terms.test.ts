@@ -12,6 +12,20 @@ const QUOTE_WORDS = ['お見積', '見積り', '見積もり', '見積書']
 const QUOTE_CONTEXT = /運用|お任せ|任せ|おまかせ|委託/
 const CONTEXT_WINDOW = 40
 
+// 屋号の由来・込めた意味は、事実源（catenaria-free-lp.md の Facts 表）が定める
+// 逐語だけを許す。見た目の指示書（ART-DIRECTION-SELF.md）にある言い回しは、
+// 見え方を決めるためのものであって、事実として書いてよいものではない。
+const BRAND_MEANING_WORDS = [
+  '自然の摂理',
+  '合理的で美しい',
+  '手を離したときに現れる',
+  '誰かが定めた形ではな',
+  '無理のない形',
+  'あるべき姿',
+  '力の流れ',
+  '最も強い形',
+]
+
 const ROOT = resolve(import.meta.dirname, '../../..')
 
 function collectFiles(dir: string): string[] {
@@ -64,5 +78,12 @@ it('/lp が読み込む一式に「契約」に関する語が無い', () => {
 
 it('/lp の「見積」は、運用・お任せの文脈から離れて使われていない', () => {
   const violations = findViolations(findQuoteWordsOutOfContext)
+  expect(violations).toEqual([])
+})
+
+it('/lp が読み込む一式に、見た目の指示書の言い回しが事実として紛れ込んでいない', () => {
+  const violations = findViolations((content) =>
+    BRAND_MEANING_WORDS.filter((word) => content.includes(word)),
+  )
   expect(violations).toEqual([])
 })
