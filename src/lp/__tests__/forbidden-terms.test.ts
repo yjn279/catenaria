@@ -81,6 +81,11 @@ function findViolations(findWords: (content: string) => string[]): string[] {
   )
 }
 
+// 語の一覧を、そのまま含んでいないかだけを見る判定にする（CONTRACT_WORDS・BRAND_MEANING_WORDS で共有）。
+function findWordsPresent(words: string[]): (content: string) => string[] {
+  return (content) => words.filter((word) => content.includes(word))
+}
+
 // 台帳の判定と同じ正規化（全角半角の統一、空白の除去）。
 function normalizeForFreeCheck(text: string): string {
   return text
@@ -121,9 +126,7 @@ function findFreeWordsWithoutObject(corpus: string): string[] {
 }
 
 it('/lp が読み込む一式に「契約」に関する語が無い', () => {
-  const violations = findViolations((content) =>
-    CONTRACT_WORDS.filter((word) => content.includes(word)),
-  )
+  const violations = findViolations(findWordsPresent(CONTRACT_WORDS))
   expect(violations).toEqual([])
 })
 
@@ -133,9 +136,7 @@ it('/lp の「見積」は、運用・お任せの文脈から離れて使われ
 })
 
 it('/lp が読み込む一式に、見た目の指示書の言い回しが事実として紛れ込んでいない', () => {
-  const violations = findViolations((content) =>
-    BRAND_MEANING_WORDS.filter((word) => content.includes(word)),
-  )
+  const violations = findViolations(findWordsPresent(BRAND_MEANING_WORDS))
   expect(violations).toEqual([])
 })
 
