@@ -196,9 +196,19 @@ select:focus-visible,
 .lp-fit-heading,
 .lp-faq-heading,
 .lp-contact-title {
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: 900;
   color: var(--lp-focus);
   margin-bottom: var(--lp-space-5);
+}
+@media (min-width: 640px) {
+  .lp-why-heading,
+  .lp-offer-heading,
+  .lp-fit-heading,
+  .lp-faq-heading,
+  .lp-contact-title {
+    font-size: 40px;
+  }
 }
 
 /* ---- 小見出し（質問・項目名） ---- */
@@ -207,7 +217,7 @@ select:focus-visible,
 .lp-offer-item-title,
 .lp-faq-question,
 .lp-field label {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.7;
   letter-spacing: 0;
@@ -241,13 +251,13 @@ select:focus-visible,
   align-items: center;
   justify-content: center;
   gap: var(--lp-space-2);
-  min-height: 44px;
+  min-height: 64px;
   padding: var(--lp-space-3) var(--lp-space-5);
   border-radius: var(--lp-radius);
   border: var(--lp-hairline) solid transparent;
   font-family: var(--lp-font-sans);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.4;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -323,9 +333,27 @@ select:focus-visible,
 
 /* ---- 最初の一画面 ---- */
 .lp-hero-title {
-  font-size: 29px;
-  line-height: 1.45;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.35;
   margin-bottom: var(--lp-space-4);
+}
+@media (min-width: 640px) {
+  .lp-hero-title {
+    font-size: 56px;
+    line-height: 1.25;
+  }
+}
+/* 大見出しの中の「無料」だけを、ひときわ大きく藍で組む */
+.lp-hero-title-mark {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--lp-focus);
+}
+@media (min-width: 640px) {
+  .lp-hero-title-mark {
+    font-size: 72px;
+  }
 }
 .lp-hero-lead {
   font-size: var(--lp-fs-body);

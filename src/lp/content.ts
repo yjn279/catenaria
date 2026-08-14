@@ -26,6 +26,7 @@ const CONTACT_EMAIL = 'y.nakamura@catenaria.dev'
 export const HERO = {
   eyebrow: 'ホームページ・LP（商品やサービスを紹介する1枚のページ）制作',
   headline: FREE_OFFER,
+  headlineMark: '無料',
   lead: NO_COST_NO_CONTRACT,
   sub: 'ホームページが無い、あっても古いまま。手が回らないまま何年も経っている、そんな会社のために。',
   ctaLabel: '制作は無料 — まずは相談する',
