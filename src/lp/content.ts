@@ -121,6 +121,8 @@ export const CONTACT = {
   boundary: PUBLISH_BOUNDARY,
   privacy:
     'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信と、ご依頼いただいた制作のご連絡にのみ使います。',
+  retreatHeading: 'お使いいただかなくても構いません',
+  retreat: `${DELIVERABLE_FREEDOM}${NO_COST_NO_CONTRACT}${RIGHTS}`,
   submitLabel: '制作は無料 — 送信する',
   submittingLabel: '送信中…',
   successMessage: `お問い合わせを受け付けました。${REPLY_TIMING}`,

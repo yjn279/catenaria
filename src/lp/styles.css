@@ -657,13 +657,30 @@ select:focus-visible,
   margin-bottom: var(--lp-space-6);
 }
 
-/* ---- 運営者情報 ---- */
+/* ---- 退路の囲み（送信ボタンの直前。使わなくても費用がかからない旨） ---- */
+.lp-contact-retreat {
+  background: var(--lp-surface-2);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-5);
+}
+.lp-contact-retreat-heading {
+  font-weight: 700;
+  color: var(--lp-text);
+  margin-bottom: var(--lp-space-2);
+}
+.lp-contact-retreat p:last-child {
+  color: var(--lp-text-2);
+  margin: 0;
+}
+
+/* ---- 運営者情報（実在の確認。フォームの前に置く） ---- */
 .lp-operator {
   background: var(--lp-surface);
   border: var(--lp-hairline) solid var(--lp-line);
   border-radius: var(--lp-radius);
   padding: var(--lp-space-6) var(--lp-space-5);
-  margin-top: var(--lp-space-7);
+  margin-bottom: var(--lp-space-6);
 }
 .lp-operator-brand {
   font-family: var(--lp-font-brand);
@@ -672,16 +689,9 @@ select:focus-visible,
   letter-spacing: 0.16em;
   margin-bottom: var(--lp-space-4);
 }
-.lp-operator-origin {
-  color: var(--lp-text-2);
-  margin-bottom: var(--lp-space-5);
-}
-.lp-operator-image {
-  margin-bottom: var(--lp-space-5);
-}
 .lp-operator-facts {
   border-top: var(--lp-hairline) solid var(--lp-line);
-  margin: 0 0 var(--lp-space-5);
+  margin: 0;
 }
 .lp-operator-row {
   display: grid;
@@ -700,18 +710,34 @@ select:focus-visible,
   margin: 0;
   color: var(--lp-text-3);
 }
+@media (max-width: 480px) {
+  .lp-operator-row {
+    grid-template-columns: 1fr;
+    gap: var(--lp-space-1);
+  }
+}
+
+/* ---- 屋号の由来（送信ボタンより後ろ） ---- */
+.lp-operator-story {
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-6) var(--lp-space-5);
+  margin-top: var(--lp-space-7);
+}
+.lp-operator-origin {
+  color: var(--lp-text-2);
+  margin-bottom: var(--lp-space-5);
+}
+.lp-operator-image {
+  margin-bottom: var(--lp-space-5);
+}
 .lp-operator-site {
   color: var(--lp-text-2);
 }
 .lp-operator-site a {
   color: var(--lp-focus);
   text-decoration: underline;
-}
-@media (max-width: 480px) {
-  .lp-operator-row {
-    grid-template-columns: 1fr;
-    gap: var(--lp-space-1);
-  }
 }
 
 /* ---- フッター（藍地。ページの床） ---- */

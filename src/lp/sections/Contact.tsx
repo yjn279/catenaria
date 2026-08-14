@@ -3,6 +3,7 @@ import { AnalyticsEvent, track } from '../../lib/analytics'
 import { submitToWeb3Forms } from '../../lib/web3forms'
 import { FullImage } from '../components/FullImage'
 import { OperatorInfo } from '../components/OperatorInfo'
+import { OperatorOrigin } from '../components/OperatorOrigin'
 import { CONTACT } from '../content'
 import {
   type ContactFormErrors,
@@ -66,6 +67,7 @@ export function Contact() {
         </h2>
         <h3 className="lp-contact-title">{CONTACT.heading}</h3>
         <p className="lp-contact-lead">{CONTACT.lead}</p>
+        <OperatorInfo />
         <p className="lp-contact-boundary">{CONTACT.boundary}</p>
       </div>
       <FullImage
@@ -165,6 +167,11 @@ export function Contact() {
 
           <p className="lp-contact-privacy">{CONTACT.privacy}</p>
 
+          <div className="lp-contact-retreat">
+            <p className="lp-contact-retreat-heading">{CONTACT.retreatHeading}</p>
+            <p>{CONTACT.retreat}</p>
+          </div>
+
           <button
             className="lp-btn lp-btn-accent lp-contact-submit"
             type="submit"
@@ -179,7 +186,7 @@ export function Contact() {
           </div>
         </form>
 
-        <OperatorInfo />
+        <OperatorOrigin />
       </div>
     </section>
   )
