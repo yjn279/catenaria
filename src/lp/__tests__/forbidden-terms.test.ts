@@ -1,5 +1,8 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative, resolve } from 'node:path'
+import { render } from '@testing-library/react'
+import { createElement } from 'react'
+import App from '../App'
 
 // /lp は「契約」に類する語を一律に使わない。無料の境目は本文で語ることで伝え、
 // 契約手続きを連想させる言葉には頼らない。
@@ -25,6 +28,15 @@ const BRAND_MEANING_WORDS = [
   '力の流れ',
   '最も強い形',
 ]
+
+// 台帳（catenaria-self.gate.json の freeScopePairing）と同じ規則。対象を書かない
+// 「無料」は、公開して使い続けるところまで無料だと読ませる。ページが実際に表示する文字
+// （画像の説明文を含む）の「無料」ごとに、前後24字以内に対象語のいずれかを求める。
+// 台帳側の判定は最初の1件で調べるのをやめるため、ここでは一件残らず確かめる。
+const FREE_WORD = '無料'
+const FREE_OBJECT_WORDS = ['制作', '作る', 'つくる', 'お渡し', '公開', 'お使い']
+const FREE_CONTEXT_WINDOW = 24
+const TEXT_ATTRIBUTES = ['alt', 'aria-label', 'title', 'placeholder']
 
 const ROOT = resolve(import.meta.dirname, '../../..')
 
@@ -69,6 +81,45 @@ function findViolations(findWords: (content: string) => string[]): string[] {
   )
 }
 
+// 台帳の判定と同じ正規化（全角半角の統一、空白の除去）。
+function normalizeForFreeCheck(text: string): string {
+  return text
+    .normalize('NFKC')
+    .replace(/\u200B|\u200C|\u200D|\uFEFF/g, '')
+    .replace(/\s+/g, '')
+}
+
+// ページに実際に表示される文字を、台帳の判定と同じ組み立て方で1本の文字列にする
+// （画面の本文＋ title ・ meta の説明文＋画像の説明文などの属性）。
+function renderedPageCorpus(): string {
+  const { container } = render(createElement(App))
+  const attributeText = Array.from(
+    container.querySelectorAll(TEXT_ATTRIBUTES.map((name) => `[${name}]`).join(',')),
+  ).flatMap((el) => TEXT_ATTRIBUTES.map((name) => el.getAttribute(name) ?? ''))
+  const indexHtml =
+    TARGET_CONTENTS.find(({ path }) => path.endsWith('lp/index.html'))?.content ?? ''
+  const title = indexHtml.match(/<title>([^<]*)<\/title>/)?.[1] ?? ''
+  const metaContents = [
+    ...indexHtml.matchAll(
+      /<meta[^>]+(?:name="description"|property="og:[^"]+")[^>]+content="([^"]*)"/g,
+    ),
+  ].map((m) => m[1])
+  return normalizeForFreeCheck(
+    [container.textContent ?? '', title, ...metaContents, ...attributeText].join('\n'),
+  )
+}
+
+function findFreeWordsWithoutObject(corpus: string): string[] {
+  return [...corpus.matchAll(new RegExp(FREE_WORD, 'g'))].flatMap((m) => {
+    const index = m.index ?? 0
+    const around = corpus.slice(
+      Math.max(0, index - FREE_CONTEXT_WINDOW),
+      index + FREE_WORD.length + FREE_CONTEXT_WINDOW,
+    )
+    return FREE_OBJECT_WORDS.some((word) => around.includes(word)) ? [] : [`…${around}…`]
+  })
+}
+
 it('/lp が読み込む一式に「契約」に関する語が無い', () => {
   const violations = findViolations((content) =>
     CONTRACT_WORDS.filter((word) => content.includes(word)),
@@ -85,5 +136,10 @@ it('/lp が読み込む一式に、見た目の指示書の言い回しが事実
   const violations = findViolations((content) =>
     BRAND_MEANING_WORDS.filter((word) => content.includes(word)),
   )
+  expect(violations).toEqual([])
+})
+
+it('/lp に出るすべての「無料」に、対象が添えられている', () => {
+  const violations = findFreeWordsWithoutObject(renderedPageCorpus())
   expect(violations).toEqual([])
 })
