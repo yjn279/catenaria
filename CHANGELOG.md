@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/yjn279/catenaria/compare/v0.1.0...v0.2.0) (2026-08-14)
+
+
+### Features
+
+* 無料制作を伝える案内ページ（/lp）を追加する ([#21](https://github.com/yjn279/catenaria/issues/21)) ([4cb167b](https://github.com/yjn279/catenaria/commit/4cb167bce944a74d28b430889078cdb09e3c383c))
+* 訪問とクリックを計測し、効果測定できるようにする ([#18](https://github.com/yjn279/catenaria/issues/18)) ([a513620](https://github.com/yjn279/catenaria/commit/a5136207095a7c82e918c7d29e4ddd7134c934c6))
+
 ## [0.1.0](https://github.com/yjn279/catenaria/compare/v0.0.1...v0.1.0) (2026-05-31)
 
 
