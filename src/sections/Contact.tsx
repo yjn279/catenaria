@@ -44,6 +44,7 @@ export function Contact() {
         }
       }
       setErrors(fieldErrors)
+      setStatus('idle')
       return
     }
 

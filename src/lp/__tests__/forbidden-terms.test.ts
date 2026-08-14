@@ -25,9 +25,7 @@ function collectFiles(dir: string): string[] {
 const TARGET_FILES = [
   join(ROOT, 'lp/index.html'),
   ...collectFiles(join(ROOT, 'src/lp')),
-  join(ROOT, 'src/lib/analytics.ts'),
-  join(ROOT, 'src/lib/catenary.ts'),
-  join(ROOT, 'src/lib/web3forms.ts'),
+  ...collectFiles(join(ROOT, 'src/lib')),
 ]
 
 const TARGET_CONTENTS = TARGET_FILES.map((path) => ({

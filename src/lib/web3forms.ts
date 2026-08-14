@@ -11,8 +11,8 @@ export async function submitToWeb3Forms(formData: FormData): Promise<void> {
     method: 'POST',
     body: formData,
   })
-  const json = (await res.json()) as { success: boolean }
+  const json = (await res.json()) as { success: boolean; message?: string }
   if (!json.success) {
-    throw new Error('Web3Forms submission failed')
+    throw new Error(json.message ?? 'Web3Forms submission failed')
   }
 }
