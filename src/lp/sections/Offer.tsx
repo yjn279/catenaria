@@ -16,7 +16,7 @@ export function Offer() {
         src="/lp/steps.webp"
         width={1672}
         height={941}
-        alt="ご相談・制作・お渡し・公開の四つの段を、垂れた一本の線の上に並べた図解"
+        alt="ご相談・制作・お渡しを結ぶ一本の線の先で、ご自分で公開してお使いになる＝無料の道と、公開や運用をこちらにお任せ＝有償の道が対等に分かれる図解。お任せいただくかは任意です"
         loading="lazy"
       />
       <div className="wrap">
