@@ -167,6 +167,28 @@ select:focus-visible,
   max-width: 34em;
 }
 
+/* ---- 本文の列を左右交互に振る（画面幅640px以上。720pxの入れ物の中で、34emの列を
+   左端・右端へ節ごとに交互に寄せ、視線を上から下へ運ぶ。列の中の文字は左揃えのまま）
+   ・向いている方・向いていない方の節は、すでに二列で左右に分かれているため対象外
+   ・お問い合わせのプライバシーの注記と運営者情報は、自分より広い枠（フォーム・情報の箱）の
+     内側にあり、そこだけを寄せると箱の中で文字が片側へ寄って見えるため対象外 ---- */
+@media (min-width: 640px) {
+  .lp-hero-lead,
+  .lp-hero-sub,
+  .lp-offer-item,
+  .lp-contact-lead,
+  .lp-contact-boundary {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .lp-why-reasons,
+  .lp-why-boundary,
+  .lp-faq-item {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 /* ---- 節見出し ---- */
 .lp-why-heading,
 .lp-offer-heading,
