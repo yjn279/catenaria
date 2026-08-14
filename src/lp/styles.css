@@ -765,6 +765,35 @@ select:focus-visible,
   color: var(--lp-footer-text-muted);
 }
 
+/* ---- 節と節の間に置く行動の入口の帯 ---- */
+.lp-cta-band {
+  padding: var(--lp-space-7) 0;
+}
+@media (min-width: 640px) {
+  .lp-cta-band {
+    padding: var(--lp-space-8) 0;
+  }
+}
+.lp-cta-band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--lp-space-4);
+  text-align: center;
+}
+.lp-cta-band-note {
+  max-width: 34em;
+  color: var(--lp-text-2);
+}
+.lp-cta-band-link {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .lp-cta-band-link {
+    width: auto;
+  }
+}
+
 /* ---- 追従する入口（常設） ---- */
 .lp-sticky-cta {
   position: fixed;

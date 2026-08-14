@@ -1,3 +1,4 @@
+import { CtaBand } from './components/CtaBand'
 import { Curve } from './components/Curve'
 import { Footer } from './components/Footer'
 import { StickyCta } from './components/StickyCta'
@@ -24,6 +25,7 @@ export default function App() {
         <Concerns />
         <Curve />
         <WhyFree />
+        <CtaBand location="why-free" />
         <Curve />
         <Offer />
         <Curve />
@@ -32,6 +34,7 @@ export default function App() {
         <FitOrNot />
         <Curve />
         <Faq />
+        <CtaBand location="faq" />
         <Curve />
         <Contact />
       </main>

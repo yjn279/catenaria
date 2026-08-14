@@ -129,6 +129,11 @@ export const CONTACT = {
   errorMessage: `送信に失敗しました。恐れ入りますが ${CONTACT_EMAIL} までご連絡ください。`,
 } as const
 
+export const CTA_BAND = {
+  label: '制作は無料 — ここから相談する',
+  note: `${NO_VISIT_NO_CALL}入力は4項目だけです。${REPLY_ONE_DAY}`,
+} as const
+
 export const FAQ = {
   eyebrow: '6 — 気になること',
   heading: 'よくあるご質問',
