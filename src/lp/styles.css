@@ -100,8 +100,8 @@ a {
   color: inherit;
 }
 ::selection {
-  background: var(--lp-accent);
-  color: var(--lp-text);
+  background: var(--lp-focus);
+  color: var(--lp-bg);
 }
 
 /* ---- キーボードで移動したときの焦点の輪 ---- */
@@ -240,9 +240,9 @@ select:focus-visible,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--lp-space-2);
   min-height: 44px;
-  padding: 12px var(--lp-space-5);
+  padding: var(--lp-space-3) var(--lp-space-5);
   border-radius: var(--lp-radius);
   border: var(--lp-hairline) solid transparent;
   font-family: var(--lp-font-sans);
