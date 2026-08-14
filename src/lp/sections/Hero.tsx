@@ -1,4 +1,4 @@
-import { AnalyticsEvent, track } from '../../lib/analytics'
+import { CtaLink } from '../components/CtaLink'
 import { FullImage } from '../components/FullImage'
 import { HERO } from '../content'
 
@@ -27,17 +27,7 @@ export function Hero() {
         </h1>
         <p className="lp-hero-lead">{HERO.lead}</p>
         <p className="lp-hero-sub">{HERO.sub}</p>
-        {/* biome-ignore lint/a11y/useValidAnchor: 同一ページ内の遷移にクリック計測を添えたアンカー */}
-        <a
-          href="#contact"
-          className="lp-btn lp-btn-accent lp-hero-cta"
-          data-cta="hero"
-          onClick={() =>
-            track(AnalyticsEvent.CtaClick, { location: 'hero', destination: 'contact' })
-          }
-        >
-          {HERO.ctaLabel}
-        </a>
+        <CtaLink location="hero" label={HERO.ctaLabel} className="lp-hero-cta" />
       </div>
       <FullImage
         src="/lp/office.webp"

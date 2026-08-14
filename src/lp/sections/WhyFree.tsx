@@ -1,5 +1,5 @@
 import { FullImage } from '../components/FullImage'
-import { WHY_FREE } from '../content'
+import { SCOPE_DIAGRAM, WHY_FREE } from '../content'
 
 /**
  * このページの中心となる節。なぜ無料でできるのかという理由と、
@@ -36,10 +36,10 @@ export function WhyFree() {
         loading="lazy"
       />
       <FullImage
-        src="/lp/scope.webp"
-        width={1672}
-        height={941}
-        alt="「どこまでが無料か」という題のもと、「ご相談から制作、お渡しまで＝無料」「ご自分で公開してお使いになる＝無料」「公開や運用をこちらにお任せ＝有償」「お任せいただくかは任意です」「金額は別途お見積りします」の六つの語句が並ぶ図解"
+        src={SCOPE_DIAGRAM.src}
+        width={SCOPE_DIAGRAM.width}
+        height={SCOPE_DIAGRAM.height}
+        alt={SCOPE_DIAGRAM.alt}
         loading="lazy"
       />
     </section>

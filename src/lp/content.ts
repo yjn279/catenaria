@@ -135,6 +135,19 @@ export const CTA_BAND = {
   note: `${NO_VISIT_NO_CALL}入力は4項目だけです。${REPLY_ONE_DAY}`,
 } as const
 
+export const STICKY_CTA = {
+  // 文言の先頭に必ず「制作は無料」を含める。
+  label: '制作は無料。今すぐメールでご相談ください',
+} as const
+
+// どこまでが無料かを示す図解。WhyFree と Contact の両方に置くため、事実として1箇所で定める。
+export const SCOPE_DIAGRAM = {
+  src: '/lp/scope.webp',
+  width: 1672,
+  height: 941,
+  alt: '「どこまでが無料か」という題のもと、「ご相談から制作、お渡しまで＝無料」「ご自分で公開してお使いになる＝無料」「公開や運用をこちらにお任せ＝有償」「お任せいただくかは任意です」「金額は別途お見積りします」の六つの語句が並ぶ図解',
+} as const
+
 export const FAQ = {
   eyebrow: '6 — 気になること',
   heading: 'よくあるご質問',

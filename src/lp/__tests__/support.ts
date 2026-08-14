@@ -1,4 +1,4 @@
-import { readdirSync, statSync } from 'node:fs'
+import { readdirSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { render } from '@testing-library/react'
 import { createElement } from 'react'
@@ -14,10 +14,10 @@ export function collectFiles(
   options: { skipDir?: (entry: string) => boolean; includeFile?: (entry: string) => boolean } = {},
 ): string[] {
   const { skipDir = () => false, includeFile = () => true } = options
-  return readdirSync(dir).flatMap((entry) => {
-    const path = join(dir, entry)
-    if (statSync(path).isDirectory()) return skipDir(entry) ? [] : collectFiles(path, options)
-    return includeFile(entry) ? [path] : []
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(dir, entry.name)
+    if (entry.isDirectory()) return skipDir(entry.name) ? [] : collectFiles(path, options)
+    return includeFile(entry.name) ? [path] : []
   })
 }
 

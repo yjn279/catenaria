@@ -4,7 +4,7 @@ import { submitToWeb3Forms } from '../../lib/web3forms'
 import { FullImage } from '../components/FullImage'
 import { OperatorInfo } from '../components/OperatorInfo'
 import { OperatorOrigin } from '../components/OperatorOrigin'
-import { CONTACT } from '../content'
+import { CONTACT, SCOPE_DIAGRAM } from '../content'
 import {
   type ContactFormErrors,
   type ContactFormValues,
@@ -78,10 +78,10 @@ export function Contact() {
         loading="lazy"
       />
       <FullImage
-        src="/lp/scope.webp"
-        width={1672}
-        height={941}
-        alt="「どこまでが無料か」という題のもと、「ご相談から制作、お渡しまで＝無料」「ご自分で公開してお使いになる＝無料」「公開や運用をこちらにお任せ＝有償」「お任せいただくかは任意です」「金額は別途お見積りします」の六つの語句が並ぶ図解"
+        src={SCOPE_DIAGRAM.src}
+        width={SCOPE_DIAGRAM.width}
+        height={SCOPE_DIAGRAM.height}
+        alt={SCOPE_DIAGRAM.alt}
         loading="lazy"
       />
       <div className="wrap">

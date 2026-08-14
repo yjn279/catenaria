@@ -39,7 +39,7 @@ const TEXT_ATTRIBUTES = ['alt', 'aria-label', 'title', 'placeholder']
 const TARGET_FILES = [
   join(ROOT, 'lp/index.html'),
   ...collectFiles(join(ROOT, 'src/lp'), { skipDir: (entry) => entry === '__tests__' }),
-  ...collectFiles(join(ROOT, 'src/lib')),
+  ...collectFiles(join(ROOT, 'src/lib'), { skipDir: (entry) => entry === '__tests__' }),
 ]
 
 const TARGET_CONTENTS = TARGET_FILES.map((path) => ({
@@ -47,20 +47,35 @@ const TARGET_CONTENTS = TARGET_FILES.map((path) => ({
   content: readFileSync(path, 'utf-8'),
 }))
 
+// 語の出現ごとに前後 window 文字を切り出し、hasContext が満たされない箇所だけ report で報告する
+// （QUOTE_WORDS・FREE_WORD の文脈チェックで共有する走査）。
+function findOutOfContext(
+  content: string,
+  word: string,
+  window: number,
+  hasContext: (around: string) => boolean,
+  report: (around: string) => string,
+): string[] {
+  const hits: string[] = []
+  let index = content.indexOf(word)
+  while (index !== -1) {
+    const around = content.slice(Math.max(0, index - window), index + word.length + window)
+    if (!hasContext(around)) hits.push(report(around))
+    index = content.indexOf(word, index + 1)
+  }
+  return hits
+}
+
 function findQuoteWordsOutOfContext(content: string): string[] {
-  return QUOTE_WORDS.flatMap((word) => {
-    const hits: string[] = []
-    let index = content.indexOf(word)
-    while (index !== -1) {
-      const around = content.slice(
-        Math.max(0, index - CONTEXT_WINDOW),
-        index + word.length + CONTEXT_WINDOW,
-      )
-      if (!QUOTE_CONTEXT.test(around)) hits.push(word)
-      index = content.indexOf(word, index + 1)
-    }
-    return hits
-  })
+  return QUOTE_WORDS.flatMap((word) =>
+    findOutOfContext(
+      content,
+      word,
+      CONTEXT_WINDOW,
+      (around) => QUOTE_CONTEXT.test(around),
+      () => word,
+    ),
+  )
 }
 
 function findViolations(findWords: (content: string) => string[]): string[] {
@@ -103,14 +118,13 @@ function renderedPageCorpus(): string {
 }
 
 function findFreeWordsWithoutObject(corpus: string): string[] {
-  return [...corpus.matchAll(new RegExp(FREE_WORD, 'g'))].flatMap((m) => {
-    const index = m.index ?? 0
-    const around = corpus.slice(
-      Math.max(0, index - FREE_CONTEXT_WINDOW),
-      index + FREE_WORD.length + FREE_CONTEXT_WINDOW,
-    )
-    return FREE_OBJECT_WORDS.some((word) => around.includes(word)) ? [] : [`…${around}…`]
-  })
+  return findOutOfContext(
+    corpus,
+    FREE_WORD,
+    FREE_CONTEXT_WINDOW,
+    (around) => FREE_OBJECT_WORDS.some((word) => around.includes(word)),
+    (around) => `…${around}…`,
+  )
 }
 
 it('/lp が読み込む一式に「契約」に関する語が無い', () => {

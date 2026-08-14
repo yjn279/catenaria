@@ -1,4 +1,4 @@
-import { AnalyticsEvent, track } from '../../lib/analytics'
+import { CtaLink } from '../components/CtaLink'
 import { FullImage } from '../components/FullImage'
 import { OFFER } from '../content'
 
@@ -55,17 +55,7 @@ export function Offer() {
         loading="lazy"
       />
       <div className="wrap">
-        {/* biome-ignore lint/a11y/useValidAnchor: 同一ページ内の遷移にクリック計測を添えたアンカー */}
-        <a
-          href="#contact"
-          className="lp-btn lp-btn-accent lp-offer-cta"
-          data-cta="offer"
-          onClick={() =>
-            track(AnalyticsEvent.CtaClick, { location: 'offer', destination: 'contact' })
-          }
-        >
-          {OFFER.ctaLabel}
-        </a>
+        <CtaLink location="offer" label={OFFER.ctaLabel} className="lp-offer-cta" />
       </div>
     </section>
   )
