@@ -264,16 +264,16 @@ select:focus-visible,
 /* 余白は入れ物（div）に、曲線の高さはsvg自身に持たせる。同じ要素にかけると
    余白がsvgの高さ指定を押しつぶし、曲線が0に潰れて消えるため分けてある。 */
 .lp-divider {
-  max-width: 240px;
+  max-width: 720px;
   margin: 0 auto;
   padding: var(--lp-space-6) 0;
 }
 .lp-curve {
   display: block;
   width: 100%;
-  height: 28px;
+  height: 20px;
   color: var(--lp-focus);
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
 /* ---- 節の上下の余白（すべての節で揃える） ---- */
