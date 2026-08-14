@@ -75,6 +75,13 @@ export function Contact() {
         alt="窓からの光が横に入る木の机で、両手がノートパソコンに文字を打っている情景"
         loading="lazy"
       />
+      <FullImage
+        src="/lp/scope.webp"
+        width={1672}
+        height={941}
+        alt="「どこまでが無料か」という題のもと、「ご相談から制作、お渡しまで＝無料」「ご自分で公開してお使いになる＝無料」「公開や運用をこちらにお任せ＝有償」「お任せいただくかは任意です」「金額は別途お見積りします」の六つの語句が並ぶ図解"
+        loading="lazy"
+      />
       <div className="wrap">
         <form className="lp-contact-form" onSubmit={handleSubmit} ref={formRef} noValidate>
           <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} />
