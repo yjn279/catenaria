@@ -65,16 +65,17 @@ export function Contact() {
         <h3 className="lp-contact-title">{CONTACT.heading}</h3>
         <p className="lp-contact-lead">{CONTACT.lead}</p>
         <p className="lp-contact-boundary">{CONTACT.boundary}</p>
-        <div className="lp-contact-image">
-          <img
-            src="/lp/reply.webp"
-            width={1536}
-            height={1024}
-            alt="窓からの光が横に入る木の机で、両手がノートパソコンに文字を打っている情景"
-            loading="lazy"
-          />
-        </div>
-
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/reply.webp"
+          width={1536}
+          height={1024}
+          alt="窓からの光が横に入る木の机で、両手がノートパソコンに文字を打っている情景"
+          loading="lazy"
+        />
+      </div>
+      <div className="wrap">
         <form className="lp-contact-form" onSubmit={handleSubmit} ref={formRef} noValidate>
           <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} />
           <input type="hidden" name="subject" value="CATENARIA LP お問い合わせ" />

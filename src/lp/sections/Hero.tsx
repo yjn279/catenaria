@@ -23,15 +23,15 @@ export function Hero() {
         >
           {HERO.ctaLabel}
         </a>
-        <div className="lp-hero-image">
-          <img
-            src="/lp/office.webp"
-            width={1536}
-            height={1024}
-            alt="日本の地方にある工務店の事務室。紺色の作業着を着て机に向かって座った後ろ姿"
-            loading="eager"
-          />
-        </div>
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/office.webp"
+          width={1536}
+          height={1024}
+          alt="日本の地方にある工務店の事務室。紺色の作業着を着て机に向かって座った後ろ姿"
+          loading="eager"
+        />
       </div>
     </section>
   )

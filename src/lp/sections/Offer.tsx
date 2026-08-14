@@ -9,15 +9,17 @@ export function Offer() {
         <h2 id="offer-heading" className="lp-offer-heading">
           {OFFER.heading}
         </h2>
-        <div className="lp-offer-image-band">
-          <img
-            src="/lp/steps.webp"
-            width={1672}
-            height={941}
-            alt="ご相談・制作・お渡し・公開の四つの段を、垂れた一本の線の上に並べた図解"
-            loading="lazy"
-          />
-        </div>
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/steps.webp"
+          width={1672}
+          height={941}
+          alt="ご相談・制作・お渡し・公開の四つの段を、垂れた一本の線の上に並べた図解"
+          loading="lazy"
+        />
+      </div>
+      <div className="wrap">
         <dl className="lp-offer-list">
           {OFFER.items.map((item) => (
             <div className="lp-offer-item" key={item.title}>
@@ -37,15 +39,24 @@ export function Offer() {
             </dd>
           </div>
         </dl>
-        <div className="lp-offer-image">
-          <img
-            src="/lp/handover.webp"
-            width={1536}
-            height={1024}
-            alt="木のカウンター越しに、袖から出た片手が無地の紙挟みを見る人の側へ差し出している情景"
-            loading="lazy"
-          />
-        </div>
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/pace.webp"
+          width={1672}
+          height={941}
+          alt="ご返信 1営業日以内、初稿 5営業日以内、なおし 2回まで無料、目安です。三つの目安を、一本の線の上に並べた図解"
+          loading="lazy"
+        />
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/handover.webp"
+          width={1536}
+          height={1024}
+          alt="木のカウンター越しに、袖から出た片手が無地の紙挟みを見る人の側へ差し出している情景"
+          loading="lazy"
+        />
       </div>
     </section>
   )

@@ -26,15 +26,24 @@ export function WhyFree() {
             </p>
           ))}
         </div>
-        <div className="lp-why-image">
-          <img
-            src="/lp/capacity.webp"
-            width={1536}
-            height={1024}
-            alt="古い木造の作業場で、梁のあいだに渡した紐に無地の紙が吊るされている情景"
-            loading="lazy"
-          />
-        </div>
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/capacity.webp"
+          width={1536}
+          height={1024}
+          alt="古い木造の作業場で、梁のあいだに渡した紐に無地の紙が吊るされている情景"
+          loading="lazy"
+        />
+      </div>
+      <div className="lp-image-full">
+        <img
+          src="/lp/scope.webp"
+          width={1672}
+          height={941}
+          alt="制作は無料、公開・運用をお任せの場合は有償。無料の範囲と有償になる場合の境目を、面積の異なる二つの面に分けて示した図解"
+          loading="lazy"
+        />
       </div>
     </section>
   )
