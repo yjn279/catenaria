@@ -29,11 +29,16 @@ const WHY_FREE_REASON_MODEL =
   'だからこそ制作そのものは無料にし、その先の運用でいただく事業の設計にしています。'
 
 export const HERO = {
-  eyebrow: 'ホームページ・LP（商品やサービスを紹介する1枚のページ）制作',
+  eyebrow: 'ホームページ・LP制作',
   headline: FREE_OFFER,
   headlineMark: '無料',
-  lead: NO_COST_NO_CONTRACT,
-  sub: 'ホームページが無い、あっても古いまま。手が回らないまま何年も経っている、そんな会社のために。',
+  lead: `LPは、商品やサービスを紹介する1枚のページです。${NO_COST_NO_CONTRACT}`,
+  sub: 'ホームページが無い、古いままの会社のために。',
+  chips: [
+    { value: '1営業日', caption: REPLY_ONE_DAY },
+    { value: '5営業日', caption: DRAFT_FIVE_DAYS },
+    { value: '2回', caption: '初稿の制作は、無料で直せます。' },
+  ],
   ctaLabel: '制作は無料 — まずは相談する',
 } as const
 

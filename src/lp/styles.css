@@ -369,7 +369,49 @@ select:focus-visible,
   }
 }
 
-/* ---- 最初の一画面 ---- */
+/* ---- 最初の一画面（写真を地に敷き、文字はそのまま上に重ねる一枚の絵） ----
+   .lp-hero-photo は position:absolute; inset:0 で、位置基準となる .lp-hero
+   （position:relative）の padding 込みの領域いっぱいに広がる。文字は生成りの不透明な
+   一枚（.lp-hero-card）に乗せ、その外側にそのまま写真を見せる。カードを不透明にするのは、
+   文字の裏地の色を機械（自動の色のコントラスト検査）が判定できる状態に保つため。
+   節の上下の余白（padding-top/bottom）は他の節と揃えたまま、その内側を写真が覆う。 */
+.lp-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.lp-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 40%;
+}
+.lp-hero-card {
+  position: relative;
+  z-index: 1;
+  background: var(--lp-bg);
+  border-radius: var(--lp-radius);
+  margin: var(--lp-space-6) 0;
+  padding: var(--lp-space-6) var(--lp-space-5);
+}
+@media (min-width: 640px) {
+  .lp-hero-photo {
+    object-position: 80% 32%;
+  }
+}
+@media (min-width: 1024px) {
+  .lp-hero .wrap {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .lp-hero-card {
+    max-width: 620px;
+    margin: var(--lp-space-7) 0;
+  }
+}
 .lp-hero-title {
   font-size: 34px;
   font-weight: 900;
@@ -384,13 +426,13 @@ select:focus-visible,
 }
 /* 大見出しの中の「無料」だけを、ひときわ大きく藍で組む */
 .lp-hero-title-mark {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 900;
   color: var(--lp-focus);
 }
 @media (min-width: 640px) {
   .lp-hero-title-mark {
-    font-size: 72px;
+    font-size: 80px;
   }
 }
 .lp-hero-lead {
@@ -400,7 +442,44 @@ select:focus-visible,
 }
 .lp-hero-sub {
   color: var(--lp-text-2);
-  margin-bottom: var(--lp-space-6);
+  margin-bottom: var(--lp-space-5);
+}
+/* ---- 数字のチップ3枚（1営業日・5営業日・2回。目安であることは同じチップの中に書く） ---- */
+.lp-hero-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--lp-space-3);
+  margin: 0 0 var(--lp-space-6);
+  padding: 0;
+  list-style: none;
+}
+.lp-hero-chip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-1);
+  padding: var(--lp-space-3) var(--lp-space-2);
+  background: rgba(250, 246, 236, 0.92);
+  border: var(--lp-hairline) solid var(--lp-line);
+  border-radius: var(--lp-radius);
+}
+.lp-hero-chip-value {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--lp-focus);
+  line-height: 1.2;
+}
+.lp-hero-chip-caption {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--lp-text-2);
+}
+@media (min-width: 640px) {
+  .lp-hero-chip-value {
+    font-size: 26px;
+  }
+  .lp-hero-chip-caption {
+    font-size: 12.5px;
+  }
 }
 /* ---- 全幅の画像（左右の余白を突き抜けて置く。入れ物は最大768px） ---- */
 .lp-image-full {
