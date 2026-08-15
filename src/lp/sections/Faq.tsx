@@ -10,22 +10,27 @@ export function Faq() {
         <h2 id="faq-heading" className="lp-faq-heading">
           {FAQ.heading}
         </h2>
-        <div className="lp-faq-list">
-          {FAQ.items.map((item) => (
-            <div className="lp-faq-item" key={item.q}>
-              <h3 className="lp-faq-question">{item.q}</h3>
-              <p className="lp-faq-answer">{item.a}</p>
-            </div>
-          ))}
-        </div>
       </div>
-      <FullImage
-        src="/lp/mail.webp"
-        width={1536}
-        height={1024}
-        alt="木の机の隅を斜め上から写し、片手が画面の消えた携帯電話を持っている情景"
-        loading="lazy"
-      />
+      <div className="lp-media-row lp-media-row--reverse">
+        <div className="lp-media-row-text">
+          <div className="lp-faq-list">
+            {FAQ.items.map((item) => (
+              <div className="lp-faq-item" key={item.q}>
+                <h3 className="lp-faq-question">{item.q}</h3>
+                <p className="lp-faq-answer">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <FullImage
+          src="/lp/mail.webp"
+          width={1536}
+          height={1024}
+          alt="木の机の隅を斜め上から写し、片手が画面の消えた携帯電話を持っている情景"
+          loading="lazy"
+          className="lp-image-full lp-media-row-image"
+        />
+      </div>
     </section>
   )
 }

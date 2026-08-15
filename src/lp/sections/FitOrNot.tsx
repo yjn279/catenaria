@@ -11,15 +11,20 @@ export function FitOrNot() {
           {FIT.heading}
         </h2>
       </div>
-      <FullImage
-        src="/lp/town.webp"
-        width={1672}
-        height={941}
-        alt="日本の地方都市の通りを斜めから写した情景"
-        loading="lazy"
-      />
+      <div className="lp-media-row lp-media-row--reverse">
+        <FullImage
+          src="/lp/town.webp"
+          width={1672}
+          height={941}
+          alt="日本の地方都市の通りを斜めから写した情景"
+          loading="lazy"
+          className="lp-image-full lp-media-row-image"
+        />
+        <div className="lp-media-row-text">
+          <p className="lp-fit-area-note">{FIT.areaNote}</p>
+        </div>
+      </div>
       <div className="wrap">
-        <p className="lp-fit-area-note">{FIT.areaNote}</p>
         <div className="lp-fit-columns">
           <div>
             <p className="lp-fit-column-title">{FIT.fitTitle}</p>

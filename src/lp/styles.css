@@ -152,7 +152,8 @@ select:focus-visible,
   margin-bottom: var(--lp-space-2);
 }
 
-/* ---- 本文の入れ物（一行を読みやすい長さに絞る。見出し・画像は720pxのまま） ---- */
+/* ---- 本文の入れ物（一行を読みやすい長さに絞る。見出しは入れ物の幅のまま。
+   画像幅は「全幅の画像」節で別に定める） ---- */
 .lp-hero-lead,
 .lp-hero-sub,
 .lp-concerns-closing,
@@ -191,6 +192,17 @@ select:focus-visible,
   .lp-contact-boundary {
     margin-left: auto;
     margin-right: 0;
+  }
+}
+
+/* ---- 机上（画面幅1024px以上）は、この左右寄せに代えて実際に文字と画像を並べる
+   （「文章の塊と画像を横に並べる行」節）。ここでは中央寄せへ戻すだけにとどめ、
+   1080px級の広い入れ物の中で片側だけへ寄って浮かないようにする。 ---- */
+@media (min-width: 1024px) {
+  .lp-why-boundary,
+  .lp-process-item-body {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -400,6 +412,65 @@ select:focus-visible,
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ---- 机上（画面幅1024px以上）で柱を広げる節。文字入りの画像が中身を担う6節
+   （こんな状態のままになっていませんか・制作が無料でできる理由・お渡しするもの・
+   進め方・向いている方向いていない方・よくあるご質問）だけ、入れ物を1080px級へ広げる。
+   お問い合わせは、フォーム・運営者情報の幅を保つため、この入れ物は広げない。 ---- */
+@media (min-width: 1024px) {
+  .lp-concerns .wrap,
+  .lp-why .wrap,
+  .lp-offer .wrap,
+  .lp-process .wrap,
+  .lp-fit .wrap,
+  .lp-faq .wrap {
+    max-width: 1128px;
+  }
+}
+
+/* ---- 文字入りの図版は、柱いっぱいに見せる。写真も同じ幅まで広げ、本文の入れ物より
+   前に出す（携帯と同じく、画像は左右の余白を突き抜けて置く規律の延長）。
+   横に並べる行（次節）の中の画像はここでは対象にしない（直下の子だけを選ぶ）。 ---- */
+@media (min-width: 1024px) {
+  .lp-why > .lp-image-full,
+  .lp-offer > .lp-image-full,
+  .lp-process > .lp-image-full,
+  .lp-contact > .lp-image-full {
+    max-width: 1080px;
+  }
+}
+
+/* ---- 文章の塊と画像を横に並べる行（節ごとに左右を替える）。
+   画面幅1024px未満では、それまでどおり縦に積む。画像（.lp-media-row-image）は
+   左右の余白を突き抜けて全幅で置かれ（.lp-image-fullと同じ）、文字の入れ物
+   （.lp-media-row-text）だけが.wrapと同じ24pxの余白を持つ。 ---- */
+.lp-media-row-text {
+  padding: 0 var(--lp-space-5);
+}
+@media (min-width: 1024px) {
+  .lp-media-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--lp-space-6);
+    max-width: 1128px;
+    margin: var(--lp-space-6) auto;
+    padding: 0 var(--lp-space-5);
+  }
+  .lp-media-row--reverse {
+    flex-direction: row-reverse;
+  }
+  .lp-media-row-text {
+    flex: 0 0 34em;
+    max-width: 34em;
+    padding: 0;
+    margin: 0;
+  }
+  .lp-media-row-image {
+    flex: 1 1 auto;
+    max-width: none;
+    margin: 0;
+  }
 }
 
 /* ---- こんな状態のままになっていませんか ---- */

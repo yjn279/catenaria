@@ -22,19 +22,24 @@ export function WhyFree() {
             </p>
           ))}
         </div>
-        <div className="lp-why-reasons">
-          {WHY_FREE.reasons.map((reason) => (
-            <p key={reason}>{reason}</p>
-          ))}
-        </div>
       </div>
-      <FullImage
-        src="/lp/capacity.webp"
-        width={1536}
-        height={1024}
-        alt="古い木造の作業場で、梁のあいだに渡した紐に無地の紙が吊るされている情景"
-        loading="lazy"
-      />
+      <div className="lp-media-row">
+        <div className="lp-media-row-text">
+          <div className="lp-why-reasons">
+            {WHY_FREE.reasons.map((reason) => (
+              <p key={reason}>{reason}</p>
+            ))}
+          </div>
+        </div>
+        <FullImage
+          src="/lp/capacity.webp"
+          width={1536}
+          height={1024}
+          alt="古い木造の作業場で、梁のあいだに渡した紐に無地の紙が吊るされている情景"
+          loading="lazy"
+          className="lp-image-full lp-media-row-image"
+        />
+      </div>
       <FullImage
         src={SCOPE_DIAGRAM.src}
         width={SCOPE_DIAGRAM.width}

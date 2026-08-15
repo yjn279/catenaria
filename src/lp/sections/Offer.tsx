@@ -12,27 +12,6 @@ export function Offer() {
           {OFFER.heading}
         </h2>
       </div>
-      <div className="wrap">
-        <dl className="lp-offer-list">
-          {OFFER.items.map((item) => (
-            <div className="lp-offer-item" key={item.title}>
-              <dt className="lp-offer-item-title">{item.title}</dt>
-              <dd className="lp-offer-item-body">{item.body}</dd>
-            </div>
-          ))}
-          <div className="lp-offer-item">
-            <dt className="lp-offer-item-title">{OFFER.operationScopeHeading}</dt>
-            <dd className="lp-offer-item-body">
-              <p>{OFFER.operationScopeIntro}</p>
-              <ul className="lp-fit-list">
-                {OFFER.operationScopeItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-        </dl>
-      </div>
       <FullImage
         src="/lp/pace.webp"
         width={1672}
@@ -40,13 +19,37 @@ export function Offer() {
         alt="返信と初稿の目安。ご返信 1営業日以内（目安）、初稿 5営業日以内（目安）、なおし 初稿の制作から2回まで無料。返信と初稿それぞれの目安を数字と結び付けた図解"
         loading="lazy"
       />
-      <FullImage
-        src="/lp/handover.webp"
-        width={1536}
-        height={1024}
-        alt="木のカウンター越しに、袖から出た片手が無地の紙挟みを見る人の側へ差し出している情景"
-        loading="lazy"
-      />
+      <div className="lp-media-row lp-media-row--reverse">
+        <div className="lp-media-row-text">
+          <dl className="lp-offer-list">
+            {OFFER.items.map((item) => (
+              <div className="lp-offer-item" key={item.title}>
+                <dt className="lp-offer-item-title">{item.title}</dt>
+                <dd className="lp-offer-item-body">{item.body}</dd>
+              </div>
+            ))}
+            <div className="lp-offer-item">
+              <dt className="lp-offer-item-title">{OFFER.operationScopeHeading}</dt>
+              <dd className="lp-offer-item-body">
+                <p>{OFFER.operationScopeIntro}</p>
+                <ul className="lp-fit-list">
+                  {OFFER.operationScopeItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <FullImage
+          src="/lp/handover.webp"
+          width={1536}
+          height={1024}
+          alt="木のカウンター越しに、袖から出た片手が無地の紙挟みを見る人の側へ差し出している情景"
+          loading="lazy"
+          className="lp-image-full lp-media-row-image"
+        />
+      </div>
       <div className="wrap">
         <CtaLink location="offer" label={OFFER.ctaLabel} className="lp-offer-cta" />
       </div>
