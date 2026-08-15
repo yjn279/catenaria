@@ -38,7 +38,7 @@ export const HERO = {
   chips: [
     { value: '1営業日', caption: REPLY_ONE_DAY },
     { value: '5営業日', caption: DRAFT_FIVE_DAYS },
-    { value: '2回', caption: '初稿の制作は、無料で直せます。' },
+    { value: '2回まで', caption: FREE_REVISIONS },
   ],
   ctaLabel: '制作は無料 — まずは相談する',
 } as const
