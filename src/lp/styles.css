@@ -199,11 +199,16 @@ select:focus-visible,
   }
 }
 
-/* ---- 机上（画面幅1024px以上）は、この左右寄せに代えて実際に文字と画像を並べる
-   （「文章の塊と画像を横に並べる行」節）。ここでは中央寄せへ戻すだけにとどめ、
+/* ---- 机上（画面幅1024px以上）は、この左右寄せをやめる（「文章の塊と画像を横に並べる行」節）。
+   .lp-why-boundary は柱の左端へ揃える。すぐ下の行は文字が左・画像が右であり、
+   上の節見出しも柱の左端から始まるため、節番号・節見出し・境目の囲み・理由の文が
+   同じ左端に並ぶ。.lp-offer-quality・.lp-process-item-body は中央寄せのままとし、
    1080px級の広い入れ物の中で片側だけへ寄って浮かないようにする。 ---- */
 @media (min-width: 1024px) {
-  .lp-why-boundary,
+  .lp-why-boundary {
+    margin-left: 0;
+    margin-right: auto;
+  }
   .lp-offer-quality,
   .lp-process-item-body {
     margin-left: auto;
