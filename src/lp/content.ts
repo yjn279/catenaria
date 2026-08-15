@@ -27,6 +27,7 @@ const WHY_FREE_REASON_COST =
   'AIエージェントが制作するため、お引き受けする数が増えても、費用はほとんど増えません。'
 const WHY_FREE_REASON_MODEL =
   'だからこそ制作そのものは無料にし、その先の運用でいただく事業の設計にしています。'
+const NO_AREA_LIMIT = '対応する地域は問いません。'
 
 export const HERO = {
   eyebrow: 'ホームページ・LP制作',
@@ -108,8 +109,7 @@ export const PROCESS = {
 export const FIT = {
   eyebrow: '5 — こんな会社に',
   heading: '向いている方・向いていない方',
-  areaNote:
-    '対応する地域は問いません。所在地は神奈川県海老名市ですが、やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。',
+  areaNote: `${NO_AREA_LIMIT}所在地は神奈川県海老名市ですが、やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。`,
   fitTitle: '向いている方',
   fit: [
     'メールとフォームのやり取りで、制作を進められる方',
@@ -196,5 +196,5 @@ export const OPERATOR = {
   email: CONTACT_EMAIL,
   siteUrl: 'https://catenaria.dev',
   siteLabel: 'catenaria.dev',
-  areaNote: '対応する地域は問いません。全国どこからでもご相談いただけます。',
+  areaNote: `${NO_AREA_LIMIT}全国どこからでもご相談いただけます。`,
 } as const
