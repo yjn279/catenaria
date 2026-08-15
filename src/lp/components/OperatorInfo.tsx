@@ -15,7 +15,7 @@ export function OperatorInfo() {
           <dt>代表者</dt>
           <dd>{OPERATOR.representative}</dd>
         </div>
-        <div className="lp-operator-row">
+        <div className="lp-operator-row lp-operator-row--stack">
           <dt>所在地</dt>
           <dd>
             {OPERATOR.postalCode}
@@ -33,7 +33,7 @@ export function OperatorInfo() {
             <a href={OPERATOR.siteUrl}>{OPERATOR.siteLabel}</a>
           </dd>
         </div>
-        <div className="lp-operator-row">
+        <div className="lp-operator-row lp-operator-row--stack">
           <dt>対応地域</dt>
           <dd>{OPERATOR.areaNote}</dd>
         </div>
