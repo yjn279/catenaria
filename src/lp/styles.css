@@ -435,7 +435,10 @@ select:focus-visible,
     line-height: 1.25;
   }
 }
-/* 大見出しの中の「無料」だけを、ひときわ大きく藍で組む */
+/* 大見出しの中の「無料」だけを、ひときわ大きく藍で組む。
+   ここと直後の .lp-hero-title-tail を nowrap にし、「無料」の途中や
+   結びの「です。」の途中で行が折れないようにする。見出しの折り返しは
+   意味の切れ目（かたまりとかたまりの間）だけで起きる */
 .lp-hero-title-mark {
   font-size: 56px;
   font-weight: 900;
@@ -447,8 +450,7 @@ select:focus-visible,
     font-size: 80px;
   }
 }
-/* 「無料」に続く結びの言葉（「です。」）を1つのかたまりとして扱い、
-   語の途中（「です」の間）で行が折れないようにする */
+/* 「無料」に続く結びの言葉（「です。」）。上の .lp-hero-title-mark と同じ理由で nowrap にする */
 .lp-hero-title-tail {
   white-space: nowrap;
 }
