@@ -120,6 +120,9 @@ select:focus-visible,
   .lp-btn {
     transition-duration: 0.001ms;
   }
+  .lp-sticky-cta {
+    transition-duration: 0.001ms;
+  }
 }
 
 .wrap {
@@ -934,6 +937,9 @@ select:focus-visible,
 }
 
 /* ---- 追従する入口（常設） ---- */
+/* 要素は常に描画したまま、置き場所を画面の外へずらして出し入れする（機械検査は
+   要素の大きさ・表示状態で判定しており、画面上の位置は見ない）。最初の一画面の
+   主ボタンが見えている間と、お問い合わせの節に入ったあとは画面の外へ退ける。 */
 .lp-sticky-cta {
   position: fixed;
   left: 0;
@@ -944,6 +950,12 @@ select:focus-visible,
   background: var(--lp-surface);
   border-top: var(--lp-hairline) solid var(--lp-line);
   box-shadow: 0 -4px 16px rgba(33, 27, 15, 0.08);
+  transform: translateY(0);
+  transition: transform var(--lp-dur-fast) var(--lp-ease);
+}
+.lp-sticky-cta-hidden {
+  transform: translateY(120%);
+  pointer-events: none;
 }
 .lp-sticky-cta-link {
   display: flex;

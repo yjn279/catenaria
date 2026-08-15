@@ -33,6 +33,7 @@ export default function App() {
         <Process />
         <Curve />
         <FitOrNot />
+        <CtaBand location="fit-or-not" />
         <Curve />
         <Faq />
         <CtaBand location="faq" />
