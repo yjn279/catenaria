@@ -64,6 +64,8 @@ export const WHY_FREE = {
 export const OFFER = {
   eyebrow: '3 — 無料で制作してお渡しする範囲',
   heading: 'お渡しするもの',
+  qualityHeading: '仕上がりは、初稿を見てから決められます',
+  qualityPoints: [DRAFT_FIVE_DAYS, FREE_REVISIONS, `${DELIVERABLE_FREEDOM}${NO_COST_NO_CONTRACT}`],
   ctaLabel: '制作は無料 — ここから相談する',
   items: [
     { title: '権利はすべてお客様のもの', body: `${RIGHTS}${DELIVERABLE_FREEDOM}` },
@@ -163,6 +165,10 @@ export const FAQ = {
       a: PUBLISH_BOUNDARY,
     },
     { q: '何回まで直してもらえますか？', a: `${FREE_REVISIONS}それ以降は別途になります。` },
+    {
+      q: '仕上がりが気に入らなかったらどうなりますか？',
+      a: `${FREE_REVISIONS}${DELIVERABLE_FREEDOM}${NO_COST_NO_CONTRACT}`,
+    },
     {
       q: 'なぜ無料でできるのですか？',
       a: `${WHY_FREE_REASON_COST}${WHY_FREE_REASON_MODEL}`,

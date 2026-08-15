@@ -162,6 +162,7 @@ select:focus-visible,
 .lp-concerns-closing,
 .lp-why-reasons,
 .lp-why-boundary,
+.lp-offer-quality,
 .lp-offer-item,
 .lp-process-item-body,
 .lp-fit-list,
@@ -190,6 +191,7 @@ select:focus-visible,
   }
   .lp-why-reasons,
   .lp-why-boundary,
+  .lp-offer-quality,
   .lp-process-item-body,
   .lp-contact-lead,
   .lp-contact-boundary {
@@ -203,6 +205,7 @@ select:focus-visible,
    1080px級の広い入れ物の中で片側だけへ寄って浮かないようにする。 ---- */
 @media (min-width: 1024px) {
   .lp-why-boundary,
+  .lp-offer-quality,
   .lp-process-item-body {
     margin-left: auto;
     margin-right: auto;
@@ -236,6 +239,7 @@ select:focus-visible,
 
 /* ---- 小見出し（質問・項目名） ---- */
 .lp-why-boundary-heading,
+.lp-offer-quality-heading,
 .lp-fit-column-title,
 .lp-offer-item-title,
 .lp-process-item-title,
@@ -615,6 +619,23 @@ select:focus-visible,
 }
 
 /* ---- お渡しするもの ---- */
+.lp-offer-quality {
+  background: var(--lp-surface);
+  border: var(--lp-hairline) solid var(--lp-focus);
+  border-radius: var(--lp-radius);
+  padding: var(--lp-space-5);
+  margin-bottom: var(--lp-space-6);
+}
+.lp-offer-quality-heading {
+  margin-bottom: var(--lp-space-3);
+}
+.lp-offer-quality-line {
+  color: var(--lp-text-2);
+  margin-bottom: var(--lp-space-2);
+}
+.lp-offer-quality-line:last-child {
+  margin-bottom: 0;
+}
 .lp-offer-list {
   display: flex;
   flex-direction: column;

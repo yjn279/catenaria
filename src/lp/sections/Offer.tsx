@@ -11,6 +11,14 @@ export function Offer() {
         <h2 id="offer-heading" className="lp-offer-heading">
           {OFFER.heading}
         </h2>
+        <div className="lp-offer-quality">
+          <p className="lp-offer-quality-heading">{OFFER.qualityHeading}</p>
+          {OFFER.qualityPoints.map((point) => (
+            <p key={point} className="lp-offer-quality-line">
+              {point}
+            </p>
+          ))}
+        </div>
       </div>
       <FullImage
         src="/lp/pace.webp"
