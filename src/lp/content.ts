@@ -57,7 +57,7 @@ export const WHY_FREE = {
 } as const
 
 export const OFFER = {
-  eyebrow: '3 — 無料でお渡しする範囲',
+  eyebrow: '3 — 無料で制作してお渡しする範囲',
   heading: 'お渡しするもの',
   ctaLabel: '制作は無料 — ここから相談する',
   items: [
