@@ -34,7 +34,7 @@ export function Hero() {
           <h1 id="hero-heading" className="lp-hero-title">
             {headline.before}
             <span className="lp-hero-title-mark">{headline.mark}</span>
-            {headline.after}
+            <span className="lp-hero-title-tail">{headline.after}</span>
           </h1>
           <p className="lp-hero-lead">{HERO.lead}</p>
           <p className="lp-hero-sub">{HERO.sub}</p>

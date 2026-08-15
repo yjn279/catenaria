@@ -435,11 +435,17 @@ select:focus-visible,
   font-size: 56px;
   font-weight: 900;
   color: var(--lp-focus);
+  white-space: nowrap;
 }
 @media (min-width: 640px) {
   .lp-hero-title-mark {
     font-size: 80px;
   }
+}
+/* 「無料」に続く結びの言葉（「です。」）を1つのかたまりとして扱い、
+   語の途中（「です」の間）で行が折れないようにする */
+.lp-hero-title-tail {
+  white-space: nowrap;
 }
 .lp-hero-lead {
   font-size: var(--lp-fs-body);
