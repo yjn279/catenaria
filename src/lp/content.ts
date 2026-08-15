@@ -123,7 +123,7 @@ export const FIT = {
 export const CONTACT = {
   eyebrow: '7 — お問い合わせ',
   heading: 'まずはメールでご相談ください',
-  lead: `${FREE_OFFER}訪問や電話でのお打ち合わせは行っておりません。メールとフォームだけでやり取りします。${REPLY_TIMING}`,
+  lead: `${FREE_OFFER}訪問や電話はなし。${REPLY_ONE_DAY}`,
   boundary: PUBLISH_BOUNDARY,
   privacy:
     'お預かりする項目と利用目的 — 会社名・お名前・メールアドレス・ご相談内容をお預かりし、お問い合わせへのご返信と、ご依頼いただいた制作のご連絡にのみ使います。',
@@ -145,7 +145,7 @@ export const STICKY_CTA = {
   label: '制作は無料。今すぐメールでご相談ください',
 } as const
 
-// どこまでが無料かを示す図解。WhyFree と Contact の両方に置くため、事実として1箇所で定める。
+// どこまでが無料かを示す図解。Contact 節（フォームの直前）だけに置く。
 export const SCOPE_DIAGRAM = {
   src: '/lp/scope.webp',
   width: 1672,

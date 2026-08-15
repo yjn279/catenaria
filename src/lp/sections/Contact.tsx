@@ -71,13 +71,6 @@ export function Contact() {
         <p className="lp-contact-boundary">{CONTACT.boundary}</p>
       </div>
       <FullImage
-        src="/lp/reply.webp"
-        width={1536}
-        height={1024}
-        alt="窓からの光が横に入る木の机で、両手がノートパソコンに文字を打っている情景"
-        loading="lazy"
-      />
-      <FullImage
         src={SCOPE_DIAGRAM.src}
         width={SCOPE_DIAGRAM.width}
         height={SCOPE_DIAGRAM.height}

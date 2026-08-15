@@ -1,5 +1,5 @@
 import { FullImage } from '../components/FullImage'
-import { SCOPE_DIAGRAM, WHY_FREE } from '../content'
+import { WHY_FREE } from '../content'
 
 /**
  * このページの中心となる節。なぜ無料でできるのかという理由と、
@@ -40,13 +40,6 @@ export function WhyFree() {
           className="lp-image-full lp-media-row-image"
         />
       </div>
-      <FullImage
-        src={SCOPE_DIAGRAM.src}
-        width={SCOPE_DIAGRAM.width}
-        height={SCOPE_DIAGRAM.height}
-        alt={SCOPE_DIAGRAM.alt}
-        loading="lazy"
-      />
     </section>
   )
 }
