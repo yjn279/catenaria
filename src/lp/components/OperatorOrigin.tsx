@@ -3,7 +3,7 @@ import { FullImage } from './FullImage'
 
 /**
  * 屋号「CATENARIA」の由来。長い説明のため、送信ボタンより後ろの現在の位置に残す。
- * 会社サイトへのリンクはここに置く1本だけで、行動の入口にはしない。
+ * 会社サイトへのリンクは送信ボタンより前の `OperatorInfo` に1本だけ置く。
  */
 export function OperatorOrigin() {
   return (
@@ -17,9 +17,6 @@ export function OperatorOrigin() {
         alt="生成り色の紙の上で、細い鎖が二つの木のピンに掛かり自重で垂れて懸垂線を描いている情景"
         loading="lazy"
       />
-      <p className="lp-operator-site">
-        会社の紹介は<a href={OPERATOR.siteUrl}>{OPERATOR.siteLabel}</a>でもご覧いただけます。
-      </p>
     </div>
   )
 }

@@ -196,4 +196,6 @@ export const OPERATOR = {
   email: CONTACT_EMAIL,
   siteUrl: 'https://catenaria.dev',
   siteLabel: 'catenaria.dev',
+  areaNote:
+    '対応する地域は問いません。やり取りはメールとフォームで完結するため、全国どこからのご相談もお受けします。',
 } as const

@@ -171,8 +171,7 @@ select:focus-visible,
 .lp-contact-lead,
 .lp-contact-boundary,
 .lp-contact-privacy,
-.lp-operator-origin,
-.lp-operator-site {
+.lp-operator-origin {
   max-width: 34em;
 }
 
@@ -881,6 +880,10 @@ select:focus-visible,
   margin: 0;
   color: var(--lp-text-3);
 }
+.lp-operator-row dd a {
+  color: var(--lp-focus);
+  text-decoration: underline;
+}
 @media (max-width: 480px) {
   .lp-operator-row {
     grid-template-columns: 1fr;
@@ -901,14 +904,7 @@ select:focus-visible,
   margin-bottom: var(--lp-space-5);
 }
 .lp-operator-image {
-  margin-bottom: var(--lp-space-5);
-}
-.lp-operator-site {
-  color: var(--lp-text-2);
-}
-.lp-operator-site a {
-  color: var(--lp-focus);
-  text-decoration: underline;
+  margin-bottom: 0;
 }
 
 /* ---- フッター（藍地。ページの床） ---- */
