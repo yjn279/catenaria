@@ -23,10 +23,10 @@ export default function App() {
       <main>
         <Hero />
         <Curve />
-        <Concerns />
-        <Curve />
         <WhyFree />
         <CtaBand location="why-free" />
+        <Curve />
+        <Concerns />
         <Curve />
         <Offer />
         <Curve />

@@ -38,7 +38,7 @@ export const HERO = {
 } as const
 
 export const CONCERNS = {
-  eyebrow: '1 — こんな状態のままになっていませんか',
+  eyebrow: '2 — こんな状態のままになっていませんか',
   heading: 'こんな状態のままになっていませんか',
   items: [
     'ホームページが無い、または何年も更新できていない。',
@@ -49,7 +49,7 @@ export const CONCERNS = {
 } as const
 
 export const WHY_FREE = {
-  eyebrow: '2 — なぜ無料でできるのか',
+  eyebrow: '1 — なぜ無料でできるのか',
   heading: '制作が無料でできる理由',
   reasons: [WHY_FREE_REASON_COST, WHY_FREE_REASON_MODEL],
   boundaryHeading: 'どこまでが無料か',
